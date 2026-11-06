@@ -1,0 +1,201 @@
+[gd_scene format=3 uid="uid://dxmc8natr05fy"]
+
+[ext_resource type="Script" uid="uid://0dec7salyo6j" path="res://scripts/player.gd" id="1_tuyoq"]
+[ext_resource type="Texture2D" uid="uid://2psvxsc336f8" path="res://assets/sprites/prototype_character.png" id="2_fjrip"]
+[ext_resource type="Texture2D" uid="uid://bvuhfyta86c14" path="res://assets/sprites/purple_effect_and_bullet_16x16.png" id="3_smehm"]
+[ext_resource type="Texture2D" uid="uid://d2t0gffrcxoyw" path="res://assets/sprites/fire_effect_and_bullet_16x16.png" id="4_ur7pv"]
+[ext_resource type="AudioStream" uid="uid://847a8h16b85y" path="res://assets/audio/jump.wav" id="5_y4r1p"]
+[ext_resource type="AudioStream" uid="uid://kn50r1ijgwdb" path="res://assets/audio/hurt.wav" id="6_d2wvv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3v2ag"]
+size = Vector2(15.5, 15.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jej6c"]
+atlas = ExtResource("2_fjrip")
+region = Rect2(0, 32, 16, 16)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1ej7"]
+atlas = ExtResource("2_fjrip")
+region = Rect2(16, 32, 16, 16)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oprun"]
+atlas = ExtResource("2_fjrip")
+region = Rect2(32, 32, 16, 16)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8ls1"]
+atlas = ExtResource("2_fjrip")
+region = Rect2(0, 0, 16, 16)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfm1y"]
+atlas = ExtResource("2_fjrip")
+region = Rect2(16, 0, 16, 16)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fulsm"]
+atlas = ExtResource("2_fjrip")
+region = Rect2(0, 16, 16, 16)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4r5pv"]
+atlas = ExtResource("2_fjrip")
+region = Rect2(16, 16, 16, 16)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60mlk"]
+atlas = ExtResource("2_fjrip")
+region = Rect2(32, 16, 16, 16)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4ail"]
+atlas = ExtResource("2_fjrip")
+region = Rect2(48, 16, 16, 16)
+filter_clip = true
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a38lo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jej6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1ej7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oprun")
+}],
+"loop": 0,
+"name": &"death",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8ls1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfm1y")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fulsm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4r5pv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60mlk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4ail")
+}],
+"loop": 1,
+"name": &"moving",
+"speed": 14.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ni07"]
+atlas = ExtResource("3_smehm")
+region = Rect2(176, 144, 16, 16)
+filter_clip = true
+
+[sub_resource type="Gradient" id="Gradient_l71n6"]
+colors = PackedColorArray(0.8, 0.7, 1, 0.95, 0.8, 0.7, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ke2ow"]
+gradient = SubResource("Gradient_l71n6")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ujl30"]
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 4.0
+initial_velocity_max = 18.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.35
+scale_max = 0.7
+color_ramp = SubResource("GradientTexture1D_ke2ow")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31cv2"]
+atlas = ExtResource("4_ur7pv")
+region = Rect2(32, 128, 16, 16)
+filter_clip = true
+
+[sub_resource type="Gradient" id="Gradient_pf23h"]
+colors = PackedColorArray(1, 0.75, 0.3, 0.95, 1, 0.75, 0.3, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dt7fs"]
+gradient = SubResource("Gradient_pf23h")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wqfne"]
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 50.0
+initial_velocity_max = 120.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.3
+scale_max = 0.7
+color_ramp = SubResource("GradientTexture1D_dt7fs")
+
+[sub_resource type="Gradient" id="Gradient_wnwbv"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.55, 0.55, 0.55, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gl8cc"]
+gradient = SubResource("Gradient_wnwbv")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[node name="Player" type="CharacterBody2D" unique_id=1740113718 groups=["player"]]
+z_index = 2
+collision_layer = 2
+motion_mode = 1
+script = ExtResource("1_tuyoq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1840538257]
+shape = SubResource("RectangleShape2D_3v2ag")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=828309478]
+sprite_frames = SubResource("SpriteFrames_a38lo")
+animation = &"idle"
+
+[node name="Trail" type="GPUParticles2D" parent="." unique_id=1588087787]
+z_index = -1
+emitting = false
+amount = 28
+texture = SubResource("AtlasTexture_4ni07")
+lifetime = 0.4
+process_material = SubResource("ParticleProcessMaterial_ujl30")
+
+[node name="DeathParticles" type="GPUParticles2D" parent="." unique_id=575252364]
+emitting = false
+amount = 24
+texture = SubResource("AtlasTexture_31cv2")
+lifetime = 0.7
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_wqfne")
+
+[node name="Light" type="PointLight2D" parent="." unique_id=716460278]
+color = Color(0.85, 0.88, 1, 1)
+shadow_enabled = true
+shadow_filter = 1
+texture = SubResource("GradientTexture2D_gl8cc")
+texture_scale = 1.7
+
+[node name="MoveSound" type="AudioStreamPlayer" parent="." unique_id=1339715711]
+stream = ExtResource("5_y4r1p")
+volume_db = -8.0
+bus = &"SFX"
+
+[node name="HurtSound" type="AudioStreamPlayer" parent="." unique_id=647556892]
+stream = ExtResource("6_d2wvv")
+bus = &"SFX"

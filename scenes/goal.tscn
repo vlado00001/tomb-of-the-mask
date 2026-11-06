@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cndjt3vyhe243"]
+
+[ext_resource type="Script" uid="uid://cv6wr2vnuk7bn" path="res://scripts/goal.gd" id="1_sx1j4"]
+[ext_resource type="Texture2D" uid="uid://6gtctr5ca6um" path="res://assets/sprites/space_cave_tileset.png" id="2_w3gav"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvyg3"]
+atlas = ExtResource("2_w3gav")
+region = Rect2(0, 144, 16, 16)
+filter_clip = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aqdrf"]
+size = Vector2(10, 10)
+
+[node name="Goal" type="Area2D" unique_id=1937577901]
+z_index = 1
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_sx1j4")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=526421406]
+position = Vector2(0, -4)
+texture = SubResource("AtlasTexture_jvyg3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=653509678]
+shape = SubResource("RectangleShape2D_aqdrf")

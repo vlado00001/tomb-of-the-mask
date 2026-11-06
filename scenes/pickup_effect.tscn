@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://ks1ah8nnjw2f"]
+
+[ext_resource type="Script" uid="uid://ddn6vqcupomgb" path="res://scripts/pickup_effect.gd" id="1_rvh4d"]
+[ext_resource type="Texture2D" uid="uid://d2t0gffrcxoyw" path="res://assets/sprites/fire_effect_and_bullet_16x16.png" id="2_7xo0w"]
+[ext_resource type="AudioStream" uid="uid://begqginr0yug0" path="res://assets/audio/pickupcoin.wav" id="3_6n1pc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nk68e"]
+atlas = ExtResource("2_7xo0w")
+region = Rect2(160, 96, 16, 16)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_klftv"]
+atlas = ExtResource("2_7xo0w")
+region = Rect2(160, 80, 16, 16)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y22xg"]
+atlas = ExtResource("2_7xo0w")
+region = Rect2(176, 80, 16, 16)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smfm0"]
+atlas = ExtResource("2_7xo0w")
+region = Rect2(176, 96, 16, 16)
+filter_clip = true
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8t4bd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nk68e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_klftv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y22xg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smfm0")
+}],
+"loop": 0,
+"name": &"burst",
+"speed": 16.0
+}]
+
+[node name="PickupEffect" type="Node2D" unique_id=893425478]
+z_index = 3
+script = ExtResource("1_rvh4d")
+
+[node name="Sparkle" type="AnimatedSprite2D" parent="." unique_id=1238277312]
+sprite_frames = SubResource("SpriteFrames_8t4bd")
+animation = &"burst"
+
+[node name="Sound" type="AudioStreamPlayer" parent="." unique_id=390716015]
+stream = ExtResource("3_6n1pc")
+bus = &"SFX"
+
+[node name="PointsLabel" type="Label" parent="." unique_id=1139071273]
+custom_minimum_size = Vector2(24, 0)
+offset_left = -12.0
+offset_top = -22.0
+offset_right = -12.0
+offset_bottom = -22.0
+theme_override_colors/font_color = Color(1, 0.9, 0.4, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 9
+text = "+1"
+horizontal_alignment = 1

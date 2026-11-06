@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bi7q75b8y7uct"]
+
+[ext_resource type="Script" uid="uid://t25memrlyogf" path="res://scripts/water.gd" id="1_s3811"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ewrsg"]
+size = Vector2(400, 3992)
+
+[node name="Water" type="Area2D" unique_id=1048130599 groups=["water"]]
+z_index = 5
+position = Vector2(0, -8)
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_s3811")
+
+[node name="Body" type="ColorRect" parent="." unique_id=1312883580]
+offset_top = 8.0
+offset_right = 400.0
+offset_bottom = 4008.0
+mouse_filter = 2
+color = Color(0.11372549, 0.8039216, 0.9529412, 0.41960785)
+
+[node name="Surface" type="ColorRect" parent="." unique_id=1180274462]
+offset_top = 8.0
+offset_right = 400.0
+offset_bottom = 10.0
+mouse_filter = 2
+color = Color(1, 1, 1, 0.41960785)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1237386405]
+position = Vector2(200, 2004)
+shape = SubResource("RectangleShape2D_ewrsg")

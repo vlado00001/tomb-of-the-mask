@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://d0jo3d2eptvh1"]
+
+[ext_resource type="Script" uid="uid://b4bgxsb8sl737" path="res://scripts/collectible.gd" id="1_fdkwx"]
+[ext_resource type="PackedScene" uid="uid://ks1ah8nnjw2f" path="res://scenes/pickup_effect.tscn" id="2_knu5b"]
+[ext_resource type="Texture2D" uid="uid://d2t0gffrcxoyw" path="res://assets/sprites/fire_effect_and_bullet_16x16.png" id="3_kppvk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drr77"]
+atlas = ExtResource("3_kppvk")
+region = Rect2(176, 144, 16, 16)
+filter_clip = true
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ya6r6"]
+radius = 4.0
+
+[node name="CollectibleSmall" type="Area2D" unique_id=918920235 groups=["collectibles"]]
+z_index = 1
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_fdkwx")
+pickup_effect = ExtResource("2_knu5b")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1639828592]
+texture = SubResource("AtlasTexture_drr77")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1063726879]
+shape = SubResource("CircleShape2D_ya6r6")

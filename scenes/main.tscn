@@ -1,0 +1,3463 @@
+[gd_scene format=4 uid="uid://b7ggn2mt25u3b"]
+
+[ext_resource type="Script" uid="uid://dmu6d8p2w44py" path="res://scripts/main.gd" id="1_jkv2x"]
+[ext_resource type="Script" uid="uid://dtrbyywnk1i7" path="res://scripts/camera_follow.gd" id="2_jbj1t"]
+[ext_resource type="Texture2D" uid="uid://ck01f3s6ckl1p" path="res://assets/sprites/spikes.png" id="3_choun"]
+[ext_resource type="PackedScene" uid="uid://d0jo3d2eptvh1" path="res://scenes/collectible_small.tscn" id="4_dp3eg"]
+[ext_resource type="Texture2D" uid="uid://6gtctr5ca6um" path="res://assets/sprites/space_cave_tileset.png" id="4_ya4ey"]
+[ext_resource type="PackedScene" path="res://scenes/collectible_big.tscn" id="7_yc10j"]
+[ext_resource type="PackedScene" uid="uid://cndjt3vyhe243" path="res://scenes/goal.tscn" id="8_jscy8"]
+[ext_resource type="PackedScene" uid="uid://dxmc8natr05fy" path="res://scenes/player.tscn" id="10_y6deb"]
+[ext_resource type="PackedScene" uid="uid://bi7q75b8y7uct" path="res://scenes/water.tscn" id="12_2wyq8"]
+[ext_resource type="PackedScene" uid="uid://ngq3v287d8bt" path="res://scenes/hud.tscn" id="14_2f3dj"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6dy5u"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tju6u"]
+load_path = "res://.godot/imported/walls_autotile.png-992e938699e2743b674db84959452282.ctex"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_did67"]
+texture = SubResource("CompressedTexture2D_tju6u")
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrain = 0
+0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrain = 0
+1:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0/terrains_peering_bit/left_side = 0
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/terrain = 0
+2:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0/terrains_peering_bit/bottom_side = 0
+3:0/0 = 0
+3:0/0/terrain_set = 0
+3:0/0/terrain = 0
+3:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0/terrains_peering_bit/bottom_side = 0
+3:0/0/terrains_peering_bit/bottom_left_corner = 0
+3:0/0/terrains_peering_bit/left_side = 0
+4:0/0 = 0
+4:0/0/terrain_set = 0
+4:0/0/terrain = 0
+4:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0/terrains_peering_bit/bottom_side = 0
+4:0/0/terrains_peering_bit/left_side = 0
+5:0/0 = 0
+5:0/0/terrain_set = 0
+5:0/0/terrain = 0
+5:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:0/0/terrains_peering_bit/right_side = 0
+6:0/0 = 0
+6:0/0/terrain_set = 0
+6:0/0/terrain = 0
+6:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:0/0/terrains_peering_bit/right_side = 0
+6:0/0/terrains_peering_bit/left_side = 0
+7:0/0 = 0
+7:0/0/terrain_set = 0
+7:0/0/terrain = 0
+7:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:0/0/terrains_peering_bit/right_side = 0
+7:0/0/terrains_peering_bit/bottom_right_corner = 0
+7:0/0/terrains_peering_bit/bottom_side = 0
+0:1/0 = 0
+0:1/0/terrain_set = 0
+0:1/0/terrain = 0
+0:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0/terrains_peering_bit/right_side = 0
+0:1/0/terrains_peering_bit/bottom_side = 0
+1:1/0 = 0
+1:1/0/terrain_set = 0
+1:1/0/terrain = 0
+1:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0/terrains_peering_bit/right_side = 0
+1:1/0/terrains_peering_bit/bottom_right_corner = 0
+1:1/0/terrains_peering_bit/bottom_side = 0
+1:1/0/terrains_peering_bit/bottom_left_corner = 0
+1:1/0/terrains_peering_bit/left_side = 0
+2:1/0 = 0
+2:1/0/terrain_set = 0
+2:1/0/terrain = 0
+2:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0/terrains_peering_bit/right_side = 0
+2:1/0/terrains_peering_bit/bottom_right_corner = 0
+2:1/0/terrains_peering_bit/bottom_side = 0
+2:1/0/terrains_peering_bit/left_side = 0
+3:1/0 = 0
+3:1/0/terrain_set = 0
+3:1/0/terrain = 0
+3:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0/terrains_peering_bit/right_side = 0
+3:1/0/terrains_peering_bit/bottom_side = 0
+3:1/0/terrains_peering_bit/bottom_left_corner = 0
+3:1/0/terrains_peering_bit/left_side = 0
+4:1/0 = 0
+4:1/0/terrain_set = 0
+4:1/0/terrain = 0
+4:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:1/0/terrains_peering_bit/right_side = 0
+4:1/0/terrains_peering_bit/bottom_side = 0
+4:1/0/terrains_peering_bit/left_side = 0
+5:1/0 = 0
+5:1/0/terrain_set = 0
+5:1/0/terrain = 0
+5:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:1/0/terrains_peering_bit/top_side = 0
+6:1/0 = 0
+6:1/0/terrain_set = 0
+6:1/0/terrain = 0
+6:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:1/0/terrains_peering_bit/left_side = 0
+6:1/0/terrains_peering_bit/top_left_corner = 0
+6:1/0/terrains_peering_bit/top_side = 0
+7:1/0 = 0
+7:1/0/terrain_set = 0
+7:1/0/terrain = 0
+7:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:1/0/terrains_peering_bit/left_side = 0
+7:1/0/terrains_peering_bit/top_side = 0
+0:2/0 = 0
+0:2/0/terrain_set = 0
+0:2/0/terrain = 0
+0:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0/terrains_peering_bit/bottom_side = 0
+0:2/0/terrains_peering_bit/top_side = 0
+1:2/0 = 0
+1:2/0/terrain_set = 0
+1:2/0/terrain = 0
+1:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0/terrains_peering_bit/bottom_side = 0
+1:2/0/terrains_peering_bit/bottom_left_corner = 0
+1:2/0/terrains_peering_bit/left_side = 0
+1:2/0/terrains_peering_bit/top_left_corner = 0
+1:2/0/terrains_peering_bit/top_side = 0
+2:2/0 = 0
+2:2/0/terrain_set = 0
+2:2/0/terrain = 0
+2:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0/terrains_peering_bit/bottom_side = 0
+2:2/0/terrains_peering_bit/bottom_left_corner = 0
+2:2/0/terrains_peering_bit/left_side = 0
+2:2/0/terrains_peering_bit/top_side = 0
+3:2/0 = 0
+3:2/0/terrain_set = 0
+3:2/0/terrain = 0
+3:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:2/0/terrains_peering_bit/bottom_side = 0
+3:2/0/terrains_peering_bit/left_side = 0
+3:2/0/terrains_peering_bit/top_left_corner = 0
+3:2/0/terrains_peering_bit/top_side = 0
+4:2/0 = 0
+4:2/0/terrain_set = 0
+4:2/0/terrain = 0
+4:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:2/0/terrains_peering_bit/bottom_side = 0
+4:2/0/terrains_peering_bit/left_side = 0
+4:2/0/terrains_peering_bit/top_side = 0
+5:2/0 = 0
+5:2/0/terrain_set = 0
+5:2/0/terrain = 0
+5:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:2/0/terrains_peering_bit/right_side = 0
+5:2/0/terrains_peering_bit/top_side = 0
+5:2/0/terrains_peering_bit/top_right_corner = 0
+6:2/0 = 0
+6:2/0/terrain_set = 0
+6:2/0/terrain = 0
+6:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:2/0/terrains_peering_bit/right_side = 0
+6:2/0/terrains_peering_bit/top_side = 0
+7:2/0 = 0
+7:2/0/terrain_set = 0
+7:2/0/terrain = 0
+7:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:2/0/terrains_peering_bit/right_side = 0
+7:2/0/terrains_peering_bit/left_side = 0
+7:2/0/terrains_peering_bit/top_left_corner = 0
+7:2/0/terrains_peering_bit/top_side = 0
+7:2/0/terrains_peering_bit/top_right_corner = 0
+0:3/0 = 0
+0:3/0/terrain_set = 0
+0:3/0/terrain = 0
+0:3/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:3/0/terrains_peering_bit/right_side = 0
+0:3/0/terrains_peering_bit/left_side = 0
+0:3/0/terrains_peering_bit/top_side = 0
+0:3/0/terrains_peering_bit/top_right_corner = 0
+1:3/0 = 0
+1:3/0/terrain_set = 0
+1:3/0/terrain = 0
+1:3/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:3/0/terrains_peering_bit/right_side = 0
+1:3/0/terrains_peering_bit/left_side = 0
+1:3/0/terrains_peering_bit/top_left_corner = 0
+1:3/0/terrains_peering_bit/top_side = 0
+2:3/0 = 0
+2:3/0/terrain_set = 0
+2:3/0/terrain = 0
+2:3/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:3/0/terrains_peering_bit/right_side = 0
+2:3/0/terrains_peering_bit/left_side = 0
+2:3/0/terrains_peering_bit/top_side = 0
+3:3/0 = 0
+3:3/0/terrain_set = 0
+3:3/0/terrain = 0
+3:3/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:3/0/terrains_peering_bit/right_side = 0
+3:3/0/terrains_peering_bit/bottom_right_corner = 0
+3:3/0/terrains_peering_bit/bottom_side = 0
+3:3/0/terrains_peering_bit/top_side = 0
+3:3/0/terrains_peering_bit/top_right_corner = 0
+4:3/0 = 0
+4:3/0/terrain_set = 0
+4:3/0/terrain = 0
+4:3/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:3/0/terrains_peering_bit/right_side = 0
+4:3/0/terrains_peering_bit/bottom_side = 0
+4:3/0/terrains_peering_bit/top_side = 0
+4:3/0/terrains_peering_bit/top_right_corner = 0
+5:3/0 = 0
+5:3/0/terrain_set = 0
+5:3/0/terrain = 0
+5:3/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:3/0/terrains_peering_bit/right_side = 0
+5:3/0/terrains_peering_bit/bottom_right_corner = 0
+5:3/0/terrains_peering_bit/bottom_side = 0
+5:3/0/terrains_peering_bit/top_side = 0
+6:3/0 = 0
+6:3/0/terrain_set = 0
+6:3/0/terrain = 0
+6:3/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:3/0/terrains_peering_bit/right_side = 0
+6:3/0/terrains_peering_bit/bottom_side = 0
+6:3/0/terrains_peering_bit/top_side = 0
+7:3/0 = 0
+7:3/0/terrain_set = 0
+7:3/0/terrain = 0
+7:3/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:3/0/terrains_peering_bit/right_side = 0
+7:3/0/terrains_peering_bit/bottom_right_corner = 0
+7:3/0/terrains_peering_bit/bottom_side = 0
+7:3/0/terrains_peering_bit/bottom_left_corner = 0
+7:3/0/terrains_peering_bit/left_side = 0
+7:3/0/terrains_peering_bit/top_left_corner = 0
+7:3/0/terrains_peering_bit/top_side = 0
+7:3/0/terrains_peering_bit/top_right_corner = 0
+0:4/0 = 0
+0:4/0/terrain_set = 0
+0:4/0/terrain = 0
+0:4/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:4/0/terrains_peering_bit/right_side = 0
+0:4/0/terrains_peering_bit/bottom_right_corner = 0
+0:4/0/terrains_peering_bit/bottom_side = 0
+0:4/0/terrains_peering_bit/bottom_left_corner = 0
+0:4/0/terrains_peering_bit/left_side = 0
+0:4/0/terrains_peering_bit/top_side = 0
+0:4/0/terrains_peering_bit/top_right_corner = 0
+1:4/0 = 0
+1:4/0/terrain_set = 0
+1:4/0/terrain = 0
+1:4/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:4/0/terrains_peering_bit/right_side = 0
+1:4/0/terrains_peering_bit/bottom_right_corner = 0
+1:4/0/terrains_peering_bit/bottom_side = 0
+1:4/0/terrains_peering_bit/left_side = 0
+1:4/0/terrains_peering_bit/top_left_corner = 0
+1:4/0/terrains_peering_bit/top_side = 0
+1:4/0/terrains_peering_bit/top_right_corner = 0
+2:4/0 = 0
+2:4/0/terrain_set = 0
+2:4/0/terrain = 0
+2:4/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:4/0/terrains_peering_bit/right_side = 0
+2:4/0/terrains_peering_bit/bottom_right_corner = 0
+2:4/0/terrains_peering_bit/bottom_side = 0
+2:4/0/terrains_peering_bit/left_side = 0
+2:4/0/terrains_peering_bit/top_side = 0
+2:4/0/terrains_peering_bit/top_right_corner = 0
+3:4/0 = 0
+3:4/0/terrain_set = 0
+3:4/0/terrain = 0
+3:4/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:4/0/terrains_peering_bit/right_side = 0
+3:4/0/terrains_peering_bit/bottom_side = 0
+3:4/0/terrains_peering_bit/bottom_left_corner = 0
+3:4/0/terrains_peering_bit/left_side = 0
+3:4/0/terrains_peering_bit/top_left_corner = 0
+3:4/0/terrains_peering_bit/top_side = 0
+3:4/0/terrains_peering_bit/top_right_corner = 0
+4:4/0 = 0
+4:4/0/terrain_set = 0
+4:4/0/terrain = 0
+4:4/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:4/0/terrains_peering_bit/right_side = 0
+4:4/0/terrains_peering_bit/bottom_side = 0
+4:4/0/terrains_peering_bit/bottom_left_corner = 0
+4:4/0/terrains_peering_bit/left_side = 0
+4:4/0/terrains_peering_bit/top_side = 0
+4:4/0/terrains_peering_bit/top_right_corner = 0
+5:4/0 = 0
+5:4/0/terrain_set = 0
+5:4/0/terrain = 0
+5:4/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:4/0/terrains_peering_bit/right_side = 0
+5:4/0/terrains_peering_bit/bottom_side = 0
+5:4/0/terrains_peering_bit/left_side = 0
+5:4/0/terrains_peering_bit/top_left_corner = 0
+5:4/0/terrains_peering_bit/top_side = 0
+5:4/0/terrains_peering_bit/top_right_corner = 0
+6:4/0 = 0
+6:4/0/terrain_set = 0
+6:4/0/terrain = 0
+6:4/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:4/0/terrains_peering_bit/right_side = 0
+6:4/0/terrains_peering_bit/bottom_side = 0
+6:4/0/terrains_peering_bit/left_side = 0
+6:4/0/terrains_peering_bit/top_side = 0
+6:4/0/terrains_peering_bit/top_right_corner = 0
+7:4/0 = 0
+7:4/0/terrain_set = 0
+7:4/0/terrain = 0
+7:4/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+7:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:4/0/terrains_peering_bit/right_side = 0
+7:4/0/terrains_peering_bit/bottom_right_corner = 0
+7:4/0/terrains_peering_bit/bottom_side = 0
+7:4/0/terrains_peering_bit/bottom_left_corner = 0
+7:4/0/terrains_peering_bit/left_side = 0
+7:4/0/terrains_peering_bit/top_left_corner = 0
+7:4/0/terrains_peering_bit/top_side = 0
+0:5/0 = 0
+0:5/0/terrain_set = 0
+0:5/0/terrain = 0
+0:5/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:5/0/terrains_peering_bit/right_side = 0
+0:5/0/terrains_peering_bit/bottom_right_corner = 0
+0:5/0/terrains_peering_bit/bottom_side = 0
+0:5/0/terrains_peering_bit/bottom_left_corner = 0
+0:5/0/terrains_peering_bit/left_side = 0
+0:5/0/terrains_peering_bit/top_side = 0
+1:5/0 = 0
+1:5/0/terrain_set = 0
+1:5/0/terrain = 0
+1:5/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:5/0/terrains_peering_bit/right_side = 0
+1:5/0/terrains_peering_bit/bottom_right_corner = 0
+1:5/0/terrains_peering_bit/bottom_side = 0
+1:5/0/terrains_peering_bit/left_side = 0
+1:5/0/terrains_peering_bit/top_left_corner = 0
+1:5/0/terrains_peering_bit/top_side = 0
+2:5/0 = 0
+2:5/0/terrain_set = 0
+2:5/0/terrain = 0
+2:5/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:5/0/terrains_peering_bit/right_side = 0
+2:5/0/terrains_peering_bit/bottom_right_corner = 0
+2:5/0/terrains_peering_bit/bottom_side = 0
+2:5/0/terrains_peering_bit/left_side = 0
+2:5/0/terrains_peering_bit/top_side = 0
+3:5/0 = 0
+3:5/0/terrain_set = 0
+3:5/0/terrain = 0
+3:5/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:5/0/terrains_peering_bit/right_side = 0
+3:5/0/terrains_peering_bit/bottom_side = 0
+3:5/0/terrains_peering_bit/bottom_left_corner = 0
+3:5/0/terrains_peering_bit/left_side = 0
+3:5/0/terrains_peering_bit/top_left_corner = 0
+3:5/0/terrains_peering_bit/top_side = 0
+4:5/0 = 0
+4:5/0/terrain_set = 0
+4:5/0/terrain = 0
+4:5/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+4:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:5/0/terrains_peering_bit/right_side = 0
+4:5/0/terrains_peering_bit/bottom_side = 0
+4:5/0/terrains_peering_bit/bottom_left_corner = 0
+4:5/0/terrains_peering_bit/left_side = 0
+4:5/0/terrains_peering_bit/top_side = 0
+5:5/0 = 0
+5:5/0/terrain_set = 0
+5:5/0/terrain = 0
+5:5/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+5:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:5/0/terrains_peering_bit/right_side = 0
+5:5/0/terrains_peering_bit/bottom_side = 0
+5:5/0/terrains_peering_bit/left_side = 0
+5:5/0/terrains_peering_bit/top_left_corner = 0
+5:5/0/terrains_peering_bit/top_side = 0
+6:5/0 = 0
+6:5/0/terrain_set = 0
+6:5/0/terrain = 0
+6:5/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6dy5u")
+6:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:5/0/terrains_peering_bit/right_side = 0
+6:5/0/terrains_peering_bit/bottom_side = 0
+6:5/0/terrains_peering_bit/left_side = 0
+6:5/0/terrains_peering_bit/top_side = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qvmtg"]
+texture = ExtResource("3_choun")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 3, 8, 3, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3, -8, -3)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -3, -8, -3, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(3, -8, 8, -8, 8, 8, 3, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ya4ey"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, -0.9892235, -1.7806015, -0.6924572, -1.6816788, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_eb6dy"]
+polygon = PackedVector2Array(-8, -8, -1.7806015, -8, -1.7806015, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_choun"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, -1.7806015, -8, -1.6816788)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_a8y0u"]
+polygon = PackedVector2Array(-8, 2.5719795, 8, 2.6709023, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_trceg"]
+polygon = PackedVector2Array(1.582756, -8, 8, -8, 8, 8, 1.3849125, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_jkv2x"]
+polygon = PackedVector2Array(1.6816788, 1.978445, 8, 2.0773678, 8, 8, 1.4838352, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_dp3eg"]
+polygon = PackedVector2Array(1.2859898, -8, 8, -8, 8, -0.7913799, 1.2859898, -0.49461174)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_jbj1t"]
+polygon = PackedVector2Array(-8, 2.0773678, -1.8795242, 1.978445, -1.7806015, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_muem4"]
+polygon = PackedVector2Array(-8, -8, -0.6924553, -8, -0.6924553, 0.19784355, -8, 0.49461174)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0ld40"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lmoxx"]
+texture = ExtResource("4_ya4ey")
+0:0/0 = 0
+0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_ya4ey")
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -0.9892235, -0.89030075, -0.9892235, -1.187067, 8, -8, 8)
+1:0/0 = 0
+1:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_choun")
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -1.3849125, -8, -1.582758)
+2:0/0 = 0
+3:0/0 = 0
+3:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_jkv2x")
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(1.8795242, 2.6709023, 8, 2.769823, 8, 8, 1.8795242, 8)
+4:0/0 = 0
+4:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_jbj1t")
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 3.4622803, -2.0773678, 3.561203, -1.8795242, 8, -8, 8)
+6:0/0 = 0
+9:0/0 = 0
+11:0/0 = 0
+0:1/0 = 0
+0:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_eb6dy")
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -1.978447, -8, -2.0773678, 8, -8, 8)
+2:1/0 = 0
+2:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_trceg")
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(1.582756, -8, 8, -8, 8, 8, 1.582756, 8)
+3:1/0 = 0
+3:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_dp3eg")
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.59353447, -8, 8, -8, 8, -0.395689, 1.0881443, -0.2967682)
+4:1/0 = 0
+4:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_muem4")
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -0.89030075, -8, -0.791378, -0.19784546, -8, -0.19784546)
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+9:1/0/modulate = Color(0, 1.6836941, 1.5308839, 1)
+9:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_0ld40")
+9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+1:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_a8y0u")
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 2.4730568, 8, 2.374134, 8, 8, -8, 8)
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+9:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+11:3/0 = 0
+0:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+8:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+8:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+0:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_eb6dy"]
+occlusion_layer_0/light_mask = 1
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Walls"
+terrain_set_0/terrain_0/color = Color(0.2, 0.45, 1, 1)
+sources/0 = SubResource("TileSetAtlasSource_did67")
+sources/1 = SubResource("TileSetAtlasSource_qvmtg")
+sources/2 = SubResource("TileSetAtlasSource_lmoxx")
+
+[node name="Main" type="Node2D" unique_id=37196995]
+script = ExtResource("1_jkv2x")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=908150762 node_paths=PackedStringArray("target")]
+script = ExtResource("2_jbj1t")
+target = NodePath("../Level/Player")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=428277980]
+visible = false
+color = Color(0.46, 0.48, 0.66, 1)
+
+[node name="Level" type="Node2D" parent="." unique_id=809863917]
+position = Vector2(80, 0)
+
+[node name="Background" type="ColorRect" parent="Level" unique_id=1636248759]
+z_index = -10
+offset_left = -582.0
+offset_top = -137.0
+offset_right = 938.0
+offset_bottom = 5440.0
+mouse_filter = 2
+color = Color(0.13725491, 0.14901961, 0.23529412, 1)
+
+[node name="Decor" type="TileMapLayer" parent="Level" unique_id=38700951]
+z_index = -1
+tile_map_data = PackedByteArray("AAANAAEAAgAAAAgAAAADAAIAAgABAAgAAAAMAAIAAgACAAgAAAAPAAIAAgACAAgAAAAGAAQAAgACAAgAAAAQAAQAAgAAAAgAAAACAAgAAgAAAAgAAAASAAkAAgACAAgAAAAPAAoAAgACAAgAAAACAAsAAgACAAgAAAAGABEAAgABAAgAAAAWABIAAgACAAgAAAAQABYAAgACAAgAAAAHAB8AAgACAAgAAAASACMAAgABAAgAAAACACQAAgACAAgAAAARACQAAgABAAgAAAAJACYAAgAAAAgAAAATACgAAgAAAAgAAAAJACoAAgACAAgAAAACACwAAgAAAAgAAAALAC0AAgAAAAgAAAAKADAAAgABAAgAAAALADIAAgAAAAgAAAAPADMAAgABAAgAAAAIADQAAgAAAAgAAAABADYAAgACAAgAAAAWADYAAgABAAgAAAAXADcAAgACAAgAAAAEADgAAgABAAgAAAAPADkAAgAAAAgAAAACADsAAgABAAgAAAAWAD0AAgABAAgAAAAQAD4AAgABAAgAAAAKAEAAAgABAAgAAAAMAEEAAgABAAgAAAADAEMAAgACAAgAAAAEAEUAAgACAAgAAAAFAEkAAgACAAgAAAAHAEwAAgAAAAgAAAACAE0AAgACAAgAAAALAE0AAgABAAgAAAAVAE4AAgAAAAgAAAAHAE8AAgACAAgAAAARAE8AAgACAAgAAAAJAFMAAgABAAgAAAASAFUAAgABAAgAAAANAFYAAgABAAgAAAALAFkAAgAAAAgAAAAPAFoAAgACAAgAAAALAGEAAgACAAgAAAABAGIAAgACAAgAAAASAGIAAgACAAgAAAAUAGcAAgABAAgAAAAIAGoAAgAAAAgAAAANAGoAAgACAAgAAAAIAHAAAgABAAgAAAAKAHAAAgABAAgAAAABAHEAAgABAAgAAAALAHEAAgABAAgAAAAOAHMAAgAAAAgAAAAEAHUAAgABAAgAAAAFAHUAAgACAAgAAAAJAHUAAgACAAgAAAAKAHYAAgABAAgAAAAFAHcAAgAAAAgAAAAIAHcAAgABAAgAAAAVAHwAAgACAAgAAAACAH8AAgACAAgAAAAVAH8AAgABAAgAAAAGAIEAAgABAAgAAAAUAIQAAgACAAgAAAAWAIUAAgABAAgAAAAEAIwAAgABAAgAAAAIAI0AAgACAAgAAAASAI0AAgABAAgAAAAMAJEAAgACAAgAAAAOAJEAAgACAAgAAAAPAJEAAgAAAAgAAAAUAJEAAgACAAgAAAATAJMAAgAAAAgAAAAWAJMAAgAAAAgAAAADAJQAAgAAAAgAAAARAJYAAgACAAgAAAACAJkAAgACAAgAAAALAJwAAgACAAgAAAALAJ4AAgAAAAgAAAAXAJ4AAgACAAgAAAAQAKMAAgACAAgAAAAMAKUAAgABAAgAAAAPAKUAAgABAAgAAAANAKYAAgAAAAgAAAACAK0AAgABAAgAAAALAK0AAgAAAAgAAAABAK4AAgAAAAgAAAASAK4AAgACAAgAAAANAK8AAgACAAgAAAAWAK8AAgABAAgAAAAIALAAAgACAAgAAAAKALAAAgABAAgAAAADALIAAgACAAgAAAAJALQAAgACAAgAAAAGALYAAgABAAgAAAAHALcAAgACAAgAAAAOALsAAgABAAgAAAABAL8AAgACAAgAAAAEAL8AAgABAAgAAAAPAMEAAgACAAgAAAAIAMIAAgACAAgAAAAGAMQAAgACAAgAAAAOAMQAAgACAAgAAAAXAMkAAgABAAgAAAATAMsAAgABAAgAAAACAM0AAgABAAgAAAAKAM4AAgAAAAgAAAAXANAAAgABAAgAAAAUANMAAgABAAgAAAAKANcAAgAAAAgAAAABANkAAgAAAAgAAAAJANkAAgAAAAgAAAAFANoAAgACAAgAAAANANsAAgACAAgAAAATANsAAgABAAgAAAAXANwAAgACAAgAAAAHAN0AAgABAAgAAAAJAN0AAgABAAgAAAATAN4AAgAAAAgAAAARAN8AAgABAAgAAAAUAOEAAgACAAgAAAAXAOMAAgABAAgAAAAMAOQAAgABAAgAAAAOAOQAAgACAAgAAAADAOUAAgABAAgAAAAGAOUAAgABAAgAAAABAOYAAgACAAgAAAAEAOYAAgACAAgAAAAXAOYAAgAAAAgAAAABAOcAAgABAAgAAAAEAOgAAgABAAgAAAAGAOgAAgABAAgAAAAIAOkAAgAAAAgAAAAMAOkAAgABAAgAAAARAOkAAgACAAgAAAATAOoAAgACAAgAAAAMAPIAAgACAAgAAAAVAPUAAgABAAgAAAAFAPYAAgABAAgAAAARAPYAAgAAAAgAAAABAPwAAgABAAgAAAAQAP0AAgACAAgAAAAVAP0AAgABAAgAAAANAP4AAgAAAAgAAAASAAABAgACAAgAAAACAAEBAgABAAgAAAAMAAEBAgABAAgAAAASAAEBAgABAAgAAAARAAIBAgAAAAgAAAADAAMBAgAAAAgAAAAKAAMBAgACAAgAAAAQAAQBAgABAAgAAAARAAQBAgAAAAgAAAABAAkBAgABAAgAAAACAAwBAgAAAAgAAAANAA0BAgAAAAgAAAANAA4BAgAAAAgAAAAXABABAgABAAgAAAAFABEBAgACAAgAAAANABYBAgACAAgAAAAQABkBAgAAAAgAAAAIABoBAgACAAgAAAAKABoBAgAAAAgAAAAGABwBAgAAAAgAAAARAB4BAgAAAAgAAAABACEBAgACAAgAAAAOACEBAgAAAAgAAAANACMBAgACAAgAAAAFACQBAgABAAgAAAAIACYBAgACAAgAAAAGACkBAgACAAgAAAAKACkBAgABAAgAAAAIACoBAgAAAAgAAAAIACsBAgAAAAgAAAASAC0BAgABAAgAAAACADABAgACAAgAAAAUADQBAgACAAgAAAANADUBAgACAAgAAAAGADYBAgABAAgAAAAMADcBAgACAAgAAAAUADcBAgACAAgAAAAVADcBAgAAAAgAAAAGADoBAgACAAgAAAAUADoBAgAAAAgAAAAGADwBAgABAAgAAAAQAD8BAgACAAgAAAAOAEEBAgAAAAgAAAATAEIBAgACAAgAAAASAEMBAgACAAgAAAAXAEQBAgACAAgAAAAFAEUBAgABAAgAAAAUAEUBAgAAAAgAAAARAEYBAgABAAgAAAAXAEYBAgACAAgAAAAEAEcBAgAAAAgAAAA=")
+tile_set = SubResource("TileSet_eb6dy")
+
+[node name="Ground" type="TileMapLayer" parent="Level" unique_id=1302865899 groups=["ground"]]
+tile_map_data = PackedByteArray("AAAAAAAAAgADAAAAAAABAAAAAgABAAIAAAACAAAAAgABAAIAAAADAAAAAgABAAIAAAAEAAAAAgABAAIAAAAFAAAAAgABAAIAAAAGAAAAAgABAAIAAAAHAAAAAgABAAIAAAAIAAAAAgABAAIAAAAJAAAAAgABAAIAAAAKAAAAAgABAAIAAAALAAAAAgABAAIAAAAMAAAAAgABAAIAAAANAAAAAgABAAIAAAAOAAAAAgABAAIAAAAPAAAAAgABAAIAAAAQAAAAAgABAAIAAAARAAAAAgABAAIAAAASAAAAAgABAAIAAAATAAAAAgABAAIAAAAUAAAAAgABAAIAAAAVAAAAAgABAAIAAAAWAAAAAgABAAIAAAAXAAAAAgABAAIAAAAYAAAAAgAEAAAAAAAAAAEAAgACAAEAAAADAAEAAgAJAAEAAAAYAAEAAgACAAEAADAAAAIAAgACAAEAAAABAAIAAgAJAAEAAAAGAAIAAgAJAAEAAAAJAAIAAgAJAAEAAAAQAAIAAgAJAAEAAAAVAAIAAgAJAAEAAAAWAAIAAgAJAAEAAAAYAAIAAgACAAEAADAAAAMAAgACAAEAAAAMAAMAAgAJAAEAAAASAAMAAgAJAAEAAAATAAMAAgAJAAEAAAAYAAMAAgACAAEAADAAAAQAAgACAAEAAAADAAQAAgAJAAEAAAAFAAQAAgAJAAEAAAAJAAQAAgAJAAEAAAAYAAQAAgACAAEAADAAAAUAAgACAAEAAAABAAUAAgAJAAEAAAAJAAUAAgAJAAEAAAAMAAUAAgAJAAEAAAAPAAUAAgAJAAEAAAAQAAUAAgAJAAEAAAARAAUAAgAJAAEAAAAVAAUAAgAJAAEAAAAYAAUAAgACAAEAADAAAAYAAgACAAEAAAAJAAYAAgAJAAEAAAALAAYAAgAJAAEAAAANAAYAAgAJAAEAAAATAAYAAgAJAAEAAAAYAAYAAgACAAEAADAAAAcAAgACAAEAAAABAAcAAgAJAAEAAAACAAcAAgAJAAEAAAAEAAcAAgAJAAEAAAAHAAcAAgAJAAEAAAALAAcAAgAJAAEAAAAVAAcAAgAJAAEAAAAWAAcAAgAJAAEAAAAYAAcAAgACAAEAADAAAAgAAgACAAEAAAAHAAgAAgAJAAEAAAAPAAgAAgAJAAEAAAASAAgAAgAJAAEAAAAVAAgAAgAJAAEAAAAYAAgAAgACAAEAADAAAAkAAgACAAEAAAAMAAkAAgAJAAEAAAAYAAkAAgACAAEAADAAAAoAAgACAAEAAAABAAoAAgAJAAEAAAACAAoAAgAJAAEAAAAEAAoAAgAJAAEAAAAFAAoAAgAJAAEAAAAJAAoAAgAJAAEAAAAKAAoAAgAJAAEAAAAQAAoAAgAJAAEAAAAWAAoAAgAJAAEAAAAYAAoAAgACAAEAADAAAAsAAgACAAEAAAAMAAsAAgAJAAEAAAAUAAsAAgAJAAEAAAAWAAsAAgAJAAEAAAAYAAsAAgACAAEAADAAAAwAAgACAAEAAAAIAAwAAgAJAAEAAAAOAAwAAgAJAAEAAAASAAwAAgAJAAEAAAAUAAwAAgAJAAEAAAAYAAwAAgACAAEAADAAAA0AAgACAAEAAAAFAA0AAgAJAAEAAAAKAA0AAgAJAAEAAAAYAA0AAgACAAEAADAAAA4AAgACAAEAAAADAA4AAgAJAAEAAAAFAA4AAgAJAAEAAAAIAA4AAgAJAAEAAAALAA4AAgAJAAEAAAANAA4AAgAJAAEAAAAPAA4AAgAJAAEAAAAYAA4AAgACAAEAADAAAA8AAgACAAEAAAALAA8AAgAJAAEAAAAMAA8AAgAJAAEAAAAPAA8AAgAJAAEAAAARAA8AAgAJAAEAAAASAA8AAgAJAAEAAAAWAA8AAgAJAAEAAAAYAA8AAgACAAEAADAAABAAAgACAAEAAAACABAAAgAJAAEAAAAFABAAAgAJAAEAAAAGABAAAgAJAAEAAAAJABAAAgAJAAEAAAANABAAAgAJAAEAAAAUABAAAgAJAAEAAAAYABAAAgACAAEAADAAABEAAgACAAEAAAAFABEAAgAJAAEAAAANABEAAgAJAAEAAAAQABEAAgAJAAEAAAAYABEAAgACAAEAADAAABIAAgACAAEAAAABABIAAgAJAAEAAAAPABIAAgAJAAEAAAASABIAAgAJAAEAAAAVABIAAgAJAAEAAAAXABIAAgAJAAEAAAAYABIAAgACAAEAADAAABMAAgACAAEAAAAFABMAAgAJAAEAAAAKABMAAgAJAAEAAAALABMAAgAJAAEAAAAMABMAAgAJAAEAAAAOABMAAgAJAAEAAAAYABMAAgACAAEAADAAABQAAgACAAEAAAATABQAAgAJAAEAAAAYABQAAgACAAEAADAAABUAAgACAAEAAAABABUAAgAJAAEAAAACABUAAgAJAAEAAAAEABUAAgAJAAEAAAAFABUAAgAJAAEAAAAGABUAAgAJAAEAAAAQABUAAgAJAAEAAAAVABUAAgAJAAEAAAAYABUAAgACAAEAADAAABYAAgACAAEAAAABABYAAgAJAAEAAAAKABYAAgAJAAEAAAALABYAAgAJAAEAAAAOABYAAgAJAAEAAAAYABYAAgACAAEAADAAABcAAgACAAEAAAADABcAAgAJAAEAAAAEABcAAgAJAAEAAAAIABcAAgAJAAEAAAATABcAAgAJAAEAAAAWABcAAgAJAAEAAAAXABcAAgAJAAEAAAAYABcAAgACAAEAADAAABgAAgACAAEAAAATABgAAgAJAAEAAAAWABgAAgAJAAEAAAAYABgAAgACAAEAADAAABkAAgACAAEAAAABABkAAgAJAAEAAAACABkAAgAJAAEAAAADABkAAgAJAAEAAAAEABkAAgAJAAEAAAAKABkAAgAJAAEAAAAMABkAAgAJAAEAAAAPABkAAgAJAAEAAAAQABkAAgAJAAEAAAARABkAAgAJAAEAAAAYABkAAgACAAEAADAAABoAAgACAAEAAAAEABoAAgAJAAEAAAAHABoAAgAJAAEAAAASABoAAgAJAAEAAAAYABoAAgACAAEAADAAABsAAgACAAEAAAABABsAAgAJAAEAAAAJABsAAgAJAAEAAAALABsAAgAJAAEAAAAQABsAAgAJAAEAAAAVABsAAgAJAAEAAAAYABsAAgACAAEAADAAABwAAgACAAEAAAAEABwAAgAJAAEAAAAGABwAAgAJAAEAAAAQABwAAgAJAAEAAAASABwAAgAJAAEAAAAXABwAAgAJAAEAAAAYABwAAgACAAEAADAAAB0AAgACAAEAAAAIAB0AAgAJAAEAAAAJAB0AAgAJAAEAAAANAB0AAgAJAAEAAAAUAB0AAgAJAAEAAAAYAB0AAgACAAEAADAAAB4AAgACAAEAAAACAB4AAgAJAAEAAAAIAB4AAgAJAAEAAAALAB4AAgAJAAEAAAASAB4AAgAJAAEAAAAUAB4AAgAJAAEAAAAYAB4AAgACAAEAADAAAB8AAgACAAEAAAACAB8AAgAJAAEAAAAWAB8AAgAJAAEAAAAXAB8AAgAJAAEAAAAYAB8AAgACAAEAADAAACAAAgACAAEAAAACACAAAgAJAAEAAAAHACAAAgAJAAEAAAAOACAAAgAJAAEAAAASACAAAgAJAAEAAAAWACAAAgAJAAEAAAAYACAAAgACAAEAADAAACEAAgACAAEAAAAJACEAAgAJAAEAAAAMACEAAgAJAAEAAAAYACEAAgACAAEAADAAACIAAgACAAEAAAACACIAAgAJAAEAAAADACIAAgAJAAEAAAANACIAAgAJAAEAAAAPACIAAgAJAAEAAAATACIAAgAJAAEAAAAUACIAAgAJAAEAAAAYACIAAgACAAEAADAAACMAAgACAAEAAAACACMAAgAJAAEAAAAKACMAAgAJAAEAAAAMACMAAgAJAAEAAAAUACMAAgAJAAEAAAAWACMAAgAJAAEAAAAYACMAAgACAAEAADAAACQAAgACAAEAAAAFACQAAgAJAAEAAAAOACQAAgAJAAEAAAASACQAAgAJAAEAAAAWACQAAgAJAAEAAAAYACQAAgACAAEAADAAACUAAgACAAEAAAAGACUAAgAJAAEAAAAJACUAAgAJAAEAAAAYACUAAgACAAEAADAAACYAAgACAAEAAAABACYAAgAJAAEAAAADACYAAgAJAAEAAAAYACYAAgACAAEAADAAACcAAgACAAEAAAAIACcAAgAJAAEAAAAKACcAAgAJAAEAAAANACcAAgAJAAEAAAARACcAAgAJAAEAAAAUACcAAgAJAAEAAAAYACcAAgACAAEAADAAACgAAgACAAEAAAADACgAAgAJAAEAAAAJACgAAgAJAAEAAAAUACgAAgAJAAEAAAAXACgAAgAJAAEAAAAYACgAAgACAAEAADAAACkAAgACAAEAAAABACkAAgAJAAEAAAAHACkAAgAJAAEAAAAJACkAAgAJAAEAAAALACkAAgAJAAEAAAAPACkAAgAJAAEAAAASACkAAgAJAAEAAAAYACkAAgACAAEAADAAACoAAgACAAEAAAADACoAAgAJAAEAAAAWACoAAgAJAAEAAAAYACoAAgACAAEAADAAACsAAgACAAEAAAAFACsAAgAJAAEAAAAJACsAAgAJAAEAAAALACsAAgAJAAEAAAAMACsAAgAJAAEAAAAPACsAAgAJAAEAAAASACsAAgAJAAEAAAAYACsAAgACAAEAADAAACwAAgACAAEAAAABACwAAgAJAAEAAAAJACwAAgAJAAEAAAALACwAAgAJAAEAAAAUACwAAgAJAAEAAAAVACwAAgAJAAEAAAAWACwAAgAJAAEAAAAYACwAAgACAAEAADAAAC0AAgACAAEAAAAOAC0AAgAJAAEAAAAYAC0AAgACAAEAADAAAC4AAgACAAEAAAACAC4AAgAJAAEAAAADAC4AAgAJAAEAAAAEAC4AAgAJAAEAAAAFAC4AAgAJAAEAAAAJAC4AAgAJAAEAAAALAC4AAgAJAAEAAAARAC4AAgAJAAEAAAAUAC4AAgAJAAEAAAAWAC4AAgAJAAEAAAAYAC4AAgACAAEAADAAAC8AAgACAAEAAAASAC8AAgAJAAEAAAATAC8AAgAJAAEAAAAYAC8AAgACAAEAADAAADAAAgACAAEAAAACADAAAgAJAAEAAAADADAAAgAJAAEAAAAFADAAAgAJAAEAAAALADAAAgAJAAEAAAANADAAAgAJAAEAAAAOADAAAgAJAAEAAAAQADAAAgAJAAEAAAARADAAAgAJAAEAAAAUADAAAgAJAAEAAAAXADAAAgAJAAEAAAAYADAAAgACAAEAADAAADEAAgACAAEAAAACADEAAgAJAAEAAAAGADEAAgAJAAEAAAAIADEAAgAJAAEAAAALADEAAgAJAAEAAAANADEAAgAJAAEAAAAUADEAAgAJAAEAAAAYADEAAgACAAEAADAAADIAAgACAAEAAAAFADIAAgAJAAEAAAAPADIAAgAJAAEAAAAXADIAAgAJAAEAAAAYADIAAgACAAEAADAAADMAAgACAAEAAAABADMAAgAJAAEAAAATADMAAgAJAAEAAAAUADMAAgAJAAEAAAAYADMAAgACAAEAADAAADQAAgACAAEAAAADADQAAgAJAAEAAAAFADQAAgAJAAEAAAAJADQAAgAJAAEAAAAKADQAAgAJAAEAAAANADQAAgAJAAEAAAAOADQAAgAJAAEAAAAYADQAAgACAAEAADAAADUAAgACAAEAAAAHADUAAgAJAAEAAAAIADUAAgAJAAEAAAARADUAAgAJAAEAAAATADUAAgAJAAEAAAAUADUAAgAJAAEAAAAVADUAAgAJAAEAAAAXADUAAgAJAAEAAAAYADUAAgACAAEAADAAADYAAgACAAEAAAAEADYAAgAJAAEAAAAFADYAAgAJAAEAAAAHADYAAgAJAAEAAAALADYAAgAJAAEAAAAMADYAAgAJAAEAAAARADYAAgAJAAEAAAAYADYAAgACAAEAADAAADcAAgACAAEAAAAUADcAAgAJAAEAAAAWADcAAgAJAAEAAAAYADcAAgACAAEAADAAADgAAgACAAEAAAAFADgAAgAJAAEAAAAHADgAAgAJAAEAAAALADgAAgAJAAEAAAAMADgAAgAJAAEAAAANADgAAgAJAAEAAAAPADgAAgAJAAEAAAAQADgAAgAJAAEAAAASADgAAgAJAAEAAAAUADgAAgAJAAEAAAAYADgAAgACAAEAADAAADkAAgACAAEAAAADADkAAgAJAAEAAAAFADkAAgAJAAEAAAAHADkAAgAJAAEAAAAYADkAAgACAAEAADAAADoAAgACAAEAAAAJADoAAgAJAAEAAAAMADoAAgAJAAEAAAAXADoAAgAJAAEAAAAYADoAAgACAAEAADAAADsAAgACAAEAAAAEADsAAgAJAAEAAAAFADsAAgAJAAEAAAAGADsAAgAJAAEAAAAHADsAAgAJAAEAAAAJADsAAgAJAAEAAAAMADsAAgAJAAEAAAAPADsAAgAJAAEAAAAVADsAAgAJAAEAAAAXADsAAgAJAAEAAAAYADsAAgACAAEAADAAADwAAgACAAEAAAACADwAAgAJAAEAAAALADwAAgAJAAEAAAAPADwAAgAJAAEAAAATADwAAgAJAAEAAAAVADwAAgAJAAEAAAAYADwAAgACAAEAADAAAD0AAgACAAEAAAAFAD0AAgAJAAEAAAAHAD0AAgAJAAEAAAAIAD0AAgAJAAEAAAAJAD0AAgAJAAEAAAAVAD0AAgAJAAEAAAAYAD0AAgACAAEAADAAAD4AAgACAAEAAAACAD4AAgAJAAEAAAALAD4AAgAJAAEAAAARAD4AAgAJAAEAAAAXAD4AAgAJAAEAAAAYAD4AAgACAAEAADAAAD8AAgACAAEAAAAFAD8AAgAJAAEAAAAGAD8AAgAJAAEAAAAHAD8AAgAJAAEAAAAOAD8AAgAJAAEAAAAYAD8AAgACAAEAADAAAEAAAgACAAEAAAABAEAAAgAJAAEAAAADAEAAAgAJAAEAAAAJAEAAAgAJAAEAAAAMAEAAAgAJAAEAAAAOAEAAAgAJAAEAAAAUAEAAAgAJAAEAAAAWAEAAAgAJAAEAAAAYAEAAAgACAAEAADAAAEEAAgACAAEAAAABAEEAAgAJAAEAAAAJAEEAAgAJAAEAAAASAEEAAgAJAAEAAAAYAEEAAgACAAEAADAAAEIAAgACAAEAAAAGAEIAAgAJAAEAAAANAEIAAgAJAAEAAAAOAEIAAgAJAAEAAAAQAEIAAgAJAAEAAAAXAEIAAgAJAAEAAAAYAEIAAgACAAEAADAAAEMAAgACAAEAAAALAEMAAgAJAAEAAAASAEMAAgAJAAEAAAAUAEMAAgAJAAEAAAAYAEMAAgACAAEAADAAAEQAAgACAAEAAAADAEQAAgAJAAEAAAAPAEQAAgAJAAEAAAAWAEQAAgAJAAEAAAAYAEQAAgACAAEAADAAAEUAAgACAAEAAAADAEUAAgAJAAEAAAAIAEUAAgAJAAEAAAAJAEUAAgAJAAEAAAAKAEUAAgAJAAEAAAATAEUAAgAJAAEAAAAYAEUAAgACAAEAADAAAEYAAgACAAEAAAADAEYAAgAJAAEAAAAEAEYAAgAJAAEAAAANAEYAAgAJAAEAAAAPAEYAAgAJAAEAAAAWAEYAAgAJAAEAAAAYAEYAAgACAAEAADAAAEcAAgACAAEAAAAFAEcAAgAJAAEAAAAHAEcAAgAJAAEAAAAIAEcAAgAJAAEAAAAKAEcAAgAJAAEAAAALAEcAAgAJAAEAAAAPAEcAAgAJAAEAAAATAEcAAgAJAAEAAAAYAEcAAgACAAEAADAAAEgAAgACAAEAAAACAEgAAgAJAAEAAAAJAEgAAgAJAAEAAAAUAEgAAgAJAAEAAAAXAEgAAgAJAAEAAAAYAEgAAgACAAEAADAAAEkAAgACAAEAAAACAEkAAgAJAAEAAAAEAEkAAgAJAAEAAAAHAEkAAgAJAAEAAAAJAEkAAgAJAAEAAAAYAEkAAgACAAEAADAAAEoAAgACAAEAAAAIAEoAAgAJAAEAAAAMAEoAAgAJAAEAAAANAEoAAgAJAAEAAAAPAEoAAgAJAAEAAAATAEoAAgAJAAEAAAAVAEoAAgAJAAEAAAAYAEoAAgACAAEAADAAAEsAAgACAAEAAAABAEsAAgAJAAEAAAACAEsAAgAJAAEAAAAIAEsAAgAJAAEAAAAKAEsAAgAJAAEAAAAYAEsAAgACAAEAADAAAEwAAgACAAEAAAAEAEwAAgAJAAEAAAANAEwAAgAJAAEAAAAPAEwAAgAJAAEAAAARAEwAAgAJAAEAAAAUAEwAAgAJAAEAAAAWAEwAAgAJAAEAAAAYAEwAAgACAAEAADAAAE0AAgACAAEAAAABAE0AAgAJAAEAAAAHAE0AAgAJAAEAAAAJAE0AAgAJAAEAAAAKAE0AAgAJAAEAAAAYAE0AAgACAAEAADAAAE4AAgACAAEAAAAMAE4AAgAJAAEAAAAOAE4AAgAJAAEAAAARAE4AAgAJAAEAAAASAE4AAgAJAAEAAAAYAE4AAgACAAEAADAAAE8AAgACAAEAAAABAE8AAgAJAAEAAAADAE8AAgAJAAEAAAAEAE8AAgAJAAEAAAAGAE8AAgAJAAEAAAAIAE8AAgAJAAEAAAAJAE8AAgAJAAEAAAAQAE8AAgAJAAEAAAASAE8AAgAJAAEAAAAVAE8AAgAJAAEAAAAYAE8AAgACAAEAADAAAFAAAgACAAEAAAADAFAAAgAJAAEAAAAMAFAAAgAJAAEAAAASAFAAAgAJAAEAAAAXAFAAAgAJAAEAAAAYAFAAAgACAAEAADAAAFEAAgACAAEAAAABAFEAAgAJAAEAAAAFAFEAAgAJAAEAAAAPAFEAAgAJAAEAAAARAFEAAgAJAAEAAAATAFEAAgAJAAEAAAAVAFEAAgAJAAEAAAAXAFEAAgAJAAEAAAAYAFEAAgACAAEAADAAAFIAAgACAAEAAAAHAFIAAgAJAAEAAAAJAFIAAgAJAAEAAAANAFIAAgAJAAEAAAAPAFIAAgAJAAEAAAAYAFIAAgACAAEAADAAAFMAAgACAAEAAAALAFMAAgAJAAEAAAATAFMAAgAJAAEAAAAWAFMAAgAJAAEAAAAYAFMAAgACAAEAADAAAFQAAgACAAEAAAACAFQAAgAJAAEAAAADAFQAAgAJAAEAAAAFAFQAAgAJAAEAAAAHAFQAAgAJAAEAAAALAFQAAgAJAAEAAAANAFQAAgAJAAEAAAAPAFQAAgAJAAEAAAAYAFQAAgACAAEAADAAAFUAAgACAAEAAAALAFUAAgAJAAEAAAATAFUAAgAJAAEAAAAWAFUAAgAJAAEAAAAYAFUAAgACAAEAADAAAFYAAgACAAEAAAAHAFYAAgAJAAEAAAARAFYAAgAJAAEAAAAYAFYAAgACAAEAADAAAFcAAgACAAEAAAADAFcAAgAJAAEAAAAFAFcAAgAJAAEAAAANAFcAAgAJAAEAAAAPAFcAAgAJAAEAAAAYAFcAAgACAAEAADAAAFgAAgACAAEAAAAJAFgAAgAJAAEAAAAKAFgAAgAJAAEAAAALAFgAAgAJAAEAAAANAFgAAgAJAAEAAAATAFgAAgAJAAEAAAAYAFgAAgACAAEAADAAAFkAAgACAAEAAAABAFkAAgAJAAEAAAACAFkAAgAJAAEAAAAEAFkAAgAJAAEAAAAWAFkAAgAJAAEAAAAYAFkAAgACAAEAADAAAFoAAgACAAEAAAALAFoAAgAJAAEAAAAQAFoAAgAJAAEAAAASAFoAAgAJAAEAAAAYAFoAAgACAAEAADAAAFsAAgACAAEAAAABAFsAAgAJAAEAAAADAFsAAgAJAAEAAAAIAFsAAgAJAAEAAAAYAFsAAgACAAEAADAAAFwAAgACAAEAAAAFAFwAAgAJAAEAAAANAFwAAgAJAAEAAAAPAFwAAgAJAAEAAAAYAFwAAgACAAEAADAAAF0AAgACAAEAAAACAF0AAgAJAAEAAAAJAF0AAgAJAAEAAAAKAF0AAgAJAAEAAAASAF0AAgAJAAEAAAAVAF0AAgAJAAEAAAAWAF0AAgAJAAEAAAAYAF0AAgACAAEAADAAAF4AAgACAAEAAAAFAF4AAgAJAAEAAAAHAF4AAgAJAAEAAAAJAF4AAgAJAAEAAAAMAF4AAgAJAAEAAAANAF4AAgAJAAEAAAAOAF4AAgAJAAEAAAAYAF4AAgACAAEAADAAAF8AAgACAAEAAAABAF8AAgAJAAEAAAAQAF8AAgAJAAEAAAAWAF8AAgAJAAEAAAAYAF8AAgACAAEAADAAAGAAAgACAAEAAAAEAGAAAgAJAAEAAAAGAGAAAgAJAAEAAAALAGAAAgAJAAEAAAANAGAAAgAJAAEAAAAOAGAAAgAJAAEAAAAYAGAAAgACAAEAADAAAGEAAgACAAEAAAARAGEAAgAJAAEAAAATAGEAAgAJAAEAAAAVAGEAAgAJAAEAAAAYAGEAAgACAAEAADAAAGIAAgACAAEAAAACAGIAAgAJAAEAAAAEAGIAAgAJAAEAAAAKAGIAAgAJAAEAAAAMAGIAAgAJAAEAAAANAGIAAgAJAAEAAAARAGIAAgAJAAEAAAAXAGIAAgAJAAEAAAAYAGIAAgACAAEAADAAAGMAAgACAAEAAAAHAGMAAgAJAAEAAAAMAGMAAgAJAAEAAAAUAGMAAgAJAAEAAAAVAGMAAgAJAAEAAAAYAGMAAgACAAEAADAAAGQAAgACAAEAAAABAGQAAgAJAAEAAAACAGQAAgAJAAEAAAADAGQAAgAJAAEAAAAGAGQAAgAJAAEAAAAIAGQAAgAJAAEAAAAKAGQAAgAJAAEAAAAPAGQAAgAJAAEAAAAQAGQAAgAJAAEAAAAYAGQAAgACAAEAADAAAGUAAgACAAEAAAANAGUAAgAJAAEAAAASAGUAAgAJAAEAAAAWAGUAAgAJAAEAAAAXAGUAAgAJAAEAAAAYAGUAAgACAAEAADAAAGYAAgACAAEAAAACAGYAAgAJAAEAAAADAGYAAgAJAAEAAAAGAGYAAgAJAAEAAAAPAGYAAgAJAAEAAAAQAGYAAgAJAAEAAAAYAGYAAgACAAEAADAAAGcAAgACAAEAAAAGAGcAAgAJAAEAAAAIAGcAAgAJAAEAAAAKAGcAAgAJAAEAAAANAGcAAgAJAAEAAAAWAGcAAgAJAAEAAAAXAGcAAgAJAAEAAAAYAGcAAgACAAEAADAAAGgAAgACAAEAAAACAGgAAgAJAAEAAAAQAGgAAgAJAAEAAAASAGgAAgAJAAEAAAAUAGgAAgAJAAEAAAAYAGgAAgACAAEAADAAAGkAAgACAAEAAAAIAGkAAgAJAAEAAAAJAGkAAgAJAAEAAAALAGkAAgAJAAEAAAAOAGkAAgAJAAEAAAAYAGkAAgACAAEAADAAAGoAAgACAAEAAAAFAGoAAgAJAAEAAAALAGoAAgAJAAEAAAAMAGoAAgAJAAEAAAARAGoAAgAJAAEAAAASAGoAAgAJAAEAAAATAGoAAgAJAAEAAAAVAGoAAgAJAAEAAAAXAGoAAgAJAAEAAAAYAGoAAgACAAEAADAAAGsAAgACAAEAAAACAGsAAgAJAAEAAAAHAGsAAgAJAAEAAAANAGsAAgAJAAEAAAAUAGsAAgAJAAEAAAAYAGsAAgACAAEAADAAAGwAAgACAAEAAAAKAGwAAgAJAAEAAAALAGwAAgAJAAEAAAAOAGwAAgAJAAEAAAAPAGwAAgAJAAEAAAAQAGwAAgAJAAEAAAAWAGwAAgAJAAEAAAAYAGwAAgACAAEAADAAAG0AAgACAAEAAAAFAG0AAgAJAAEAAAAGAG0AAgAJAAEAAAAHAG0AAgAJAAEAAAAIAG0AAgAJAAEAAAANAG0AAgAJAAEAAAATAG0AAgAJAAEAAAAUAG0AAgAJAAEAAAAYAG0AAgACAAEAADAAAG4AAgACAAEAAAABAG4AAgAJAAEAAAACAG4AAgAJAAEAAAADAG4AAgAJAAEAAAANAG4AAgAJAAEAAAAXAG4AAgAJAAEAAAAYAG4AAgACAAEAADAAAG8AAgACAAEAAAAHAG8AAgAJAAEAAAAIAG8AAgAJAAEAAAAJAG8AAgAJAAEAAAAVAG8AAgAJAAEAAAAYAG8AAgACAAEAADAAAHAAAgACAAEAAAAMAHAAAgAJAAEAAAAPAHAAAgAJAAEAAAARAHAAAgAJAAEAAAASAHAAAgAJAAEAAAAYAHAAAgACAAEAADAAAHEAAgACAAEAAAACAHEAAgAJAAEAAAAEAHEAAgAJAAEAAAAFAHEAAgAJAAEAAAAGAHEAAgAJAAEAAAAJAHEAAgAJAAEAAAAKAHEAAgAJAAEAAAAPAHEAAgAJAAEAAAAVAHEAAgAJAAEAAAAYAHEAAgACAAEAADAAAHIAAgACAAEAAAAMAHIAAgAJAAEAAAANAHIAAgAJAAEAAAAPAHIAAgAJAAEAAAAQAHIAAgAJAAEAAAAVAHIAAgAJAAEAAAAYAHIAAgACAAEAADAAAHMAAgACAAEAAAAFAHMAAgAJAAEAAAATAHMAAgAJAAEAAAAYAHMAAgACAAEAADAAAHQAAgACAAEAAAABAHQAAgAJAAEAAAADAHQAAgAJAAEAAAAFAHQAAgAJAAEAAAAIAHQAAgAJAAEAAAALAHQAAgAJAAEAAAAOAHQAAgAJAAEAAAAPAHQAAgAJAAEAAAAYAHQAAgACAAEAADAAAHUAAgACAAEAAAASAHUAAgAJAAEAAAAWAHUAAgAJAAEAAAAYAHUAAgACAAEAADAAAHYAAgACAAEAAAABAHYAAgAJAAEAAAAEAHYAAgAJAAEAAAAFAHYAAgAJAAEAAAAGAHYAAgAJAAEAAAAJAHYAAgAJAAEAAAALAHYAAgAJAAEAAAAQAHYAAgAJAAEAAAAUAHYAAgAJAAEAAAAYAHYAAgACAAEAADAAAHcAAgACAAEAAAALAHcAAgAJAAEAAAANAHcAAgAJAAEAAAATAHcAAgAJAAEAAAAYAHcAAgACAAEAADAAAHgAAgACAAEAAAAIAHgAAgAJAAEAAAAJAHgAAgAJAAEAAAAPAHgAAgAJAAEAAAAQAHgAAgAJAAEAAAARAHgAAgAJAAEAAAASAHgAAgAJAAEAAAAXAHgAAgAJAAEAAAAYAHgAAgACAAEAADAAAHkAAgACAAEAAAACAHkAAgAJAAEAAAANAHkAAgAJAAEAAAAUAHkAAgAJAAEAAAAYAHkAAgACAAEAADAAAHoAAgACAAEAAAAGAHoAAgAJAAEAAAAHAHoAAgAJAAEAAAAJAHoAAgAJAAEAAAAPAHoAAgAJAAEAAAATAHoAAgAJAAEAAAAYAHoAAgACAAEAADAAAHsAAgACAAEAAAABAHsAAgAJAAEAAAACAHsAAgAJAAEAAAAJAHsAAgAJAAEAAAALAHsAAgAJAAEAAAAPAHsAAgAJAAEAAAARAHsAAgAJAAEAAAAYAHsAAgACAAEAADAAAHwAAgACAAEAAAAUAHwAAgAJAAEAAAAXAHwAAgAJAAEAAAAYAHwAAgACAAEAADAAAH0AAgACAAEAAAADAH0AAgAJAAEAAAAFAH0AAgAJAAEAAAAMAH0AAgAJAAEAAAAOAH0AAgAJAAEAAAAYAH0AAgACAAEAADAAAH4AAgACAAEAAAAHAH4AAgAJAAEAAAAIAH4AAgAJAAEAAAAJAH4AAgAJAAEAAAAKAH4AAgAJAAEAAAASAH4AAgAJAAEAAAAUAH4AAgAJAAEAAAAYAH4AAgACAAEAADAAAH8AAgACAAEAAAALAH8AAgAJAAEAAAAQAH8AAgAJAAEAAAASAH8AAgAJAAEAAAAUAH8AAgAJAAEAAAAWAH8AAgAJAAEAAAAYAH8AAgACAAEAADAAAIAAAgACAAEAAAACAIAAAgAJAAEAAAAEAIAAAgAJAAEAAAANAIAAAgAJAAEAAAAYAIAAAgACAAEAADAAAIEAAgACAAEAAAAHAIEAAgAJAAEAAAAJAIEAAgAJAAEAAAAKAIEAAgAJAAEAAAARAIEAAgAJAAEAAAATAIEAAgAJAAEAAAAUAIEAAgAJAAEAAAAXAIEAAgAJAAEAAAAYAIEAAgACAAEAADAAAIIAAgACAAEAAAAEAIIAAgAJAAEAAAAHAIIAAgAJAAEAAAANAIIAAgAJAAEAAAAPAIIAAgAJAAEAAAAYAIIAAgACAAEAADAAAIMAAgACAAEAAAAHAIMAAgAJAAEAAAAJAIMAAgAJAAEAAAARAIMAAgAJAAEAAAATAIMAAgAJAAEAAAAXAIMAAgAJAAEAAAAYAIMAAgACAAEAADAAAIQAAgACAAEAAAACAIQAAgAJAAEAAAAOAIQAAgAJAAEAAAAVAIQAAgAJAAEAAAAYAIQAAgACAAEAADAAAIUAAgACAAEAAAACAIUAAgAJAAEAAAAIAIUAAgAJAAEAAAAJAIUAAgAJAAEAAAAMAIUAAgAJAAEAAAAOAIUAAgAJAAEAAAAYAIUAAgACAAEAADAAAIYAAgACAAEAAAACAIYAAgAJAAEAAAAVAIYAAgAJAAEAAAAWAIYAAgAJAAEAAAAYAIYAAgACAAEAADAAAIcAAgACAAEAAAAEAIcAAgAJAAEAAAAFAIcAAgAJAAEAAAAGAIcAAgAJAAEAAAALAIcAAgAJAAEAAAAOAIcAAgAJAAEAAAARAIcAAgAJAAEAAAASAIcAAgAJAAEAAAAYAIcAAgACAAEAADAAAIgAAgACAAEAAAAWAIgAAgAJAAEAAAAYAIgAAgACAAEAADAAAIkAAgACAAEAAAABAIkAAgAJAAEAAAAPAIkAAgAJAAEAAAAQAIkAAgAJAAEAAAASAIkAAgAJAAEAAAATAIkAAgAJAAEAAAAYAIkAAgACAAEAADAAAIoAAgACAAEAAAAFAIoAAgAJAAEAAAAGAIoAAgAJAAEAAAAHAIoAAgAJAAEAAAAMAIoAAgAJAAEAAAAPAIoAAgAJAAEAAAAYAIoAAgACAAEAADAAAIsAAgACAAEAAAABAIsAAgAJAAEAAAADAIsAAgAJAAEAAAASAIsAAgAJAAEAAAAWAIsAAgAJAAEAAAAYAIsAAgACAAEAADAAAIwAAgACAAEAAAAGAIwAAgAJAAEAAAAJAIwAAgAJAAEAAAAMAIwAAgAJAAEAAAANAIwAAgAJAAEAAAAYAIwAAgACAAEAADAAAI0AAgACAAEAAAAEAI0AAgAJAAEAAAAGAI0AAgAJAAEAAAATAI0AAgAJAAEAAAAWAI0AAgAJAAEAAAAYAI0AAgACAAEAADAAAI4AAgACAAEAAAAGAI4AAgAJAAEAAAAIAI4AAgAJAAEAAAAJAI4AAgAJAAEAAAAMAI4AAgAJAAEAAAAQAI4AAgAJAAEAAAAYAI4AAgACAAEAADAAAI8AAgACAAEAAAACAI8AAgAJAAEAAAAXAI8AAgAJAAEAAAAYAI8AAgACAAEAADAAAJAAAgACAAEAAAAIAJAAAgAJAAEAAAAJAJAAAgAJAAEAAAAOAJAAAgAJAAEAAAASAJAAAgAJAAEAAAAUAJAAAgAJAAEAAAAXAJAAAgAJAAEAAAAYAJAAAgACAAEAADAAAJEAAgACAAEAAAALAJEAAgAJAAEAAAAQAJEAAgAJAAEAAAASAJEAAgAJAAEAAAAYAJEAAgACAAEAADAAAJIAAgACAAEAAAAFAJIAAgAJAAEAAAAHAJIAAgAJAAEAAAAIAJIAAgAJAAEAAAAOAJIAAgAJAAEAAAAXAJIAAgAJAAEAAAAYAJIAAgACAAEAADAAAJMAAgACAAEAAAABAJMAAgAJAAEAAAACAJMAAgAJAAEAAAADAJMAAgAJAAEAAAAOAJMAAgAJAAEAAAAXAJMAAgAJAAEAAAAYAJMAAgACAAEAADAAAJQAAgACAAEAAAAHAJQAAgAJAAEAAAAJAJQAAgAJAAEAAAALAJQAAgAJAAEAAAARAJQAAgAJAAEAAAATAJQAAgAJAAEAAAAUAJQAAgAJAAEAAAAVAJQAAgAJAAEAAAAXAJQAAgAJAAEAAAAYAJQAAgACAAEAADAAAJUAAgACAAEAAAABAJUAAgAJAAEAAAAPAJUAAgAJAAEAAAAYAJUAAgACAAEAADAAAJYAAgACAAEAAAAEAJYAAgAJAAEAAAAGAJYAAgAJAAEAAAAIAJYAAgAJAAEAAAAKAJYAAgAJAAEAAAAMAJYAAgAJAAEAAAANAJYAAgAJAAEAAAAPAJYAAgAJAAEAAAAYAJYAAgACAAEAADAAAJcAAgACAAEAAAACAJcAAgAJAAEAAAAEAJcAAgAJAAEAAAARAJcAAgAJAAEAAAATAJcAAgAJAAEAAAAWAJcAAgAJAAEAAAAYAJcAAgACAAEAADAAAJgAAgACAAEAAAAJAJgAAgAJAAEAAAAKAJgAAgAJAAEAAAANAJgAAgAJAAEAAAAYAJgAAgACAAEAADAAAJkAAgACAAEAAAABAJkAAgAJAAEAAAAFAJkAAgAJAAEAAAAQAJkAAgAJAAEAAAARAJkAAgAJAAEAAAAUAJkAAgAJAAEAAAAWAJkAAgAJAAEAAAAYAJkAAgACAAEAADAAAJoAAgACAAEAAAAJAJoAAgAJAAEAAAAMAJoAAgAJAAEAAAANAJoAAgAJAAEAAAAOAJoAAgAJAAEAAAAWAJoAAgAJAAEAAAAYAJoAAgACAAEAADAAAJsAAgACAAEAAAABAJsAAgAJAAEAAAAEAJsAAgAJAAEAAAAHAJsAAgAJAAEAAAASAJsAAgAJAAEAAAAWAJsAAgAJAAEAAAAYAJsAAgACAAEAADAAAJwAAgACAAEAAAASAJwAAgAJAAEAAAAYAJwAAgACAAEAADAAAJ0AAgACAAEAAAAHAJ0AAgAJAAEAAAAIAJ0AAgAJAAEAAAALAJ0AAgAJAAEAAAAPAJ0AAgAJAAEAAAAWAJ0AAgAJAAEAAAAYAJ0AAgACAAEAADAAAJ4AAgACAAEAAAABAJ4AAgAJAAEAAAAEAJ4AAgAJAAEAAAANAJ4AAgAJAAEAAAARAJ4AAgAJAAEAAAATAJ4AAgAJAAEAAAAYAJ4AAgACAAEAADAAAJ8AAgACAAEAAAAGAJ8AAgAJAAEAAAANAJ8AAgAJAAEAAAAWAJ8AAgAJAAEAAAAYAJ8AAgACAAEAADAAAKAAAgACAAEAAAADAKAAAgAJAAEAAAAJAKAAAgAJAAEAAAAQAKAAAgAJAAEAAAATAKAAAgAJAAEAAAAUAKAAAgAJAAEAAAAYAKAAAgACAAEAADAAAKEAAgACAAEAAAALAKEAAgAJAAEAAAAYAKEAAgACAAEAADAAAKIAAgACAAEAAAACAKIAAgAJAAEAAAAIAKIAAgAJAAEAAAANAKIAAgAJAAEAAAAUAKIAAgAJAAEAAAAWAKIAAgAJAAEAAAAYAKIAAgACAAEAADAAAKMAAgACAAEAAAAGAKMAAgAJAAEAAAARAKMAAgAJAAEAAAASAKMAAgAJAAEAAAAYAKMAAgACAAEAADAAAKQAAgACAAEAAAAJAKQAAgAJAAEAAAAPAKQAAgAJAAEAAAAXAKQAAgAJAAEAAAAYAKQAAgACAAEAADAAAKUAAgACAAEAAAACAKUAAgAJAAEAAAADAKUAAgAJAAEAAAAHAKUAAgAJAAEAAAALAKUAAgAJAAEAAAANAKUAAgAJAAEAAAARAKUAAgAJAAEAAAAVAKUAAgAJAAEAAAAYAKUAAgACAAEAADAAAKYAAgACAAEAAAADAKYAAgAJAAEAAAAFAKYAAgAJAAEAAAAHAKYAAgAJAAEAAAAJAKYAAgAJAAEAAAATAKYAAgAJAAEAAAAYAKYAAgACAAEAADAAAKcAAgACAAEAAAAFAKcAAgAJAAEAAAAMAKcAAgAJAAEAAAAOAKcAAgAJAAEAAAAVAKcAAgAJAAEAAAAYAKcAAgACAAEAADAAAKgAAgACAAEAAAABAKgAAgAJAAEAAAAIAKgAAgAJAAEAAAAKAKgAAgAJAAEAAAAMAKgAAgAJAAEAAAARAKgAAgAJAAEAAAAXAKgAAgAJAAEAAAAYAKgAAgACAAEAADAAAKkAAgACAAEAAAAGAKkAAgAJAAEAAAAMAKkAAgAJAAEAAAAYAKkAAgACAAEAADAAAKoAAgACAAEAAAACAKoAAgAJAAEAAAAFAKoAAgAJAAEAAAAPAKoAAgAJAAEAAAASAKoAAgAJAAEAAAAWAKoAAgAJAAEAAAAYAKoAAgACAAEAADAAAKsAAgACAAEAAAAIAKsAAgAJAAEAAAAKAKsAAgAJAAEAAAALAKsAAgAJAAEAAAAYAKsAAgACAAEAADAAAKwAAgACAAEAAAACAKwAAgAJAAEAAAANAKwAAgAJAAEAAAAOAKwAAgAJAAEAAAAYAKwAAgACAAEAADAAAK0AAgACAAEAAAAIAK0AAgAJAAEAAAAJAK0AAgAJAAEAAAAKAK0AAgAJAAEAAAANAK0AAgAJAAEAAAAQAK0AAgAJAAEAAAARAK0AAgAJAAEAAAASAK0AAgAJAAEAAAAUAK0AAgAJAAEAAAAYAK0AAgACAAEAADAAAK4AAgACAAEAAAACAK4AAgAJAAEAAAADAK4AAgAJAAEAAAAEAK4AAgAJAAEAAAAXAK4AAgAJAAEAAAAYAK4AAgACAAEAADAAAK8AAgACAAEAAAAHAK8AAgAJAAEAAAAJAK8AAgAJAAEAAAAOAK8AAgAJAAEAAAAPAK8AAgAJAAEAAAASAK8AAgAJAAEAAAAVAK8AAgAJAAEAAAAXAK8AAgAJAAEAAAAYAK8AAgACAAEAADAAALAAAgACAAEAAAABALAAAgAJAAEAAAADALAAAgAJAAEAAAAFALAAAgAJAAEAAAAYALAAAgACAAEAADAAALEAAgACAAEAAAAIALEAAgAJAAEAAAAJALEAAgAJAAEAAAAKALEAAgAJAAEAAAANALEAAgAJAAEAAAAWALEAAgAJAAEAAAAYALEAAgACAAEAADAAALIAAgACAAEAAAABALIAAgAJAAEAAAACALIAAgAJAAEAAAAPALIAAgAJAAEAAAARALIAAgAJAAEAAAAUALIAAgAJAAEAAAAYALIAAgACAAEAADAAALMAAgACAAEAAAABALMAAgAJAAEAAAAFALMAAgAJAAEAAAAHALMAAgAJAAEAAAAJALMAAgAJAAEAAAAMALMAAgAJAAEAAAAYALMAAgACAAEAADAAALQAAgACAAEAAAATALQAAgAJAAEAAAAUALQAAgAJAAEAAAAYALQAAgACAAEAADAAALUAAgACAAEAAAADALUAAgAJAAEAAAAEALUAAgAJAAEAAAALALUAAgAJAAEAAAANALUAAgAJAAEAAAAPALUAAgAJAAEAAAARALUAAgAJAAEAAAAUALUAAgAJAAEAAAAWALUAAgAJAAEAAAAYALUAAgACAAEAADAAALYAAgACAAEAAAADALYAAgAJAAEAAAAIALYAAgAJAAEAAAAPALYAAgAJAAEAAAAYALYAAgACAAEAADAAALcAAgACAAEAAAAGALcAAgAJAAEAAAAKALcAAgAJAAEAAAANALcAAgAJAAEAAAASALcAAgAJAAEAAAAUALcAAgAJAAEAAAAVALcAAgAJAAEAAAAYALcAAgACAAEAADAAALgAAgACAAEAAAAPALgAAgAJAAEAAAAYALgAAgACAAEAADAAALkAAgACAAEAAAACALkAAgAJAAEAAAAGALkAAgAJAAEAAAALALkAAgAJAAEAAAAMALkAAgAJAAEAAAAXALkAAgAJAAEAAAAYALkAAgACAAEAADAAALoAAgACAAEAAAAEALoAAgAJAAEAAAAOALoAAgAJAAEAAAARALoAAgAJAAEAAAAUALoAAgAJAAEAAAAYALoAAgACAAEAADAAALsAAgACAAEAAAAEALsAAgAJAAEAAAALALsAAgAJAAEAAAAYALsAAgACAAEAADAAALwAAgACAAEAAAAPALwAAgAJAAEAAAAYALwAAgACAAEAADAAAL0AAgACAAEAAAABAL0AAgAJAAEAAAADAL0AAgAJAAEAAAAGAL0AAgAJAAEAAAAJAL0AAgAJAAEAAAANAL0AAgAJAAEAAAAYAL0AAgACAAEAADAAAL4AAgACAAEAAAAIAL4AAgAJAAEAAAARAL4AAgAJAAEAAAAVAL4AAgAJAAEAAAAWAL4AAgAJAAEAAAAXAL4AAgAJAAEAAAAYAL4AAgACAAEAADAAAL8AAgACAAEAAAADAL8AAgAJAAEAAAAGAL8AAgAJAAEAAAANAL8AAgAJAAEAAAAYAL8AAgACAAEAADAAAMAAAgACAAEAAAAKAMAAAgAJAAEAAAALAMAAAgAJAAEAAAAPAMAAAgAJAAEAAAARAMAAAgAJAAEAAAASAMAAAgAJAAEAAAATAMAAAgAJAAEAAAAUAMAAAgAJAAEAAAAYAMAAAgACAAEAADAAAMEAAgACAAEAAAABAMEAAgAJAAEAAAADAMEAAgAJAAEAAAAEAMEAAgAJAAEAAAAFAMEAAgAJAAEAAAAHAMEAAgAJAAEAAAAMAMEAAgAJAAEAAAAWAMEAAgAJAAEAAAAYAMEAAgACAAEAADAAAMIAAgACAAEAAAAJAMIAAgAJAAEAAAALAMIAAgAJAAEAAAAMAMIAAgAJAAEAAAAYAMIAAgACAAEAADAAAMMAAgACAAEAAAACAMMAAgAJAAEAAAAIAMMAAgAJAAEAAAAPAMMAAgAJAAEAAAAQAMMAAgAJAAEAAAAYAMMAAgACAAEAADAAAMQAAgACAAEAAAACAMQAAgAJAAEAAAAEAMQAAgAJAAEAAAAFAMQAAgAJAAEAAAALAMQAAgAJAAEAAAASAMQAAgAJAAEAAAAVAMQAAgAJAAEAAAAWAMQAAgAJAAEAAAAYAMQAAgACAAEAADAAAMUAAgACAAEAAAAEAMUAAgAJAAEAAAANAMUAAgAJAAEAAAAOAMUAAgAJAAEAAAAQAMUAAgAJAAEAAAAYAMUAAgACAAEAADAAAMYAAgACAAEAAAAGAMYAAgAJAAEAAAAHAMYAAgAJAAEAAAAUAMYAAgAJAAEAAAAVAMYAAgAJAAEAAAAWAMYAAgAJAAEAAAAYAMYAAgACAAEAADAAAMcAAgACAAEAAAABAMcAAgAJAAEAAAADAMcAAgAJAAEAAAAOAMcAAgAJAAEAAAAYAMcAAgACAAEAADAAAMgAAgACAAEAAAASAMgAAgAJAAEAAAAVAMgAAgAJAAEAAAAWAMgAAgAJAAEAAAAXAMgAAgAJAAEAAAAYAMgAAgACAAEAADAAAMkAAgACAAEAAAADAMkAAgAJAAEAAAAEAMkAAgAJAAEAAAAHAMkAAgAJAAEAAAAKAMkAAgAJAAEAAAAYAMkAAgACAAEAADAAAMoAAgACAAEAAAAOAMoAAgAJAAEAAAAQAMoAAgAJAAEAAAAYAMoAAgACAAEAADAAAMsAAgACAAEAAAADAMsAAgAJAAEAAAAGAMsAAgAJAAEAAAAKAMsAAgAJAAEAAAASAMsAAgAJAAEAAAAVAMsAAgAJAAEAAAAWAMsAAgAJAAEAAAAYAMsAAgACAAEAADAAAMwAAgACAAEAAAABAMwAAgAJAAEAAAADAMwAAgAJAAEAAAAGAMwAAgAJAAEAAAAMAMwAAgAJAAEAAAAWAMwAAgAJAAEAAAAYAMwAAgACAAEAADAAAM0AAgACAAEAAAADAM0AAgAJAAEAAAARAM0AAgAJAAEAAAAUAM0AAgAJAAEAAAAYAM0AAgACAAEAADAAAM4AAgACAAEAAAABAM4AAgAJAAEAAAAFAM4AAgAJAAEAAAAGAM4AAgAJAAEAAAAYAM4AAgACAAEAADAAAM8AAgACAAEAAAADAM8AAgAJAAEAAAAJAM8AAgAJAAEAAAAKAM8AAgAJAAEAAAALAM8AAgAJAAEAAAAOAM8AAgAJAAEAAAAUAM8AAgAJAAEAAAAVAM8AAgAJAAEAAAAXAM8AAgAJAAEAAAAYAM8AAgACAAEAADAAANAAAgACAAEAAAABANAAAgAJAAEAAAARANAAAgAJAAEAAAAYANAAAgACAAEAADAAANEAAgACAAEAAAAGANEAAgAJAAEAAAAHANEAAgAJAAEAAAAIANEAAgAJAAEAAAANANEAAgAJAAEAAAAPANEAAgAJAAEAAAATANEAAgAJAAEAAAAUANEAAgAJAAEAAAAVANEAAgAJAAEAAAAXANEAAgAJAAEAAAAYANEAAgACAAEAADAAANIAAgACAAEAAAACANIAAgAJAAEAAAADANIAAgAJAAEAAAALANIAAgAJAAEAAAARANIAAgAJAAEAAAAXANIAAgAJAAEAAAAYANIAAgACAAEAADAAANMAAgACAAEAAAAXANMAAgAJAAEAAAAYANMAAgACAAEAADAAANQAAgACAAEAAAACANQAAgAJAAEAAAAEANQAAgAJAAEAAAAIANQAAgAJAAEAAAAKANQAAgAJAAEAAAAQANQAAgAJAAEAAAARANQAAgAJAAEAAAAUANQAAgAJAAEAAAAYANQAAgACAAEAADAAANUAAgACAAEAAAACANUAAgAJAAEAAAAGANUAAgAJAAEAAAAUANUAAgAJAAEAAAAYANUAAgACAAEAADAAANYAAgACAAEAAAAEANYAAgAJAAEAAAAIANYAAgAJAAEAAAAKANYAAgAJAAEAAAALANYAAgAJAAEAAAAPANYAAgAJAAEAAAARANYAAgAJAAEAAAAYANYAAgACAAEAADAAANcAAgACAAEAAAABANcAAgAJAAEAAAAWANcAAgAJAAEAAAAYANcAAgACAAEAADAAANgAAgACAAEAAAABANgAAgAJAAEAAAADANgAAgAJAAEAAAAIANgAAgAJAAEAAAAJANgAAgAJAAEAAAAMANgAAgAJAAEAAAAQANgAAgAJAAEAAAAUANgAAgAJAAEAAAAYANgAAgACAAEAADAAANkAAgACAAEAAAADANkAAgAJAAEAAAAFANkAAgAJAAEAAAAOANkAAgAJAAEAAAAYANkAAgACAAEAADAAANoAAgACAAEAAAAJANoAAgAJAAEAAAALANoAAgAJAAEAAAAMANoAAgAJAAEAAAAQANoAAgAJAAEAAAASANoAAgAJAAEAAAAYANoAAgACAAEAADAAANsAAgACAAEAAAAEANsAAgAJAAEAAAAJANsAAgAJAAEAAAAYANsAAgACAAEAADAAANwAAgACAAEAAAABANwAAgAJAAEAAAACANwAAgAJAAEAAAAGANwAAgAJAAEAAAAHANwAAgAJAAEAAAAJANwAAgAJAAEAAAAMANwAAgAJAAEAAAANANwAAgAJAAEAAAAOANwAAgAJAAEAAAAQANwAAgAJAAEAAAASANwAAgAJAAEAAAATANwAAgAJAAEAAAAWANwAAgAJAAEAAAAYANwAAgACAAEAADAAAN0AAgACAAEAAAATAN0AAgAJAAEAAAAYAN0AAgACAAEAADAAAN4AAgACAAEAAAADAN4AAgAJAAEAAAAHAN4AAgAJAAEAAAALAN4AAgAJAAEAAAAQAN4AAgAJAAEAAAARAN4AAgAJAAEAAAASAN4AAgAJAAEAAAAXAN4AAgAJAAEAAAAYAN4AAgACAAEAADAAAN8AAgACAAEAAAADAN8AAgAJAAEAAAAFAN8AAgAJAAEAAAAJAN8AAgAJAAEAAAAYAN8AAgACAAEAADAAAOAAAgACAAEAAAAHAOAAAgAJAAEAAAAMAOAAAgAJAAEAAAANAOAAAgAJAAEAAAASAOAAAgAJAAEAAAAWAOAAAgAJAAEAAAAYAOAAAgACAAEAADAAAOEAAgACAAEAAAAEAOEAAgAJAAEAAAAPAOEAAgAJAAEAAAAYAOEAAgACAAEAADAAAOIAAgACAAEAAAACAOIAAgAJAAEAAAAEAOIAAgAJAAEAAAAIAOIAAgAJAAEAAAAUAOIAAgAJAAEAAAAVAOIAAgAJAAEAAAAXAOIAAgAJAAEAAAAYAOIAAgACAAEAADAAAOMAAgACAAEAAAAMAOMAAgAJAAEAAAAPAOMAAgAJAAEAAAAQAOMAAgAJAAEAAAARAOMAAgAJAAEAAAAYAOMAAgACAAEAADAAAOQAAgACAAEAAAATAOQAAgAJAAEAAAAWAOQAAgAJAAEAAAAYAOQAAgACAAEAADAAAOUAAgACAAEAAAACAOUAAgAJAAEAAAAEAOUAAgAJAAEAAAAIAOUAAgAJAAEAAAAJAOUAAgAJAAEAAAAOAOUAAgAJAAEAAAATAOUAAgAJAAEAAAAYAOUAAgACAAEAADAAAOYAAgACAAEAAAAGAOYAAgAJAAEAAAAJAOYAAgAJAAEAAAAVAOYAAgAJAAEAAAAWAOYAAgAJAAEAAAAYAOYAAgACAAEAADAAAOcAAgACAAEAAAAKAOcAAgAJAAEAAAAPAOcAAgAJAAEAAAARAOcAAgAJAAEAAAAYAOcAAgACAAEAADAAAOgAAgACAAEAAAABAOgAAgAJAAEAAAACAOgAAgAJAAEAAAAXAOgAAgAJAAEAAAAYAOgAAgACAAEAADAAAOkAAgACAAEAAAAEAOkAAgAJAAEAAAAGAOkAAgAJAAEAAAAHAOkAAgAJAAEAAAAQAOkAAgAJAAEAAAASAOkAAgAJAAEAAAAYAOkAAgACAAEAADAAAOoAAgACAAEAAAAHAOoAAgAJAAEAAAAJAOoAAgAJAAEAAAAMAOoAAgAJAAEAAAAOAOoAAgAJAAEAAAAQAOoAAgAJAAEAAAAVAOoAAgAJAAEAAAAYAOoAAgACAAEAADAAAOsAAgACAAEAAAAEAOsAAgAJAAEAAAAQAOsAAgAJAAEAAAASAOsAAgAJAAEAAAATAOsAAgAJAAEAAAAXAOsAAgAJAAEAAAAYAOsAAgACAAEAADAAAOwAAgACAAEAAAABAOwAAgAJAAEAAAAEAOwAAgAJAAEAAAALAOwAAgAJAAEAAAANAOwAAgAJAAEAAAAYAOwAAgACAAEAADAAAO0AAgACAAEAAAAGAO0AAgAJAAEAAAAIAO0AAgAJAAEAAAARAO0AAgAJAAEAAAAYAO0AAgACAAEAADAAAO4AAgACAAEAAAADAO4AAgAJAAEAAAAGAO4AAgAJAAEAAAANAO4AAgAJAAEAAAAOAO4AAgAJAAEAAAAUAO4AAgAJAAEAAAAYAO4AAgACAAEAADAAAO8AAgACAAEAAAANAO8AAgAJAAEAAAAWAO8AAgAJAAEAAAAYAO8AAgACAAEAADAAAPAAAgACAAEAAAABAPAAAgAJAAEAAAAEAPAAAgAJAAEAAAAJAPAAAgAJAAEAAAAKAPAAAgAJAAEAAAARAPAAAgAJAAEAAAASAPAAAgAJAAEAAAAYAPAAAgACAAEAADAAAPEAAgACAAEAAAAKAPEAAgAJAAEAAAANAPEAAgAJAAEAAAATAPEAAgAJAAEAAAAVAPEAAgAJAAEAAAAYAPEAAgACAAEAADAAAPIAAgACAAEAAAACAPIAAgAJAAEAAAADAPIAAgAJAAEAAAAIAPIAAgAJAAEAAAANAPIAAgAJAAEAAAAPAPIAAgAJAAEAAAAWAPIAAgAJAAEAAAAYAPIAAgACAAEAADAAAPMAAgACAAEAAAADAPMAAgAJAAEAAAAPAPMAAgAJAAEAAAARAPMAAgAJAAEAAAATAPMAAgAJAAEAAAAUAPMAAgAJAAEAAAAYAPMAAgACAAEAADAAAPQAAgACAAEAAAANAPQAAgAJAAEAAAAOAPQAAgAJAAEAAAAWAPQAAgAJAAEAAAAYAPQAAgACAAEAADAAAPUAAgACAAEAAAADAPUAAgAJAAEAAAAEAPUAAgAJAAEAAAAFAPUAAgAJAAEAAAAHAPUAAgAJAAEAAAAJAPUAAgAJAAEAAAANAPUAAgAJAAEAAAAQAPUAAgAJAAEAAAARAPUAAgAJAAEAAAATAPUAAgAJAAEAAAAUAPUAAgAJAAEAAAAYAPUAAgACAAEAADAAAPYAAgACAAEAAAADAPYAAgAJAAEAAAASAPYAAgAJAAEAAAAVAPYAAgAJAAEAAAAXAPYAAgAJAAEAAAAYAPYAAgACAAEAADAAAPcAAgACAAEAAAABAPcAAgAJAAEAAAAEAPcAAgAJAAEAAAAFAPcAAgAJAAEAAAAOAPcAAgAJAAEAAAAQAPcAAgAJAAEAAAATAPcAAgAJAAEAAAAYAPcAAgACAAEAADAAAPgAAgACAAEAAAAHAPgAAgAJAAEAAAAOAPgAAgAJAAEAAAAYAPgAAgACAAEAADAAAPkAAgACAAEAAAABAPkAAgAJAAEAAAAFAPkAAgAJAAEAAAAHAPkAAgAJAAEAAAAJAPkAAgAJAAEAAAAKAPkAAgAJAAEAAAALAPkAAgAJAAEAAAAMAPkAAgAJAAEAAAATAPkAAgAJAAEAAAAUAPkAAgAJAAEAAAAYAPkAAgACAAEAADAAAPoAAgACAAEAAAALAPoAAgAJAAEAAAATAPoAAgAJAAEAAAAWAPoAAgAJAAEAAAAYAPoAAgACAAEAADAAAPsAAgACAAEAAAACAPsAAgAJAAEAAAAIAPsAAgAJAAEAAAANAPsAAgAJAAEAAAAOAPsAAgAJAAEAAAAPAPsAAgAJAAEAAAAYAPsAAgACAAEAADAAAPwAAgACAAEAAAACAPwAAgAJAAEAAAAGAPwAAgAJAAEAAAAIAPwAAgAJAAEAAAAJAPwAAgAJAAEAAAAQAPwAAgAJAAEAAAAYAPwAAgACAAEAADAAAP0AAgACAAEAAAAMAP0AAgAJAAEAAAANAP0AAgAJAAEAAAATAP0AAgAJAAEAAAAWAP0AAgAJAAEAAAAYAP0AAgACAAEAADAAAP4AAgACAAEAAAACAP4AAgAJAAEAAAAEAP4AAgAJAAEAAAAFAP4AAgAJAAEAAAAGAP4AAgAJAAEAAAAIAP4AAgAJAAEAAAAKAP4AAgAJAAEAAAAQAP4AAgAJAAEAAAAVAP4AAgAJAAEAAAAYAP4AAgACAAEAADAAAP8AAgACAAEAAAASAP8AAgAJAAEAAAATAP8AAgAJAAEAAAAYAP8AAgACAAEAADAAAAABAgACAAEAAAACAAABAgAJAAEAAAAFAAABAgAJAAEAAAAGAAABAgAJAAEAAAALAAABAgAJAAEAAAAMAAABAgAJAAEAAAAVAAABAgAJAAEAAAAYAAABAgACAAEAADAAAAEBAgACAAEAAAAHAAEBAgAJAAEAAAAOAAEBAgAJAAEAAAAYAAEBAgACAAEAADAAAAIBAgACAAEAAAABAAIBAgAJAAEAAAADAAIBAgAJAAEAAAAGAAIBAgAJAAEAAAAJAAIBAgAJAAEAAAASAAIBAgAJAAEAAAATAAIBAgAJAAEAAAAYAAIBAgACAAEAADAAAAMBAgACAAEAAAAHAAMBAgAJAAEAAAAMAAMBAgAJAAEAAAAPAAMBAgAJAAEAAAASAAMBAgAJAAEAAAAUAAMBAgAJAAEAAAAYAAMBAgACAAEAADAAAAQBAgACAAEAAAABAAQBAgAJAAEAAAADAAQBAgAJAAEAAAAFAAQBAgAJAAEAAAAKAAQBAgAJAAEAAAAPAAQBAgAJAAEAAAAUAAQBAgAJAAEAAAAXAAQBAgAJAAEAAAAYAAQBAgACAAEAADAAAAUBAgACAAEAAAAOAAUBAgAJAAEAAAARAAUBAgAJAAEAAAAYAAUBAgACAAEAADAAAAYBAgACAAEAAAADAAYBAgAJAAEAAAAFAAYBAgAJAAEAAAAIAAYBAgAJAAEAAAAKAAYBAgAJAAEAAAAUAAYBAgAJAAEAAAAWAAYBAgAJAAEAAAAYAAYBAgACAAEAADAAAAcBAgACAAEAAAABAAcBAgAJAAEAAAASAAcBAgAJAAEAAAAYAAcBAgACAAEAADAAAAgBAgACAAEAAAAKAAgBAgAJAAEAAAALAAgBAgAJAAEAAAANAAgBAgAJAAEAAAAOAAgBAgAJAAEAAAAQAAgBAgAJAAEAAAAVAAgBAgAJAAEAAAAXAAgBAgAJAAEAAAAYAAgBAgACAAEAADAAAAkBAgACAAEAAAACAAkBAgAJAAEAAAAIAAkBAgAJAAEAAAAVAAkBAgAJAAEAAAAYAAkBAgACAAEAADAAAAoBAgACAAEAAAANAAoBAgAJAAEAAAARAAoBAgAJAAEAAAAYAAoBAgACAAEAADAAAAsBAgACAAEAAAADAAsBAgAJAAEAAAAFAAsBAgAJAAEAAAAWAAsBAgAJAAEAAAAYAAsBAgACAAEAADAAAAwBAgACAAEAAAADAAwBAgAJAAEAAAAIAAwBAgAJAAEAAAAJAAwBAgAJAAEAAAALAAwBAgAJAAEAAAAQAAwBAgAJAAEAAAASAAwBAgAJAAEAAAATAAwBAgAJAAEAAAAYAAwBAgACAAEAADAAAA0BAgACAAEAAAABAA0BAgAJAAEAAAADAA0BAgAJAAEAAAAGAA0BAgAJAAEAAAAIAA0BAgAJAAEAAAAMAA0BAgAJAAEAAAAYAA0BAgACAAEAADAAAA4BAgACAAEAAAAKAA4BAgAJAAEAAAAOAA4BAgAJAAEAAAAPAA4BAgAJAAEAAAAXAA4BAgAJAAEAAAAYAA4BAgACAAEAADAAAA8BAgACAAEAAAACAA8BAgAJAAEAAAADAA8BAgAJAAEAAAAGAA8BAgAJAAEAAAAKAA8BAgAJAAEAAAARAA8BAgAJAAEAAAAUAA8BAgAJAAEAAAAXAA8BAgAJAAEAAAAYAA8BAgACAAEAADAAABABAgACAAEAAAAMABABAgAJAAEAAAARABABAgAJAAEAAAAWABABAgAJAAEAAAAYABABAgACAAEAADAAABEBAgACAAEAAAABABEBAgAJAAEAAAAOABEBAgAJAAEAAAAVABEBAgAJAAEAAAAYABEBAgACAAEAADAAABIBAgACAAEAAAADABIBAgAJAAEAAAAFABIBAgAJAAEAAAAIABIBAgAJAAEAAAAJABIBAgAJAAEAAAAKABIBAgAJAAEAAAAQABIBAgAJAAEAAAASABIBAgAJAAEAAAAUABIBAgAJAAEAAAAYABIBAgACAAEAADAAABMBAgACAAEAAAAMABMBAgAJAAEAAAANABMBAgAJAAEAAAAWABMBAgAJAAEAAAAYABMBAgACAAEAADAAABQBAgACAAEAAAAKABQBAgAJAAEAAAATABQBAgAJAAEAAAAYABQBAgACAAEAADAAABUBAgACAAEAAAADABUBAgAJAAEAAAAEABUBAgAJAAEAAAAIABUBAgAJAAEAAAAMABUBAgAJAAEAAAAQABUBAgAJAAEAAAATABUBAgAJAAEAAAAWABUBAgAJAAEAAAAYABUBAgACAAEAADAAABYBAgACAAEAAAABABYBAgAJAAEAAAAHABYBAgAJAAEAAAAOABYBAgAJAAEAAAATABYBAgAJAAEAAAAYABYBAgACAAEAADAAABcBAgACAAEAAAAIABcBAgAJAAEAAAARABcBAgAJAAEAAAAWABcBAgAJAAEAAAAYABcBAgACAAEAADAAABgBAgACAAEAAAACABgBAgAJAAEAAAALABgBAgAJAAEAAAAMABgBAgAJAAEAAAAUABgBAgAJAAEAAAAYABgBAgACAAEAADAAABkBAgACAAEAAAAGABkBAgAJAAEAAAAPABkBAgAJAAEAAAARABkBAgAJAAEAAAAXABkBAgAJAAEAAAAYABkBAgACAAEAADAAABoBAgACAAEAAAABABoBAgAJAAEAAAAJABoBAgAJAAEAAAALABoBAgAJAAEAAAATABoBAgAJAAEAAAAUABoBAgAJAAEAAAAXABoBAgAJAAEAAAAYABoBAgACAAEAADAAABsBAgACAAEAAAAFABsBAgAJAAEAAAAOABsBAgAJAAEAAAAXABsBAgAJAAEAAAAYABsBAgACAAEAADAAABwBAgACAAEAAAADABwBAgAJAAEAAAAHABwBAgAJAAEAAAAMABwBAgAJAAEAAAATABwBAgAJAAEAAAAYABwBAgACAAEAADAAAB0BAgACAAEAAAADAB0BAgAJAAEAAAAFAB0BAgAJAAEAAAAGAB0BAgAJAAEAAAAOAB0BAgAJAAEAAAAPAB0BAgAJAAEAAAAQAB0BAgAJAAEAAAARAB0BAgAJAAEAAAAXAB0BAgAJAAEAAAAYAB0BAgACAAEAADAAAB4BAgACAAEAAAADAB4BAgAJAAEAAAAIAB4BAgAJAAEAAAAUAB4BAgAJAAEAAAAVAB4BAgAJAAEAAAAXAB4BAgAJAAEAAAAYAB4BAgACAAEAADAAAB8BAgACAAEAAAABAB8BAgAJAAEAAAAIAB8BAgAJAAEAAAAKAB8BAgAJAAEAAAAMAB8BAgAJAAEAAAAQAB8BAgAJAAEAAAAYAB8BAgACAAEAADAAACABAgACAAEAAAAFACABAgAJAAEAAAAUACABAgAJAAEAAAAWACABAgAJAAEAAAAXACABAgAJAAEAAAAYACABAgACAAEAADAAACEBAgACAAEAAAADACEBAgAJAAEAAAAHACEBAgAJAAEAAAAIACEBAgAJAAEAAAAJACEBAgAJAAEAAAAKACEBAgAJAAEAAAAPACEBAgAJAAEAAAASACEBAgAJAAEAAAAUACEBAgAJAAEAAAAXACEBAgAJAAEAAAAYACEBAgACAAEAADAAACIBAgACAAEAAAABACIBAgAJAAEAAAADACIBAgAJAAEAAAAFACIBAgAJAAEAAAANACIBAgAJAAEAAAAUACIBAgAJAAEAAAAYACIBAgACAAEAADAAACMBAgACAAEAAAADACMBAgAJAAEAAAAFACMBAgAJAAEAAAAHACMBAgAJAAEAAAAJACMBAgAJAAEAAAARACMBAgAJAAEAAAAWACMBAgAJAAEAAAAYACMBAgACAAEAADAAACQBAgACAAEAAAABACQBAgAJAAEAAAAOACQBAgAJAAEAAAAPACQBAgAJAAEAAAAYACQBAgACAAEAADAAACUBAgACAAEAAAAEACUBAgAJAAEAAAAHACUBAgAJAAEAAAAJACUBAgAJAAEAAAAKACUBAgAJAAEAAAAMACUBAgAJAAEAAAARACUBAgAJAAEAAAAVACUBAgAJAAEAAAAWACUBAgAJAAEAAAAYACUBAgACAAEAADAAACYBAgACAAEAAAACACYBAgAJAAEAAAAJACYBAgAJAAEAAAAPACYBAgAJAAEAAAARACYBAgAJAAEAAAAYACYBAgACAAEAADAAACcBAgACAAEAAAAMACcBAgAJAAEAAAAWACcBAgAJAAEAAAAYACcBAgACAAEAADAAACgBAgACAAEAAAAGACgBAgAJAAEAAAAQACgBAgAJAAEAAAAYACgBAgACAAEAADAAACkBAgACAAEAAAACACkBAgAJAAEAAAADACkBAgAJAAEAAAAIACkBAgAJAAEAAAAJACkBAgAJAAEAAAASACkBAgAJAAEAAAAVACkBAgAJAAEAAAAWACkBAgAJAAEAAAAXACkBAgAJAAEAAAAYACkBAgACAAEAADAAACoBAgACAAEAAAALACoBAgAJAAEAAAANACoBAgAJAAEAAAAAACsBAgACAAEAAAABACsBAgAJAAEAAAAJACsBAgAJAAEAAAAPACsBAgAJAAEAAAAQACsBAgAJAAEAAAATACsBAgAJAAEAAAAXACsBAgAJAAEAAAAAACwBAgACAAEAAAACACwBAgAJAAEAAAAFACwBAgAJAAEAAAAGACwBAgAJAAEAAAAHACwBAgAJAAEAAAAOACwBAgAJAAEAAAAAAC0BAgACAAEAAAALAC0BAgAJAAEAAAARAC0BAgAJAAEAAAAVAC0BAgAJAAEAAAAYAC0BAgACAAEAADAAAC4BAgACAAEAAAABAC4BAgAJAAEAAAAJAC4BAgAJAAEAAAASAC4BAgAJAAEAAAAYAC4BAgACAAEAADAAAC8BAgACAAEAAAAGAC8BAgAJAAEAAAAQAC8BAgAJAAEAAAAUAC8BAgAJAAEAAAAYAC8BAgACAAEAADAAADABAgACAAEAAAABADABAgAJAAEAAAADADABAgAJAAEAAAALADABAgAJAAEAAAAQADABAgAJAAEAAAASADABAgAJAAEAAAAUADABAgAJAAEAAAAYADABAgACAAEAADAAADEBAgACAAEAAAABADEBAgAJAAEAAAAGADEBAgAJAAEAAAAJADEBAgAJAAEAAAAMADEBAgAJAAEAAAANADEBAgAJAAEAAAAOADEBAgAJAAEAAAAYADEBAgACAAEAADAAADIBAgACAAEAAAAEADIBAgAJAAEAAAALADIBAgAJAAEAAAAQADIBAgAJAAEAAAAWADIBAgAJAAEAAAAYADIBAgACAAEAADAAADMBAgACAAEAAAABADMBAgAJAAEAAAAEADMBAgAJAAEAAAAGADMBAgAJAAEAAAAJADMBAgAJAAEAAAAKADMBAgAJAAEAAAANADMBAgAJAAEAAAAOADMBAgAJAAEAAAAYADMBAgACAAEAADAAADQBAgACAAEAAAAKADQBAgAJAAEAAAAXADQBAgAJAAEAAAAYADQBAgACAAEAADAAADUBAgACAAEAAAAFADUBAgAJAAEAAAAMADUBAgAJAAEAAAARADUBAgAJAAEAAAAYADUBAgACAAEAADAAADYBAgACAAEAAAABADYBAgAJAAEAAAAFADYBAgAJAAEAAAAHADYBAgAJAAEAAAAIADYBAgAJAAEAAAAJADYBAgAJAAEAAAAKADYBAgAJAAEAAAAOADYBAgAJAAEAAAAYADYBAgACAAEAADAAADcBAgACAAEAAAADADcBAgAJAAEAAAAQADcBAgAJAAEAAAASADcBAgAJAAEAAAAWADcBAgAJAAEAAAAYADcBAgACAAEAADAAADgBAgACAAEAAAAHADgBAgAJAAEAAAAJADgBAgAJAAEAAAAKADgBAgAJAAEAAAALADgBAgAJAAEAAAAMADgBAgAJAAEAAAAUADgBAgAJAAEAAAAWADgBAgAJAAEAAAAYADgBAgACAAEAADAAADkBAgACAAEAAAAEADkBAgAJAAEAAAAFADkBAgAJAAEAAAAWADkBAgAJAAEAAAAYADkBAgACAAEAADAAADoBAgACAAEAAAACADoBAgAJAAEAAAAIADoBAgAJAAEAAAANADoBAgAJAAEAAAAOADoBAgAJAAEAAAARADoBAgAJAAEAAAASADoBAgAJAAEAAAATADoBAgAJAAEAAAAYADoBAgACAAEAADAAADsBAgACAAEAAAAGADsBAgAJAAEAAAAKADsBAgAJAAEAAAAVADsBAgAJAAEAAAAYADsBAgACAAEAADAAADwBAgACAAEAAAABADwBAgAJAAEAAAADADwBAgAJAAEAAAAPADwBAgAJAAEAAAAVADwBAgAJAAEAAAAXADwBAgAJAAEAAAAYADwBAgACAAEAADAAAD0BAgACAAEAAAABAD0BAgAJAAEAAAAGAD0BAgAJAAEAAAAKAD0BAgAJAAEAAAALAD0BAgAJAAEAAAARAD0BAgAJAAEAAAASAD0BAgAJAAEAAAAVAD0BAgAJAAEAAAAXAD0BAgAJAAEAAAAYAD0BAgACAAEAADAAAD4BAgACAAEAAAADAD4BAgAJAAEAAAAGAD4BAgAJAAEAAAAOAD4BAgAJAAEAAAAPAD4BAgAJAAEAAAAQAD4BAgAJAAEAAAAYAD4BAgACAAEAADAAAD8BAgACAAEAAAABAD8BAgAJAAEAAAAJAD8BAgAJAAEAAAALAD8BAgAJAAEAAAATAD8BAgAJAAEAAAAYAD8BAgACAAEAADAAAEABAgACAAEAAAAEAEABAgAJAAEAAAAFAEABAgAJAAEAAAAGAEABAgAJAAEAAAANAEABAgAJAAEAAAAOAEABAgAJAAEAAAAWAEABAgAJAAEAAAAYAEABAgACAAEAADAAAEEBAgACAAEAAAABAEEBAgAJAAEAAAAJAEEBAgAJAAEAAAAMAEEBAgAJAAEAAAASAEEBAgAJAAEAAAAYAEEBAgACAAEAADAAAEIBAgACAAEAAAAHAEIBAgAJAAEAAAAPAEIBAgAJAAEAAAASAEIBAgAJAAEAAAAUAEIBAgAJAAEAAAAYAEIBAgACAAEAADAAAEMBAgACAAEAAAABAEMBAgAJAAEAAAACAEMBAgAJAAEAAAAFAEMBAgAJAAEAAAAHAEMBAgAJAAEAAAAJAEMBAgAJAAEAAAAKAEMBAgAJAAEAAAALAEMBAgAJAAEAAAAXAEMBAgAJAAEAAAAYAEMBAgACAAEAADAAAEQBAgACAAEAAAANAEQBAgAJAAEAAAAPAEQBAgAJAAEAAAAQAEQBAgAJAAEAAAATAEQBAgAJAAEAAAAUAEQBAgAJAAEAAAAYAEQBAgACAAEAADAAAEUBAgACAAEAAAABAEUBAgAJAAEAAAADAEUBAgAJAAEAAAAGAEUBAgAJAAEAAAAPAEUBAgAJAAEAAAAYAEUBAgACAAEAADAAAEYBAgACAAEAAAAIAEYBAgAJAAEAAAAMAEYBAgAJAAEAAAASAEYBAgAJAAEAAAAUAEYBAgAJAAEAAAAWAEYBAgAJAAEAAAAYAEYBAgACAAEAADAAAEcBAgACAAEAAAAFAEcBAgAJAAEAAAAGAEcBAgAJAAEAAAAHAEcBAgAJAAEAAAAPAEcBAgAJAAEAAAAYAEcBAgACAAEAADAAAEgBAgACAAEAAAAGAEgBAgAJAAEAAAAYAEgBAgACAAEAADAAAEkBAgADAAEAAAABAEkBAgABAAAAAAACAEkBAgABAAAAAAADAEkBAgABAAAAAAAEAEkBAgABAAAAAAAFAEkBAgABAAAAAAAGAEkBAgABAAAAAAAHAEkBAgABAAAAAAAIAEkBAgABAAAAAAAJAEkBAgABAAAAAAAKAEkBAgABAAAAAAALAEkBAgABAAAAAAAMAEkBAgABAAAAAAANAEkBAgABAAAAAAAOAEkBAgABAAAAAAAPAEkBAgABAAAAAAAQAEkBAgABAAAAAAARAEkBAgABAAAAAAASAEkBAgABAAAAAAATAEkBAgABAAAAAAAUAEkBAgABAAAAAAAVAEkBAgABAAAAAAAWAEkBAgABAAAAAAAXAEkBAgABAAAAAAAYAEkBAgAEAAEAAAAUADUBAgAJAAEAAAAWADEBAgAJAAEAAAAWADABAgAJAAEAAAAYACwBAgACAAEAADAYACsBAgACAAEAADAYACoBAgACAAEAADA=")
+tile_set = SubResource("TileSet_eb6dy")
+
+[node name="Spikes" type="TileMapLayer" parent="Level" unique_id=523852765 groups=["spikes"]]
+tile_map_data = PackedByteArray("AAAKAAIAAQACAAAAAAAXAAIAAQADAAAAAAACAAYAAQAAAAAAAAAXAAYAAQADAAAAAAAPAAcAAQAAAAAAAAAXAAoAAQADAAAAAAAOAAsAAQAAAAAAAAALAA0AAQAAAAAAAAAGAA4AAQACAAAAAAAXABYAAQADAAAAAAAKABgAAQAAAAAAAAAXABkAAQADAAAAAAAEABsAAQAAAAAAAAANAB4AAQABAAAAAAAXAB4AAQAAAAAAAAAOACEAAQABAAAAAAARACYAAQAAAAAAAAANACgAAQABAAAAAAAEACoAAQACAAAAAAAEAC0AAQAAAAAAAAATAC4AAQAAAAAAAAAWADUAAQADAAAAAAAQADcAAQAAAAAAAAAXADgAAQADAAAAAAAFAD4AAQABAAAAAAAIAEAAAQADAAAAAAAOAEEAAQAAAAAAAAARAEEAAQADAAAAAAAXAEEAAQAAAAAAAAAKAEMAAQADAAAAAAASAEQAAQABAAAAAAADAEsAAQACAAAAAAAFAFAAAQAAAAAAAAAJAFEAAQAAAAAAAAAQAFQAAQACAAAAAAAJAFkAAQABAAAAAAAQAFkAAQAAAAAAAAAVAFkAAQADAAAAAAAFAFsAAQAAAAAAAAAKAFwAAQAAAAAAAAANAF0AAQAAAAAAAAABAGEAAQACAAAAAAAEAGEAAQABAAAAAAAVAGIAAQAAAAAAAAAQAGkAAQABAAAAAAAJAGoAAQABAAAAAAACAGwAAQABAAAAAAAWAG4AAQADAAAAAAAHAHAAAQABAAAAAAASAHEAAQABAAAAAAABAHIAAQACAAAAAAAEAHIAAQABAAAAAAAXAHMAAQADAAAAAAAIAHoAAQADAAAAAAATAIAAAQAAAAAAAAAWAIAAAQABAAAAAAAOAIMAAQAAAAAAAAAVAIUAAQAAAAAAAAAOAIYAAQABAAAAAAATAIgAAQAAAAAAAAAEAIsAAQACAAAAAAAHAIsAAQABAAAAAAAMAIsAAQABAAAAAAAPAIsAAQABAAAAAAANAI4AAQACAAAAAAAJAJEAAQABAAAAAAANAJIAAQADAAAAAAACAJQAAQABAAAAAAAIAJcAAQABAAAAAAAQAJcAAQADAAAAAAAMAJkAAQAAAAAAAAAIAJoAAQADAAAAAAAUAJoAAQABAAAAAAADAJsAAQADAAAAAAAQAJ8AAQAAAAAAAAAMAKEAAQACAAAAAAAGAKQAAQABAAAAAAAOAKYAAQAAAAAAAAASAKYAAQADAAAAAAAJAKcAAQABAAAAAAAIAK4AAQABAAAAAAAPAK4AAQAAAAAAAAAXALAAAQADAAAAAAANALIAAQABAAAAAAAEALQAAQAAAAAAAAAUALYAAQABAAAAAAAOALkAAQAAAAAAAAAOAL0AAQACAAAAAAAKAL8AAQAAAAAAAAADAMAAAQABAAAAAAAXAMQAAQADAAAAAAANAMcAAQADAAAAAAAUAMcAAQABAAAAAAAUAMwAAQAAAAAAAAAPANAAAQAAAAAAAAAEANIAAQACAAAAAAAKANMAAQAAAAAAAAASANQAAQACAAAAAAAEANcAAQABAAAAAAAIANcAAQABAAAAAAASANkAAQAAAAAAAAABANsAAQACAAAAAAAIANsAAQADAAAAAAAVANwAAQADAAAAAAAOAN0AAQABAAAAAAASAN0AAQAAAAAAAAABAOEAAQACAAAAAAAOAOEAAQADAAAAAAAVAOMAAQABAAAAAAABAOUAAQACAAAAAAAKAOYAAQAAAAAAAAADAOgAAQACAAAAAAAWAOoAAQACAAAAAAAHAOsAAQABAAAAAAALAOsAAQAAAAAAAAAMAO4AAQADAAAAAAAPAO4AAQACAAAAAAATAPAAAQAAAAAAAAAMAPEAAQADAAAAAAAPAPEAAQAAAAAAAAAEAPIAAQACAAAAAAAHAPQAAQAAAAAAAAAMAPQAAQADAAAAAAABAPYAAQAAAAAAAAAJAPgAAQAAAAAAAAAUAPoAAQABAAAAAAAFAP0AAQAAAAAAAAAMAP8AAQAAAAAAAAAQAP8AAQABAAAAAAAIAAEBAQACAAAAAAAHAAQBAQABAAAAAAAVAAYBAQACAAAAAAACAAgBAQAAAAAAAAARAAkBAQAAAAAAAAAVAAsBAQADAAAAAAALAA4BAQACAAAAAAADABEBAQAAAAAAAAAKABEBAQAAAAAAAAANABEBAQADAAAAAAAVABMBAQADAAAAAAACABUBAQADAAAAAAAKABUBAQABAAAAAAAJABkBAQAAAAAAAAACABwBAQADAAAAAAAVAB0BAQAAAAAAAAAIACABAQAAAAAAAAACACEBAQADAAAAAAAVACIBAQACAAAAAAAOACMBAQAAAAAAAAAQACcBAQAAAAAAAAAFACgBAQADAAAAAAABACoBAQAAAAAAAAATACoBAQAAAAAAAAAGACsBAQAAAAAAAAAOACsBAQAAAAAAAAAPADIBAQADAAAAAAALADMBAQACAAAAAAAEADQBAQABAAAAAAAHADkBAQABAAAAAAAEADoBAQABAAAAAAAMADoBAQADAAAAAAAPADsBAQAAAAAAAAASADsBAQABAAAAAAAMAD0BAQACAAAAAAAXAD4BAQABAAAAAAAEAD8BAQAAAAAAAAAQAEMBAQAAAAAAAAAUAEMBAQABAAAAAAAIAEUBAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_eb6dy")
+
+[node name="Collectibles" type="Node2D" parent="Level" unique_id=1947209979]
+
+[node name="Dot0" parent="Level/Collectibles" unique_id=2018017294 instance=ExtResource("4_dp3eg")]
+position = Vector2(200, 5240)
+
+[node name="Dot1" parent="Level/Collectibles" unique_id=300653602 instance=ExtResource("4_dp3eg")]
+position = Vector2(216, 5240)
+
+[node name="Dot2" parent="Level/Collectibles" unique_id=1692420203 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 5240)
+
+[node name="Dot3" parent="Level/Collectibles" unique_id=1690215106 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 5224)
+
+[node name="Dot4" parent="Level/Collectibles" unique_id=1974982201 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 5208)
+
+[node name="Dot5" parent="Level/Collectibles" unique_id=1268488104 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 5192)
+
+[node name="Dot6" parent="Level/Collectibles" unique_id=667139295 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 5176)
+
+[node name="Dot7" parent="Level/Collectibles" unique_id=1100281509 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 5160)
+
+[node name="Dot8" parent="Level/Collectibles" unique_id=894847333 instance=ExtResource("4_dp3eg")]
+position = Vector2(216, 5144)
+
+[node name="Dot9" parent="Level/Collectibles" unique_id=848393310 instance=ExtResource("4_dp3eg")]
+position = Vector2(216, 5160)
+
+[node name="Dot10" parent="Level/Collectibles" unique_id=1745156034 instance=ExtResource("4_dp3eg")]
+position = Vector2(216, 5176)
+
+[node name="Dot11" parent="Level/Collectibles" unique_id=328979278 instance=ExtResource("4_dp3eg")]
+position = Vector2(200, 5176)
+
+[node name="Dot12" parent="Level/Collectibles" unique_id=1126757894 instance=ExtResource("4_dp3eg")]
+position = Vector2(200, 5160)
+
+[node name="Dot13" parent="Level/Collectibles" unique_id=1742821252 instance=ExtResource("4_dp3eg")]
+position = Vector2(184, 5160)
+
+[node name="Dot14" parent="Level/Collectibles" unique_id=432403830 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 5160)
+
+[node name="Dot15" parent="Level/Collectibles" unique_id=817467143 instance=ExtResource("4_dp3eg")]
+position = Vector2(152, 5160)
+
+[node name="Dot16" parent="Level/Collectibles" unique_id=40347965 instance=ExtResource("4_dp3eg")]
+position = Vector2(136, 5160)
+
+[node name="Dot17" parent="Level/Collectibles" unique_id=2069059943 instance=ExtResource("4_dp3eg")]
+position = Vector2(136, 5144)
+
+[node name="Dot18" parent="Level/Collectibles" unique_id=237920903 instance=ExtResource("4_dp3eg")]
+position = Vector2(136, 5128)
+
+[node name="Dot19" parent="Level/Collectibles" unique_id=846118410 instance=ExtResource("4_dp3eg")]
+position = Vector2(136, 5112)
+
+[node name="Dot20" parent="Level/Collectibles" unique_id=1916473185 instance=ExtResource("4_dp3eg")]
+position = Vector2(136, 5096)
+
+[node name="Dot21" parent="Level/Collectibles" unique_id=167696881 instance=ExtResource("4_dp3eg")]
+position = Vector2(136, 5080)
+
+[node name="Dot22" parent="Level/Collectibles" unique_id=120327760 instance=ExtResource("4_dp3eg")]
+position = Vector2(136, 5064)
+
+[node name="Dot23" parent="Level/Collectibles" unique_id=1800571485 instance=ExtResource("4_dp3eg")]
+position = Vector2(136, 5048)
+
+[node name="Dot24" parent="Level/Collectibles" unique_id=755215138 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 5048)
+
+[node name="Dot25" parent="Level/Collectibles" unique_id=1397859509 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 5064)
+
+[node name="Dot26" parent="Level/Collectibles" unique_id=768926745 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 5080)
+
+[node name="Dot27" parent="Level/Collectibles" unique_id=2016917282 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 5096)
+
+[node name="Dot28" parent="Level/Collectibles" unique_id=1662561109 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 5112)
+
+[node name="Dot29" parent="Level/Collectibles" unique_id=2039524900 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 5128)
+
+[node name="Dot30" parent="Level/Collectibles" unique_id=65384119 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 5144)
+
+[node name="Dot31" parent="Level/Collectibles" unique_id=64937544 instance=ExtResource("4_dp3eg")]
+position = Vector2(104, 5144)
+
+[node name="Dot32" parent="Level/Collectibles" unique_id=1106049545 instance=ExtResource("4_dp3eg")]
+position = Vector2(88, 5144)
+
+[node name="Dot33" parent="Level/Collectibles" unique_id=1032254656 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 5144)
+
+[node name="Dot34" parent="Level/Collectibles" unique_id=713859355 instance=ExtResource("4_dp3eg")]
+position = Vector2(56, 5144)
+
+[node name="Dot35" parent="Level/Collectibles" unique_id=1476289972 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 5128)
+
+[node name="Dot36" parent="Level/Collectibles" unique_id=662130049 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 5112)
+
+[node name="Dot37" parent="Level/Collectibles" unique_id=976669115 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 5096)
+
+[node name="Dot38" parent="Level/Collectibles" unique_id=710171469 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 5080)
+
+[node name="Dot39" parent="Level/Collectibles" unique_id=1972707522 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 5064)
+
+[node name="Dot40" parent="Level/Collectibles" unique_id=270646204 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 5048)
+
+[node name="Dot41" parent="Level/Collectibles" unique_id=1078522749 instance=ExtResource("4_dp3eg")]
+position = Vector2(24, 5048)
+
+[node name="Dot42" parent="Level/Collectibles" unique_id=2047494186 instance=ExtResource("4_dp3eg")]
+position = Vector2(24, 5032)
+
+[node name="Dot43" parent="Level/Collectibles" unique_id=1011978954 instance=ExtResource("4_dp3eg")]
+position = Vector2(24, 5016)
+
+[node name="Dot44" parent="Level/Collectibles" unique_id=1237540772 instance=ExtResource("4_dp3eg")]
+position = Vector2(24, 5000)
+
+[node name="Dot45" parent="Level/Collectibles" unique_id=1338446324 instance=ExtResource("4_dp3eg")]
+position = Vector2(24, 4984)
+
+[node name="Dot46" parent="Level/Collectibles" unique_id=1738592513 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 4984)
+
+[node name="Dot47" parent="Level/Collectibles" unique_id=376647617 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 4968)
+
+[node name="Dot48" parent="Level/Collectibles" unique_id=340477512 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 4952)
+
+[node name="Dot49" parent="Level/Collectibles" unique_id=1279725117 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 4936)
+
+[node name="Dot50" parent="Level/Collectibles" unique_id=1125861985 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 4920)
+
+[node name="Dot51" parent="Level/Collectibles" unique_id=454498299 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 4904)
+
+[node name="Dot52" parent="Level/Collectibles" unique_id=941165154 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 4888)
+
+[node name="Dot53" parent="Level/Collectibles" unique_id=1348619039 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 4872)
+
+[node name="Dot54" parent="Level/Collectibles" unique_id=732454015 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 4856)
+
+[node name="Dot55" parent="Level/Collectibles" unique_id=995302549 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 4840)
+
+[node name="Dot56" parent="Level/Collectibles" unique_id=1294666821 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 4824)
+
+[node name="Dot57" parent="Level/Collectibles" unique_id=511064853 instance=ExtResource("4_dp3eg")]
+position = Vector2(56, 4824)
+
+[node name="Dot58" parent="Level/Collectibles" unique_id=1467064010 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 4824)
+
+[node name="Dot59" parent="Level/Collectibles" unique_id=1536608933 instance=ExtResource("4_dp3eg")]
+position = Vector2(88, 4824)
+
+[node name="Dot60" parent="Level/Collectibles" unique_id=159268307 instance=ExtResource("4_dp3eg")]
+position = Vector2(104, 4824)
+
+[node name="Dot61" parent="Level/Collectibles" unique_id=1185433667 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 4824)
+
+[node name="Dot62" parent="Level/Collectibles" unique_id=867183285 instance=ExtResource("4_dp3eg")]
+position = Vector2(136, 4824)
+
+[node name="Dot63" parent="Level/Collectibles" unique_id=83342339 instance=ExtResource("4_dp3eg")]
+position = Vector2(152, 4824)
+
+[node name="Dot64" parent="Level/Collectibles" unique_id=429820028 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 4824)
+
+[node name="Dot65" parent="Level/Collectibles" unique_id=1399916819 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 4808)
+
+[node name="Dot66" parent="Level/Collectibles" unique_id=1988810513 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 4792)
+
+[node name="Dot67" parent="Level/Collectibles" unique_id=382296166 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 4776)
+
+[node name="Dot68" parent="Level/Collectibles" unique_id=107144842 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 4760)
+
+[node name="Dot69" parent="Level/Collectibles" unique_id=1402065036 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 4744)
+
+[node name="Dot70" parent="Level/Collectibles" unique_id=1179877013 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 4728)
+
+[node name="Dot71" parent="Level/Collectibles" unique_id=2009214465 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 4712)
+
+[node name="Dot72" parent="Level/Collectibles" unique_id=1811696485 instance=ExtResource("4_dp3eg")]
+position = Vector2(184, 4712)
+
+[node name="Dot73" parent="Level/Collectibles" unique_id=113481791 instance=ExtResource("4_dp3eg")]
+position = Vector2(200, 4712)
+
+[node name="Dot74" parent="Level/Collectibles" unique_id=980277903 instance=ExtResource("4_dp3eg")]
+position = Vector2(216, 4712)
+
+[node name="Dot75" parent="Level/Collectibles" unique_id=1874220393 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 4712)
+
+[node name="Dot76" parent="Level/Collectibles" unique_id=1630726733 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 4696)
+
+[node name="Dot77" parent="Level/Collectibles" unique_id=1386220762 instance=ExtResource("4_dp3eg")]
+position = Vector2(248, 4696)
+
+[node name="Dot78" parent="Level/Collectibles" unique_id=414863577 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 4680)
+
+[node name="Dot79" parent="Level/Collectibles" unique_id=1049040170 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 4664)
+
+[node name="Dot80" parent="Level/Collectibles" unique_id=1536743814 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 4648)
+
+[node name="Dot81" parent="Level/Collectibles" unique_id=1467356648 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 4632)
+
+[node name="Dot82" parent="Level/Collectibles" unique_id=1895097445 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 4616)
+
+[node name="Dot83" parent="Level/Collectibles" unique_id=53958629 instance=ExtResource("4_dp3eg")]
+position = Vector2(280, 4616)
+
+[node name="Dot84" parent="Level/Collectibles" unique_id=287325553 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 4616)
+
+[node name="Dot85" parent="Level/Collectibles" unique_id=1396527793 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 4616)
+
+[node name="Dot86" parent="Level/Collectibles" unique_id=1148030089 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 4600)
+
+[node name="Dot87" parent="Level/Collectibles" unique_id=479705205 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 4584)
+
+[node name="Dot88" parent="Level/Collectibles" unique_id=1696652868 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 4568)
+
+[node name="Dot89" parent="Level/Collectibles" unique_id=1905511581 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 4568)
+
+[node name="Dot90" parent="Level/Collectibles" unique_id=1119932624 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 4552)
+
+[node name="Dot91" parent="Level/Collectibles" unique_id=1931172562 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 4536)
+
+[node name="Dot92" parent="Level/Collectibles" unique_id=2064255924 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 4520)
+
+[node name="Dot93" parent="Level/Collectibles" unique_id=305755231 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 4504)
+
+[node name="Dot94" parent="Level/Collectibles" unique_id=354436359 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 4488)
+
+[node name="Dot95" parent="Level/Collectibles" unique_id=1429965405 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 4472)
+
+[node name="Dot96" parent="Level/Collectibles" unique_id=1823280913 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 4456)
+
+[node name="Dot97" parent="Level/Collectibles" unique_id=409443172 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 4440)
+
+[node name="Dot98" parent="Level/Collectibles" unique_id=847457288 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 4424)
+
+[node name="Dot99" parent="Level/Collectibles" unique_id=595848353 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 4408)
+
+[node name="Dot100" parent="Level/Collectibles" unique_id=923441351 instance=ExtResource("4_dp3eg")]
+position = Vector2(280, 4408)
+
+[node name="Dot101" parent="Level/Collectibles" unique_id=1154632219 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 4408)
+
+[node name="Dot102" parent="Level/Collectibles" unique_id=899244605 instance=ExtResource("4_dp3eg")]
+position = Vector2(248, 4408)
+
+[node name="Dot103" parent="Level/Collectibles" unique_id=1874114480 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 4408)
+
+[node name="Dot104" parent="Level/Collectibles" unique_id=178918519 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 4424)
+
+[node name="Dot105" parent="Level/Collectibles" unique_id=832884261 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 4440)
+
+[node name="Dot106" parent="Level/Collectibles" unique_id=664787659 instance=ExtResource("4_dp3eg")]
+position = Vector2(248, 4440)
+
+[node name="Dot107" parent="Level/Collectibles" unique_id=412006330 instance=ExtResource("4_dp3eg")]
+position = Vector2(248, 4424)
+
+[node name="Dot108" parent="Level/Collectibles" unique_id=748876063 instance=ExtResource("4_dp3eg")]
+position = Vector2(248, 4392)
+
+[node name="Dot109" parent="Level/Collectibles" unique_id=385154558 instance=ExtResource("4_dp3eg")]
+position = Vector2(248, 4376)
+
+[node name="Dot110" parent="Level/Collectibles" unique_id=575741015 instance=ExtResource("4_dp3eg")]
+position = Vector2(248, 4360)
+
+[node name="Dot111" parent="Level/Collectibles" unique_id=1006250416 instance=ExtResource("4_dp3eg")]
+position = Vector2(248, 4344)
+
+[node name="Dot112" parent="Level/Collectibles" unique_id=1078593043 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 4328)
+
+[node name="Dot113" parent="Level/Collectibles" unique_id=1685569929 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 4312)
+
+[node name="Dot114" parent="Level/Collectibles" unique_id=1760186302 instance=ExtResource("4_dp3eg")]
+position = Vector2(248, 4312)
+
+[node name="Dot115" parent="Level/Collectibles" unique_id=902789249 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 4312)
+
+[node name="Dot116" parent="Level/Collectibles" unique_id=627767185 instance=ExtResource("4_dp3eg")]
+position = Vector2(216, 4312)
+
+[node name="Dot117" parent="Level/Collectibles" unique_id=1014378922 instance=ExtResource("4_dp3eg")]
+position = Vector2(216, 4296)
+
+[node name="Dot118" parent="Level/Collectibles" unique_id=390023600 instance=ExtResource("4_dp3eg")]
+position = Vector2(216, 4280)
+
+[node name="Dot119" parent="Level/Collectibles" unique_id=709627121 instance=ExtResource("4_dp3eg")]
+position = Vector2(200, 4280)
+
+[node name="Dot120" parent="Level/Collectibles" unique_id=1125263656 instance=ExtResource("4_dp3eg")]
+position = Vector2(184, 4280)
+
+[node name="Dot121" parent="Level/Collectibles" unique_id=1045200467 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 4280)
+
+[node name="Dot122" parent="Level/Collectibles" unique_id=964734504 instance=ExtResource("4_dp3eg")]
+position = Vector2(152, 4280)
+
+[node name="Dot123" parent="Level/Collectibles" unique_id=267924853 instance=ExtResource("4_dp3eg")]
+position = Vector2(136, 4280)
+
+[node name="Dot124" parent="Level/Collectibles" unique_id=1142264720 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 4280)
+
+[node name="Dot125" parent="Level/Collectibles" unique_id=1720690776 instance=ExtResource("4_dp3eg")]
+position = Vector2(104, 4280)
+
+[node name="Dot126" parent="Level/Collectibles" unique_id=1136782388 instance=ExtResource("4_dp3eg")]
+position = Vector2(104, 4296)
+
+[node name="Dot127" parent="Level/Collectibles" unique_id=1720925990 instance=ExtResource("4_dp3eg")]
+position = Vector2(88, 4296)
+
+[node name="Dot128" parent="Level/Collectibles" unique_id=598051181 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 4296)
+
+[node name="Dot129" parent="Level/Collectibles" unique_id=1762673819 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 4280)
+
+[node name="Dot130" parent="Level/Collectibles" unique_id=213079029 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 4264)
+
+[node name="Dot131" parent="Level/Collectibles" unique_id=1830786845 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 4248)
+
+[node name="Dot132" parent="Level/Collectibles" unique_id=470272292 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 4232)
+
+[node name="Dot133" parent="Level/Collectibles" unique_id=506787739 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 4216)
+
+[node name="Dot134" parent="Level/Collectibles" unique_id=20535185 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 4200)
+
+[node name="Dot135" parent="Level/Collectibles" unique_id=2057999071 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 4184)
+
+[node name="Dot136" parent="Level/Collectibles" unique_id=209972807 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 4168)
+
+[node name="Dot137" parent="Level/Collectibles" unique_id=1896823729 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 4152)
+
+[node name="Dot138" parent="Level/Collectibles" unique_id=985201631 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 4136)
+
+[node name="Dot139" parent="Level/Collectibles" unique_id=1396585537 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 4120)
+
+[node name="Dot140" parent="Level/Collectibles" unique_id=719619123 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 4104)
+
+[node name="Dot141" parent="Level/Collectibles" unique_id=886178613 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 4088)
+
+[node name="Dot142" parent="Level/Collectibles" unique_id=1180507766 instance=ExtResource("4_dp3eg")]
+position = Vector2(56, 4088)
+
+[node name="Dot143" parent="Level/Collectibles" unique_id=1692153662 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 4088)
+
+[node name="Dot144" parent="Level/Collectibles" unique_id=1800044854 instance=ExtResource("4_dp3eg")]
+position = Vector2(24, 4088)
+
+[node name="Dot145" parent="Level/Collectibles" unique_id=1834273309 instance=ExtResource("4_dp3eg")]
+position = Vector2(24, 4072)
+
+[node name="Dot146" parent="Level/Collectibles" unique_id=1827659901 instance=ExtResource("4_dp3eg")]
+position = Vector2(24, 4056)
+
+[node name="Dot147" parent="Level/Collectibles" unique_id=1449670808 instance=ExtResource("4_dp3eg")]
+position = Vector2(24, 4040)
+
+[node name="Dot148" parent="Level/Collectibles" unique_id=401811523 instance=ExtResource("4_dp3eg")]
+position = Vector2(24, 4024)
+
+[node name="Dot149" parent="Level/Collectibles" unique_id=2074158329 instance=ExtResource("4_dp3eg")]
+position = Vector2(24, 4008)
+
+[node name="Dot150" parent="Level/Collectibles" unique_id=68378855 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 4008)
+
+[node name="Dot151" parent="Level/Collectibles" unique_id=765807208 instance=ExtResource("4_dp3eg")]
+position = Vector2(56, 4008)
+
+[node name="Dot152" parent="Level/Collectibles" unique_id=1827931437 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 4008)
+
+[node name="Dot153" parent="Level/Collectibles" unique_id=346637656 instance=ExtResource("4_dp3eg")]
+position = Vector2(88, 4008)
+
+[node name="Dot154" parent="Level/Collectibles" unique_id=765273707 instance=ExtResource("4_dp3eg")]
+position = Vector2(104, 4008)
+
+[node name="Dot155" parent="Level/Collectibles" unique_id=1216891274 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 4008)
+
+[node name="Dot156" parent="Level/Collectibles" unique_id=1485658720 instance=ExtResource("4_dp3eg")]
+position = Vector2(136, 4008)
+
+[node name="Dot157" parent="Level/Collectibles" unique_id=1239074135 instance=ExtResource("4_dp3eg")]
+position = Vector2(152, 4008)
+
+[node name="Dot158" parent="Level/Collectibles" unique_id=1710384003 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 4024)
+
+[node name="Dot159" parent="Level/Collectibles" unique_id=1166159548 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 4040)
+
+[node name="Dot160" parent="Level/Collectibles" unique_id=475021362 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 4056)
+
+[node name="Dot161" parent="Level/Collectibles" unique_id=245565001 instance=ExtResource("4_dp3eg")]
+position = Vector2(184, 4056)
+
+[node name="Dot162" parent="Level/Collectibles" unique_id=1343124391 instance=ExtResource("4_dp3eg")]
+position = Vector2(184, 4040)
+
+[node name="Dot163" parent="Level/Collectibles" unique_id=1547625221 instance=ExtResource("4_dp3eg")]
+position = Vector2(184, 4024)
+
+[node name="Dot164" parent="Level/Collectibles" unique_id=612309627 instance=ExtResource("4_dp3eg")]
+position = Vector2(200, 4024)
+
+[node name="Dot165" parent="Level/Collectibles" unique_id=1203570884 instance=ExtResource("4_dp3eg")]
+position = Vector2(200, 4008)
+
+[node name="Dot166" parent="Level/Collectibles" unique_id=1623289022 instance=ExtResource("4_dp3eg")]
+position = Vector2(216, 4008)
+
+[node name="Dot167" parent="Level/Collectibles" unique_id=1229859867 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 4008)
+
+[node name="Dot168" parent="Level/Collectibles" unique_id=1579747178 instance=ExtResource("4_dp3eg")]
+position = Vector2(248, 4008)
+
+[node name="Dot169" parent="Level/Collectibles" unique_id=470495762 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 4008)
+
+[node name="Dot170" parent="Level/Collectibles" unique_id=1233711388 instance=ExtResource("4_dp3eg")]
+position = Vector2(280, 4008)
+
+[node name="Dot171" parent="Level/Collectibles" unique_id=642863690 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 4008)
+
+[node name="Dot172" parent="Level/Collectibles" unique_id=1218671201 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 4024)
+
+[node name="Dot173" parent="Level/Collectibles" unique_id=585741874 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 4040)
+
+[node name="Dot174" parent="Level/Collectibles" unique_id=1449474096 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 4056)
+
+[node name="Dot175" parent="Level/Collectibles" unique_id=1203430016 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 4072)
+
+[node name="Dot176" parent="Level/Collectibles" unique_id=294795336 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 4072)
+
+[node name="Dot177" parent="Level/Collectibles" unique_id=227874537 instance=ExtResource("4_dp3eg")]
+position = Vector2(328, 4072)
+
+[node name="Dot178" parent="Level/Collectibles" unique_id=1688344987 instance=ExtResource("4_dp3eg")]
+position = Vector2(328, 4088)
+
+[node name="Dot179" parent="Level/Collectibles" unique_id=576318755 instance=ExtResource("4_dp3eg")]
+position = Vector2(328, 4104)
+
+[node name="Dot180" parent="Level/Collectibles" unique_id=217083434 instance=ExtResource("4_dp3eg")]
+position = Vector2(328, 4120)
+
+[node name="Dot181" parent="Level/Collectibles" unique_id=2060579892 instance=ExtResource("4_dp3eg")]
+position = Vector2(328, 4136)
+
+[node name="Dot182" parent="Level/Collectibles" unique_id=946416419 instance=ExtResource("4_dp3eg")]
+position = Vector2(344, 4136)
+
+[node name="Dot183" parent="Level/Collectibles" unique_id=377810448 instance=ExtResource("4_dp3eg")]
+position = Vector2(360, 4136)
+
+[node name="Dot184" parent="Level/Collectibles" unique_id=237710004 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 4120)
+
+[node name="Dot185" parent="Level/Collectibles" unique_id=1480054124 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 4104)
+
+[node name="Dot186" parent="Level/Collectibles" unique_id=139764089 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 4088)
+
+[node name="Dot187" parent="Level/Collectibles" unique_id=1640182188 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 4072)
+
+[node name="Dot188" parent="Level/Collectibles" unique_id=775048292 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 4056)
+
+[node name="Dot189" parent="Level/Collectibles" unique_id=1561252663 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 4040)
+
+[node name="Dot190" parent="Level/Collectibles" unique_id=1732962857 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 4024)
+
+[node name="Dot191" parent="Level/Collectibles" unique_id=408347875 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 4008)
+
+[node name="Dot192" parent="Level/Collectibles" unique_id=1397155015 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 3992)
+
+[node name="Dot193" parent="Level/Collectibles" unique_id=1363100542 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 3976)
+
+[node name="Dot194" parent="Level/Collectibles" unique_id=238320515 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 3960)
+
+[node name="Dot195" parent="Level/Collectibles" unique_id=1097972559 instance=ExtResource("4_dp3eg")]
+position = Vector2(360, 3960)
+
+[node name="Dot196" parent="Level/Collectibles" unique_id=683345454 instance=ExtResource("4_dp3eg")]
+position = Vector2(344, 3960)
+
+[node name="Dot197" parent="Level/Collectibles" unique_id=604393557 instance=ExtResource("4_dp3eg")]
+position = Vector2(328, 3960)
+
+[node name="Dot198" parent="Level/Collectibles" unique_id=1272953519 instance=ExtResource("4_dp3eg")]
+position = Vector2(328, 3976)
+
+[node name="Dot199" parent="Level/Collectibles" unique_id=1808283995 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 3976)
+
+[node name="Dot200" parent="Level/Collectibles" unique_id=147256489 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 3976)
+
+[node name="Dot201" parent="Level/Collectibles" unique_id=634995371 instance=ExtResource("4_dp3eg")]
+position = Vector2(280, 3976)
+
+[node name="Dot202" parent="Level/Collectibles" unique_id=2011063742 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 3976)
+
+[node name="Dot203" parent="Level/Collectibles" unique_id=685602205 instance=ExtResource("4_dp3eg")]
+position = Vector2(248, 3976)
+
+[node name="Dot204" parent="Level/Collectibles" unique_id=356584279 instance=ExtResource("4_dp3eg")]
+position = Vector2(248, 3960)
+
+[node name="Dot205" parent="Level/Collectibles" unique_id=570188942 instance=ExtResource("4_dp3eg")]
+position = Vector2(248, 3944)
+
+[node name="Dot206" parent="Level/Collectibles" unique_id=560022278 instance=ExtResource("4_dp3eg")]
+position = Vector2(248, 3928)
+
+[node name="Dot207" parent="Level/Collectibles" unique_id=145031802 instance=ExtResource("4_dp3eg")]
+position = Vector2(248, 3912)
+
+[node name="Dot208" parent="Level/Collectibles" unique_id=39786749 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 3912)
+
+[node name="Dot209" parent="Level/Collectibles" unique_id=893995177 instance=ExtResource("4_dp3eg")]
+position = Vector2(280, 3912)
+
+[node name="Dot210" parent="Level/Collectibles" unique_id=1870780660 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 3912)
+
+[node name="Dot211" parent="Level/Collectibles" unique_id=1938556422 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 3912)
+
+[node name="Dot212" parent="Level/Collectibles" unique_id=1953279120 instance=ExtResource("4_dp3eg")]
+position = Vector2(328, 3912)
+
+[node name="Dot213" parent="Level/Collectibles" unique_id=1678120840 instance=ExtResource("4_dp3eg")]
+position = Vector2(344, 3912)
+
+[node name="Dot214" parent="Level/Collectibles" unique_id=561993560 instance=ExtResource("4_dp3eg")]
+position = Vector2(344, 3928)
+
+[node name="Dot215" parent="Level/Collectibles" unique_id=900192646 instance=ExtResource("4_dp3eg")]
+position = Vector2(360, 3928)
+
+[node name="Dot216" parent="Level/Collectibles" unique_id=2083251062 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 3928)
+
+[node name="Dot217" parent="Level/Collectibles" unique_id=43135656 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 3912)
+
+[node name="Dot218" parent="Level/Collectibles" unique_id=133075748 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 3896)
+
+[node name="Dot219" parent="Level/Collectibles" unique_id=217124615 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 3880)
+
+[node name="Dot220" parent="Level/Collectibles" unique_id=515142656 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 3864)
+
+[node name="Dot221" parent="Level/Collectibles" unique_id=59344253 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 3848)
+
+[node name="Dot222" parent="Level/Collectibles" unique_id=675545287 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 3832)
+
+[node name="Dot223" parent="Level/Collectibles" unique_id=274184121 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 3816)
+
+[node name="Dot224" parent="Level/Collectibles" unique_id=211584599 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 3800)
+
+[node name="Dot225" parent="Level/Collectibles" unique_id=1482801218 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 3784)
+
+[node name="Dot226" parent="Level/Collectibles" unique_id=1215121128 instance=ExtResource("4_dp3eg")]
+position = Vector2(360, 3784)
+
+[node name="Dot227" parent="Level/Collectibles" unique_id=1247983628 instance=ExtResource("4_dp3eg")]
+position = Vector2(344, 3784)
+
+[node name="Dot228" parent="Level/Collectibles" unique_id=2020283256 instance=ExtResource("4_dp3eg")]
+position = Vector2(328, 3784)
+
+[node name="Dot229" parent="Level/Collectibles" unique_id=1851340178 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 3784)
+
+[node name="Dot230" parent="Level/Collectibles" unique_id=762278169 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 3784)
+
+[node name="Dot231" parent="Level/Collectibles" unique_id=686402445 instance=ExtResource("4_dp3eg")]
+position = Vector2(280, 3784)
+
+[node name="Dot232" parent="Level/Collectibles" unique_id=1684514925 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 3784)
+
+[node name="Dot233" parent="Level/Collectibles" unique_id=989348557 instance=ExtResource("4_dp3eg")]
+position = Vector2(248, 3784)
+
+[node name="Dot234" parent="Level/Collectibles" unique_id=1314070312 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 3768)
+
+[node name="Dot235" parent="Level/Collectibles" unique_id=1353739907 instance=ExtResource("4_dp3eg")]
+position = Vector2(248, 3768)
+
+[node name="Dot236" parent="Level/Collectibles" unique_id=1415994263 instance=ExtResource("4_dp3eg")]
+position = Vector2(248, 3752)
+
+[node name="Dot237" parent="Level/Collectibles" unique_id=1543767823 instance=ExtResource("4_dp3eg")]
+position = Vector2(248, 3736)
+
+[node name="Dot238" parent="Level/Collectibles" unique_id=1331013477 instance=ExtResource("4_dp3eg")]
+position = Vector2(248, 3720)
+
+[node name="Dot239" parent="Level/Collectibles" unique_id=91627690 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 3720)
+
+[node name="Dot240" parent="Level/Collectibles" unique_id=1995872538 instance=ExtResource("4_dp3eg")]
+position = Vector2(280, 3720)
+
+[node name="Dot241" parent="Level/Collectibles" unique_id=877992598 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 3720)
+
+[node name="Dot242" parent="Level/Collectibles" unique_id=688741686 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 3720)
+
+[node name="Dot243" parent="Level/Collectibles" unique_id=1315209749 instance=ExtResource("4_dp3eg")]
+position = Vector2(328, 3720)
+
+[node name="Dot244" parent="Level/Collectibles" unique_id=473075272 instance=ExtResource("4_dp3eg")]
+position = Vector2(344, 3720)
+
+[node name="Dot245" parent="Level/Collectibles" unique_id=1285728649 instance=ExtResource("4_dp3eg")]
+position = Vector2(360, 3720)
+
+[node name="Dot246" parent="Level/Collectibles" unique_id=1003575934 instance=ExtResource("4_dp3eg")]
+position = Vector2(360, 3704)
+
+[node name="Dot247" parent="Level/Collectibles" unique_id=925094240 instance=ExtResource("4_dp3eg")]
+position = Vector2(344, 3704)
+
+[node name="Dot248" parent="Level/Collectibles" unique_id=1461525579 instance=ExtResource("4_dp3eg")]
+position = Vector2(328, 3704)
+
+[node name="Dot249" parent="Level/Collectibles" unique_id=1896356519 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 3704)
+
+[node name="Dot250" parent="Level/Collectibles" unique_id=266495997 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 3704)
+
+[node name="Dot251" parent="Level/Collectibles" unique_id=1484169058 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 3688)
+
+[node name="Dot252" parent="Level/Collectibles" unique_id=813474298 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 3672)
+
+[node name="Dot253" parent="Level/Collectibles" unique_id=1859629327 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 3656)
+
+[node name="Dot254" parent="Level/Collectibles" unique_id=1086451486 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 3640)
+
+[node name="Dot255" parent="Level/Collectibles" unique_id=1473303285 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 3624)
+
+[node name="Dot256" parent="Level/Collectibles" unique_id=1993699423 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 3608)
+
+[node name="Dot257" parent="Level/Collectibles" unique_id=550258714 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 3608)
+
+[node name="Dot258" parent="Level/Collectibles" unique_id=845472732 instance=ExtResource("4_dp3eg")]
+position = Vector2(328, 3608)
+
+[node name="Dot259" parent="Level/Collectibles" unique_id=636810504 instance=ExtResource("4_dp3eg")]
+position = Vector2(344, 3608)
+
+[node name="Dot260" parent="Level/Collectibles" unique_id=2043803639 instance=ExtResource("4_dp3eg")]
+position = Vector2(360, 3608)
+
+[node name="Dot261" parent="Level/Collectibles" unique_id=1764098254 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 3608)
+
+[node name="Dot262" parent="Level/Collectibles" unique_id=775186892 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 3592)
+
+[node name="Dot263" parent="Level/Collectibles" unique_id=133761009 instance=ExtResource("4_dp3eg")]
+position = Vector2(360, 3576)
+
+[node name="Dot264" parent="Level/Collectibles" unique_id=1589231390 instance=ExtResource("4_dp3eg")]
+position = Vector2(344, 3576)
+
+[node name="Dot265" parent="Level/Collectibles" unique_id=1545821646 instance=ExtResource("4_dp3eg")]
+position = Vector2(328, 3576)
+
+[node name="Dot266" parent="Level/Collectibles" unique_id=947894916 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 3576)
+
+[node name="Dot267" parent="Level/Collectibles" unique_id=1896387076 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 3576)
+
+[node name="Dot268" parent="Level/Collectibles" unique_id=60816581 instance=ExtResource("4_dp3eg")]
+position = Vector2(280, 3576)
+
+[node name="Dot269" parent="Level/Collectibles" unique_id=614368325 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 3576)
+
+[node name="Dot270" parent="Level/Collectibles" unique_id=1503146732 instance=ExtResource("4_dp3eg")]
+position = Vector2(248, 3576)
+
+[node name="Dot271" parent="Level/Collectibles" unique_id=719846533 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 3576)
+
+[node name="Dot272" parent="Level/Collectibles" unique_id=631816116 instance=ExtResource("4_dp3eg")]
+position = Vector2(216, 3576)
+
+[node name="Dot273" parent="Level/Collectibles" unique_id=1571492572 instance=ExtResource("4_dp3eg")]
+position = Vector2(200, 3576)
+
+[node name="Dot274" parent="Level/Collectibles" unique_id=2067899697 instance=ExtResource("4_dp3eg")]
+position = Vector2(184, 3576)
+
+[node name="Dot275" parent="Level/Collectibles" unique_id=1661738296 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 3576)
+
+[node name="Dot276" parent="Level/Collectibles" unique_id=1727650029 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 3560)
+
+[node name="Dot277" parent="Level/Collectibles" unique_id=1976797100 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 3544)
+
+[node name="Dot278" parent="Level/Collectibles" unique_id=272669964 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 3528)
+
+[node name="Dot279" parent="Level/Collectibles" unique_id=647678128 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 3512)
+
+[node name="Dot280" parent="Level/Collectibles" unique_id=1659038558 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 3496)
+
+[node name="Dot281" parent="Level/Collectibles" unique_id=904720090 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 3480)
+
+[node name="Dot282" parent="Level/Collectibles" unique_id=694794999 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 3464)
+
+[node name="Dot283" parent="Level/Collectibles" unique_id=1267579475 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 3448)
+
+[node name="Dot284" parent="Level/Collectibles" unique_id=1949092877 instance=ExtResource("4_dp3eg")]
+position = Vector2(184, 3448)
+
+[node name="Dot285" parent="Level/Collectibles" unique_id=53529691 instance=ExtResource("4_dp3eg")]
+position = Vector2(200, 3448)
+
+[node name="Dot286" parent="Level/Collectibles" unique_id=1174272930 instance=ExtResource("4_dp3eg")]
+position = Vector2(216, 3448)
+
+[node name="Dot287" parent="Level/Collectibles" unique_id=2064691070 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 3448)
+
+[node name="Dot288" parent="Level/Collectibles" unique_id=745478462 instance=ExtResource("4_dp3eg")]
+position = Vector2(248, 3448)
+
+[node name="Dot289" parent="Level/Collectibles" unique_id=434016983 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 3448)
+
+[node name="Dot290" parent="Level/Collectibles" unique_id=1214443781 instance=ExtResource("4_dp3eg")]
+position = Vector2(280, 3448)
+
+[node name="Dot291" parent="Level/Collectibles" unique_id=130570794 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 3448)
+
+[node name="Dot292" parent="Level/Collectibles" unique_id=1559792189 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 3448)
+
+[node name="Dot293" parent="Level/Collectibles" unique_id=251801516 instance=ExtResource("4_dp3eg")]
+position = Vector2(328, 3448)
+
+[node name="Dot294" parent="Level/Collectibles" unique_id=358158942 instance=ExtResource("4_dp3eg")]
+position = Vector2(344, 3448)
+
+[node name="Dot295" parent="Level/Collectibles" unique_id=1339228584 instance=ExtResource("4_dp3eg")]
+position = Vector2(344, 3432)
+
+[node name="Dot296" parent="Level/Collectibles" unique_id=273464488 instance=ExtResource("4_dp3eg")]
+position = Vector2(344, 3416)
+
+[node name="Dot297" parent="Level/Collectibles" unique_id=264010707 instance=ExtResource("4_dp3eg")]
+position = Vector2(344, 3400)
+
+[node name="Dot298" parent="Level/Collectibles" unique_id=90141360 instance=ExtResource("4_dp3eg")]
+position = Vector2(344, 3384)
+
+[node name="Dot299" parent="Level/Collectibles" unique_id=279899949 instance=ExtResource("4_dp3eg")]
+position = Vector2(344, 3368)
+
+[node name="Dot300" parent="Level/Collectibles" unique_id=1132240367 instance=ExtResource("4_dp3eg")]
+position = Vector2(328, 3368)
+
+[node name="Dot301" parent="Level/Collectibles" unique_id=770296508 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 3368)
+
+[node name="Dot302" parent="Level/Collectibles" unique_id=1291945986 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 3368)
+
+[node name="Dot303" parent="Level/Collectibles" unique_id=1401340619 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 3352)
+
+[node name="Dot304" parent="Level/Collectibles" unique_id=1418319430 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 3336)
+
+[node name="Dot305" parent="Level/Collectibles" unique_id=659057976 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 3320)
+
+[node name="Dot306" parent="Level/Collectibles" unique_id=71835022 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 3304)
+
+[node name="Dot307" parent="Level/Collectibles" unique_id=922186808 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 3288)
+
+[node name="Dot308" parent="Level/Collectibles" unique_id=1251518611 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 3272)
+
+[node name="Dot309" parent="Level/Collectibles" unique_id=281222492 instance=ExtResource("4_dp3eg")]
+position = Vector2(280, 3272)
+
+[node name="Dot310" parent="Level/Collectibles" unique_id=774442867 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 3272)
+
+[node name="Dot311" parent="Level/Collectibles" unique_id=901845886 instance=ExtResource("4_dp3eg")]
+position = Vector2(248, 3272)
+
+[node name="Dot312" parent="Level/Collectibles" unique_id=834861176 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 3272)
+
+[node name="Dot313" parent="Level/Collectibles" unique_id=819992536 instance=ExtResource("4_dp3eg")]
+position = Vector2(216, 3272)
+
+[node name="Dot314" parent="Level/Collectibles" unique_id=523905678 instance=ExtResource("4_dp3eg")]
+position = Vector2(216, 3288)
+
+[node name="Dot315" parent="Level/Collectibles" unique_id=1677734541 instance=ExtResource("4_dp3eg")]
+position = Vector2(216, 3304)
+
+[node name="Dot316" parent="Level/Collectibles" unique_id=914059353 instance=ExtResource("4_dp3eg")]
+position = Vector2(216, 3320)
+
+[node name="Dot317" parent="Level/Collectibles" unique_id=1432907699 instance=ExtResource("4_dp3eg")]
+position = Vector2(216, 3336)
+
+[node name="Dot318" parent="Level/Collectibles" unique_id=481512868 instance=ExtResource("4_dp3eg")]
+position = Vector2(200, 3336)
+
+[node name="Dot319" parent="Level/Collectibles" unique_id=1674101757 instance=ExtResource("4_dp3eg")]
+position = Vector2(184, 3336)
+
+[node name="Dot320" parent="Level/Collectibles" unique_id=278882268 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 3336)
+
+[node name="Dot321" parent="Level/Collectibles" unique_id=403992634 instance=ExtResource("4_dp3eg")]
+position = Vector2(152, 3336)
+
+[node name="Dot322" parent="Level/Collectibles" unique_id=1175926999 instance=ExtResource("4_dp3eg")]
+position = Vector2(136, 3336)
+
+[node name="Dot323" parent="Level/Collectibles" unique_id=71025306 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 3336)
+
+[node name="Dot324" parent="Level/Collectibles" unique_id=1430695045 instance=ExtResource("4_dp3eg")]
+position = Vector2(104, 3336)
+
+[node name="Dot325" parent="Level/Collectibles" unique_id=1550318631 instance=ExtResource("4_dp3eg")]
+position = Vector2(88, 3336)
+
+[node name="Dot326" parent="Level/Collectibles" unique_id=2017178793 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 3336)
+
+[node name="Dot327" parent="Level/Collectibles" unique_id=1172498935 instance=ExtResource("4_dp3eg")]
+position = Vector2(56, 3336)
+
+[node name="Dot328" parent="Level/Collectibles" unique_id=1478346532 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 3336)
+
+[node name="Dot329" parent="Level/Collectibles" unique_id=1201634694 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 3320)
+
+[node name="Dot330" parent="Level/Collectibles" unique_id=862246969 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 3304)
+
+[node name="Dot331" parent="Level/Collectibles" unique_id=1919426667 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 3288)
+
+[node name="Dot332" parent="Level/Collectibles" unique_id=557553152 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 3272)
+
+[node name="Dot333" parent="Level/Collectibles" unique_id=1699221352 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 3256)
+
+[node name="Dot334" parent="Level/Collectibles" unique_id=327147646 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 3240)
+
+[node name="Dot335" parent="Level/Collectibles" unique_id=500175593 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 3224)
+
+[node name="Dot336" parent="Level/Collectibles" unique_id=60169514 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 3208)
+
+[node name="Dot337" parent="Level/Collectibles" unique_id=45639213 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 3192)
+
+[node name="Dot338" parent="Level/Collectibles" unique_id=604491255 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 3176)
+
+[node name="Dot339" parent="Level/Collectibles" unique_id=1172110733 instance=ExtResource("4_dp3eg")]
+position = Vector2(56, 3160)
+
+[node name="Dot340" parent="Level/Collectibles" unique_id=1038308152 instance=ExtResource("4_dp3eg")]
+position = Vector2(56, 3144)
+
+[node name="Dot341" parent="Level/Collectibles" unique_id=907389976 instance=ExtResource("4_dp3eg")]
+position = Vector2(56, 3128)
+
+[node name="Dot342" parent="Level/Collectibles" unique_id=576540790 instance=ExtResource("4_dp3eg")]
+position = Vector2(56, 3112)
+
+[node name="Dot343" parent="Level/Collectibles" unique_id=2068317866 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 3112)
+
+[node name="Dot344" parent="Level/Collectibles" unique_id=685909076 instance=ExtResource("4_dp3eg")]
+position = Vector2(88, 3112)
+
+[node name="Dot345" parent="Level/Collectibles" unique_id=307764592 instance=ExtResource("4_dp3eg")]
+position = Vector2(104, 3112)
+
+[node name="Dot346" parent="Level/Collectibles" unique_id=2037713854 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 3112)
+
+[node name="Dot347" parent="Level/Collectibles" unique_id=1355994974 instance=ExtResource("4_dp3eg")]
+position = Vector2(136, 3112)
+
+[node name="Dot348" parent="Level/Collectibles" unique_id=1284854763 instance=ExtResource("4_dp3eg")]
+position = Vector2(136, 3096)
+
+[node name="Dot349" parent="Level/Collectibles" unique_id=202085538 instance=ExtResource("4_dp3eg")]
+position = Vector2(136, 3080)
+
+[node name="Dot350" parent="Level/Collectibles" unique_id=1812926974 instance=ExtResource("4_dp3eg")]
+position = Vector2(136, 3064)
+
+[node name="Dot351" parent="Level/Collectibles" unique_id=395048624 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 3064)
+
+[node name="Dot352" parent="Level/Collectibles" unique_id=1197520051 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 3048)
+
+[node name="Dot353" parent="Level/Collectibles" unique_id=91623310 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 3032)
+
+[node name="Dot354" parent="Level/Collectibles" unique_id=1406322277 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 3016)
+
+[node name="Dot355" parent="Level/Collectibles" unique_id=1869992128 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 3000)
+
+[node name="Dot356" parent="Level/Collectibles" unique_id=2074387902 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 2984)
+
+[node name="Dot357" parent="Level/Collectibles" unique_id=1779063356 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 2968)
+
+[node name="Dot358" parent="Level/Collectibles" unique_id=1113906918 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 2952)
+
+[node name="Dot359" parent="Level/Collectibles" unique_id=1770643098 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 2936)
+
+[node name="Dot360" parent="Level/Collectibles" unique_id=579561605 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 2920)
+
+[node name="Dot361" parent="Level/Collectibles" unique_id=741675619 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 2904)
+
+[node name="Dot362" parent="Level/Collectibles" unique_id=1369371222 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 2888)
+
+[node name="Dot363" parent="Level/Collectibles" unique_id=1127655556 instance=ExtResource("4_dp3eg")]
+position = Vector2(136, 2888)
+
+[node name="Dot364" parent="Level/Collectibles" unique_id=1630345022 instance=ExtResource("4_dp3eg")]
+position = Vector2(152, 2888)
+
+[node name="Dot365" parent="Level/Collectibles" unique_id=1605778231 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 2888)
+
+[node name="Dot366" parent="Level/Collectibles" unique_id=691821641 instance=ExtResource("4_dp3eg")]
+position = Vector2(184, 2888)
+
+[node name="Dot367" parent="Level/Collectibles" unique_id=130808287 instance=ExtResource("4_dp3eg")]
+position = Vector2(200, 2888)
+
+[node name="Dot368" parent="Level/Collectibles" unique_id=1422760168 instance=ExtResource("4_dp3eg")]
+position = Vector2(216, 2888)
+
+[node name="Dot369" parent="Level/Collectibles" unique_id=1815286949 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 2888)
+
+[node name="Dot370" parent="Level/Collectibles" unique_id=34501356 instance=ExtResource("4_dp3eg")]
+position = Vector2(248, 2888)
+
+[node name="Dot371" parent="Level/Collectibles" unique_id=1358315110 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 2888)
+
+[node name="Dot372" parent="Level/Collectibles" unique_id=531422992 instance=ExtResource("4_dp3eg")]
+position = Vector2(280, 2888)
+
+[node name="Dot373" parent="Level/Collectibles" unique_id=1020487829 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 2888)
+
+[node name="Dot374" parent="Level/Collectibles" unique_id=135191676 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 2872)
+
+[node name="Dot375" parent="Level/Collectibles" unique_id=2093474933 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 2856)
+
+[node name="Dot376" parent="Level/Collectibles" unique_id=486394917 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 2840)
+
+[node name="Dot377" parent="Level/Collectibles" unique_id=1468448896 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 2824)
+
+[node name="Dot378" parent="Level/Collectibles" unique_id=1102253678 instance=ExtResource("4_dp3eg")]
+position = Vector2(280, 2824)
+
+[node name="Dot379" parent="Level/Collectibles" unique_id=1861360958 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 2824)
+
+[node name="Dot380" parent="Level/Collectibles" unique_id=333941096 instance=ExtResource("4_dp3eg")]
+position = Vector2(248, 2824)
+
+[node name="Dot381" parent="Level/Collectibles" unique_id=2001210432 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 2824)
+
+[node name="Dot382" parent="Level/Collectibles" unique_id=1610289166 instance=ExtResource("4_dp3eg")]
+position = Vector2(216, 2824)
+
+[node name="Dot383" parent="Level/Collectibles" unique_id=1955717171 instance=ExtResource("4_dp3eg")]
+position = Vector2(200, 2824)
+
+[node name="Dot384" parent="Level/Collectibles" unique_id=1882020313 instance=ExtResource("4_dp3eg")]
+position = Vector2(184, 2824)
+
+[node name="Dot385" parent="Level/Collectibles" unique_id=867005586 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 2824)
+
+[node name="Dot386" parent="Level/Collectibles" unique_id=1528849846 instance=ExtResource("4_dp3eg")]
+position = Vector2(152, 2824)
+
+[node name="Dot387" parent="Level/Collectibles" unique_id=782946290 instance=ExtResource("4_dp3eg")]
+position = Vector2(136, 2824)
+
+[node name="Dot388" parent="Level/Collectibles" unique_id=2052256739 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 2824)
+
+[node name="Dot389" parent="Level/Collectibles" unique_id=1706863648 instance=ExtResource("4_dp3eg")]
+position = Vector2(104, 2824)
+
+[node name="Dot390" parent="Level/Collectibles" unique_id=509317279 instance=ExtResource("4_dp3eg")]
+position = Vector2(104, 2808)
+
+[node name="Dot391" parent="Level/Collectibles" unique_id=1216005840 instance=ExtResource("4_dp3eg")]
+position = Vector2(104, 2792)
+
+[node name="Dot392" parent="Level/Collectibles" unique_id=1790376216 instance=ExtResource("4_dp3eg")]
+position = Vector2(104, 2776)
+
+[node name="Dot393" parent="Level/Collectibles" unique_id=602194281 instance=ExtResource("4_dp3eg")]
+position = Vector2(104, 2760)
+
+[node name="Dot394" parent="Level/Collectibles" unique_id=748064245 instance=ExtResource("4_dp3eg")]
+position = Vector2(104, 2744)
+
+[node name="Dot395" parent="Level/Collectibles" unique_id=1859440918 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 2728)
+
+[node name="Dot396" parent="Level/Collectibles" unique_id=441599979 instance=ExtResource("4_dp3eg")]
+position = Vector2(136, 2728)
+
+[node name="Dot397" parent="Level/Collectibles" unique_id=814719076 instance=ExtResource("4_dp3eg")]
+position = Vector2(152, 2728)
+
+[node name="Dot398" parent="Level/Collectibles" unique_id=781180475 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 2728)
+
+[node name="Dot399" parent="Level/Collectibles" unique_id=996269931 instance=ExtResource("4_dp3eg")]
+position = Vector2(184, 2728)
+
+[node name="Dot400" parent="Level/Collectibles" unique_id=1377971563 instance=ExtResource("4_dp3eg")]
+position = Vector2(200, 2728)
+
+[node name="Dot401" parent="Level/Collectibles" unique_id=992603071 instance=ExtResource("4_dp3eg")]
+position = Vector2(216, 2728)
+
+[node name="Dot402" parent="Level/Collectibles" unique_id=1188529386 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 2728)
+
+[node name="Dot403" parent="Level/Collectibles" unique_id=1752548796 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 2712)
+
+[node name="Dot404" parent="Level/Collectibles" unique_id=1028041805 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 2696)
+
+[node name="Dot405" parent="Level/Collectibles" unique_id=1936340668 instance=ExtResource("4_dp3eg")]
+position = Vector2(248, 2696)
+
+[node name="Dot406" parent="Level/Collectibles" unique_id=1703567788 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 2696)
+
+[node name="Dot407" parent="Level/Collectibles" unique_id=1456122776 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 2680)
+
+[node name="Dot408" parent="Level/Collectibles" unique_id=1256785410 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 2664)
+
+[node name="Dot409" parent="Level/Collectibles" unique_id=680430776 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 2648)
+
+[node name="Dot410" parent="Level/Collectibles" unique_id=413517065 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 2632)
+
+[node name="Dot411" parent="Level/Collectibles" unique_id=349934260 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 2616)
+
+[node name="Dot412" parent="Level/Collectibles" unique_id=1358655366 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 2600)
+
+[node name="Dot413" parent="Level/Collectibles" unique_id=891624123 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 2584)
+
+[node name="Dot414" parent="Level/Collectibles" unique_id=340239260 instance=ExtResource("4_dp3eg")]
+position = Vector2(280, 2584)
+
+[node name="Dot415" parent="Level/Collectibles" unique_id=1051221825 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 2584)
+
+[node name="Dot416" parent="Level/Collectibles" unique_id=1929415943 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 2584)
+
+[node name="Dot417" parent="Level/Collectibles" unique_id=21407022 instance=ExtResource("4_dp3eg")]
+position = Vector2(328, 2584)
+
+[node name="Dot418" parent="Level/Collectibles" unique_id=2051059559 instance=ExtResource("4_dp3eg")]
+position = Vector2(344, 2584)
+
+[node name="Dot419" parent="Level/Collectibles" unique_id=771137532 instance=ExtResource("4_dp3eg")]
+position = Vector2(360, 2584)
+
+[node name="Dot420" parent="Level/Collectibles" unique_id=1757523583 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 2584)
+
+[node name="Dot421" parent="Level/Collectibles" unique_id=2061917382 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 2568)
+
+[node name="Dot422" parent="Level/Collectibles" unique_id=1803277809 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 2552)
+
+[node name="Dot423" parent="Level/Collectibles" unique_id=1133622864 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 2536)
+
+[node name="Dot424" parent="Level/Collectibles" unique_id=1518282126 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 2520)
+
+[node name="Dot425" parent="Level/Collectibles" unique_id=886875307 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 2504)
+
+[node name="Dot426" parent="Level/Collectibles" unique_id=1718036260 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 2488)
+
+[node name="Dot427" parent="Level/Collectibles" unique_id=90544131 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 2472)
+
+[node name="Dot428" parent="Level/Collectibles" unique_id=1382491843 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 2456)
+
+[node name="Dot429" parent="Level/Collectibles" unique_id=380597198 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 2440)
+
+[node name="Dot430" parent="Level/Collectibles" unique_id=190833829 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 2424)
+
+[node name="Dot431" parent="Level/Collectibles" unique_id=652175361 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 2408)
+
+[node name="Dot432" parent="Level/Collectibles" unique_id=810568726 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 2392)
+
+[node name="Dot433" parent="Level/Collectibles" unique_id=1184081981 instance=ExtResource("4_dp3eg")]
+position = Vector2(360, 2392)
+
+[node name="Dot434" parent="Level/Collectibles" unique_id=1579828337 instance=ExtResource("4_dp3eg")]
+position = Vector2(344, 2392)
+
+[node name="Dot435" parent="Level/Collectibles" unique_id=579115095 instance=ExtResource("4_dp3eg")]
+position = Vector2(328, 2392)
+
+[node name="Dot436" parent="Level/Collectibles" unique_id=306268102 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 2392)
+
+[node name="Dot437" parent="Level/Collectibles" unique_id=1544843368 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 2392)
+
+[node name="Dot438" parent="Level/Collectibles" unique_id=1598107276 instance=ExtResource("4_dp3eg")]
+position = Vector2(280, 2392)
+
+[node name="Dot439" parent="Level/Collectibles" unique_id=226362292 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 2392)
+
+[node name="Dot440" parent="Level/Collectibles" unique_id=1950265139 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 2376)
+
+[node name="Dot441" parent="Level/Collectibles" unique_id=49411570 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 2360)
+
+[node name="Dot442" parent="Level/Collectibles" unique_id=1155501172 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 2344)
+
+[node name="Dot443" parent="Level/Collectibles" unique_id=476267197 instance=ExtResource("4_dp3eg")]
+position = Vector2(280, 2344)
+
+[node name="Dot444" parent="Level/Collectibles" unique_id=1834956492 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 2344)
+
+[node name="Dot445" parent="Level/Collectibles" unique_id=1832594512 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 2344)
+
+[node name="Dot446" parent="Level/Collectibles" unique_id=1503790123 instance=ExtResource("4_dp3eg")]
+position = Vector2(328, 2344)
+
+[node name="Dot447" parent="Level/Collectibles" unique_id=1260669293 instance=ExtResource("4_dp3eg")]
+position = Vector2(344, 2344)
+
+[node name="Dot448" parent="Level/Collectibles" unique_id=668655869 instance=ExtResource("4_dp3eg")]
+position = Vector2(360, 2344)
+
+[node name="Dot449" parent="Level/Collectibles" unique_id=1239712141 instance=ExtResource("4_dp3eg")]
+position = Vector2(360, 2328)
+
+[node name="Dot450" parent="Level/Collectibles" unique_id=105870242 instance=ExtResource("4_dp3eg")]
+position = Vector2(360, 2312)
+
+[node name="Dot451" parent="Level/Collectibles" unique_id=2062012391 instance=ExtResource("4_dp3eg")]
+position = Vector2(360, 2296)
+
+[node name="Dot452" parent="Level/Collectibles" unique_id=854553845 instance=ExtResource("4_dp3eg")]
+position = Vector2(344, 2280)
+
+[node name="Dot453" parent="Level/Collectibles" unique_id=827293331 instance=ExtResource("4_dp3eg")]
+position = Vector2(328, 2280)
+
+[node name="Dot454" parent="Level/Collectibles" unique_id=1167452797 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 2280)
+
+[node name="Dot455" parent="Level/Collectibles" unique_id=2078334488 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 2280)
+
+[node name="Dot456" parent="Level/Collectibles" unique_id=2095395248 instance=ExtResource("4_dp3eg")]
+position = Vector2(280, 2280)
+
+[node name="Dot457" parent="Level/Collectibles" unique_id=1119381314 instance=ExtResource("4_dp3eg")]
+position = Vector2(280, 2264)
+
+[node name="Dot458" parent="Level/Collectibles" unique_id=1753857009 instance=ExtResource("4_dp3eg")]
+position = Vector2(280, 2248)
+
+[node name="Dot459" parent="Level/Collectibles" unique_id=1393079883 instance=ExtResource("4_dp3eg")]
+position = Vector2(280, 2232)
+
+[node name="Dot460" parent="Level/Collectibles" unique_id=1431139656 instance=ExtResource("4_dp3eg")]
+position = Vector2(280, 2216)
+
+[node name="Dot461" parent="Level/Collectibles" unique_id=349396780 instance=ExtResource("4_dp3eg")]
+position = Vector2(280, 2200)
+
+[node name="Dot462" parent="Level/Collectibles" unique_id=2082666673 instance=ExtResource("4_dp3eg")]
+position = Vector2(280, 2184)
+
+[node name="Dot463" parent="Level/Collectibles" unique_id=1102556945 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 2184)
+
+[node name="Dot464" parent="Level/Collectibles" unique_id=235317123 instance=ExtResource("4_dp3eg")]
+position = Vector2(248, 2184)
+
+[node name="Dot465" parent="Level/Collectibles" unique_id=193688713 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 2184)
+
+[node name="Dot466" parent="Level/Collectibles" unique_id=314711462 instance=ExtResource("4_dp3eg")]
+position = Vector2(216, 2184)
+
+[node name="Dot467" parent="Level/Collectibles" unique_id=1583194816 instance=ExtResource("4_dp3eg")]
+position = Vector2(200, 2184)
+
+[node name="Dot468" parent="Level/Collectibles" unique_id=845826010 instance=ExtResource("4_dp3eg")]
+position = Vector2(184, 2184)
+
+[node name="Dot469" parent="Level/Collectibles" unique_id=726421903 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 2184)
+
+[node name="Dot470" parent="Level/Collectibles" unique_id=1185726603 instance=ExtResource("4_dp3eg")]
+position = Vector2(152, 2184)
+
+[node name="Dot471" parent="Level/Collectibles" unique_id=571446868 instance=ExtResource("4_dp3eg")]
+position = Vector2(136, 2184)
+
+[node name="Dot472" parent="Level/Collectibles" unique_id=676621404 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 2184)
+
+[node name="Dot473" parent="Level/Collectibles" unique_id=99310824 instance=ExtResource("4_dp3eg")]
+position = Vector2(104, 2184)
+
+[node name="Dot474" parent="Level/Collectibles" unique_id=1593404187 instance=ExtResource("4_dp3eg")]
+position = Vector2(88, 2184)
+
+[node name="Dot475" parent="Level/Collectibles" unique_id=1282860568 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 2184)
+
+[node name="Dot476" parent="Level/Collectibles" unique_id=1432203368 instance=ExtResource("4_dp3eg")]
+position = Vector2(56, 2184)
+
+[node name="Dot477" parent="Level/Collectibles" unique_id=1700593258 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 2184)
+
+[node name="Dot478" parent="Level/Collectibles" unique_id=417542495 instance=ExtResource("4_dp3eg")]
+position = Vector2(24, 2184)
+
+[node name="Dot479" parent="Level/Collectibles" unique_id=358344724 instance=ExtResource("4_dp3eg")]
+position = Vector2(24, 2168)
+
+[node name="Dot480" parent="Level/Collectibles" unique_id=1940399228 instance=ExtResource("4_dp3eg")]
+position = Vector2(24, 2152)
+
+[node name="Dot481" parent="Level/Collectibles" unique_id=639026027 instance=ExtResource("4_dp3eg")]
+position = Vector2(24, 2136)
+
+[node name="Dot482" parent="Level/Collectibles" unique_id=644134405 instance=ExtResource("4_dp3eg")]
+position = Vector2(24, 2120)
+
+[node name="Dot483" parent="Level/Collectibles" unique_id=1172143676 instance=ExtResource("4_dp3eg")]
+position = Vector2(24, 2104)
+
+[node name="Dot484" parent="Level/Collectibles" unique_id=623275787 instance=ExtResource("4_dp3eg")]
+position = Vector2(24, 2088)
+
+[node name="Dot485" parent="Level/Collectibles" unique_id=777131234 instance=ExtResource("4_dp3eg")]
+position = Vector2(24, 2072)
+
+[node name="Dot486" parent="Level/Collectibles" unique_id=297773007 instance=ExtResource("4_dp3eg")]
+position = Vector2(24, 2056)
+
+[node name="Dot487" parent="Level/Collectibles" unique_id=2098973519 instance=ExtResource("4_dp3eg")]
+position = Vector2(24, 2040)
+
+[node name="Dot488" parent="Level/Collectibles" unique_id=844537677 instance=ExtResource("4_dp3eg")]
+position = Vector2(24, 2024)
+
+[node name="Dot489" parent="Level/Collectibles" unique_id=415224041 instance=ExtResource("4_dp3eg")]
+position = Vector2(24, 2008)
+
+[node name="Dot490" parent="Level/Collectibles" unique_id=1614176051 instance=ExtResource("4_dp3eg")]
+position = Vector2(24, 1992)
+
+[node name="Dot491" parent="Level/Collectibles" unique_id=1362522813 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 1992)
+
+[node name="Dot492" parent="Level/Collectibles" unique_id=30291201 instance=ExtResource("4_dp3eg")]
+position = Vector2(56, 1992)
+
+[node name="Dot493" parent="Level/Collectibles" unique_id=1829582331 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 1992)
+
+[node name="Dot494" parent="Level/Collectibles" unique_id=1311270148 instance=ExtResource("4_dp3eg")]
+position = Vector2(88, 1992)
+
+[node name="Dot495" parent="Level/Collectibles" unique_id=1401101672 instance=ExtResource("4_dp3eg")]
+position = Vector2(104, 1992)
+
+[node name="Dot496" parent="Level/Collectibles" unique_id=1040818138 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 1992)
+
+[node name="Dot497" parent="Level/Collectibles" unique_id=2026953816 instance=ExtResource("4_dp3eg")]
+position = Vector2(136, 1992)
+
+[node name="Dot498" parent="Level/Collectibles" unique_id=917640198 instance=ExtResource("4_dp3eg")]
+position = Vector2(152, 1992)
+
+[node name="Dot499" parent="Level/Collectibles" unique_id=773769998 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 1992)
+
+[node name="Dot500" parent="Level/Collectibles" unique_id=1754032277 instance=ExtResource("4_dp3eg")]
+position = Vector2(184, 1992)
+
+[node name="Dot501" parent="Level/Collectibles" unique_id=1668652280 instance=ExtResource("4_dp3eg")]
+position = Vector2(200, 1992)
+
+[node name="Dot502" parent="Level/Collectibles" unique_id=1947303471 instance=ExtResource("4_dp3eg")]
+position = Vector2(216, 1992)
+
+[node name="Dot503" parent="Level/Collectibles" unique_id=1677467999 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 1992)
+
+[node name="Dot504" parent="Level/Collectibles" unique_id=1893243084 instance=ExtResource("4_dp3eg")]
+position = Vector2(248, 1992)
+
+[node name="Dot505" parent="Level/Collectibles" unique_id=1163999856 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 1992)
+
+[node name="Dot506" parent="Level/Collectibles" unique_id=376973241 instance=ExtResource("4_dp3eg")]
+position = Vector2(280, 1992)
+
+[node name="Dot507" parent="Level/Collectibles" unique_id=1560440643 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 1992)
+
+[node name="Dot508" parent="Level/Collectibles" unique_id=1118510404 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 1992)
+
+[node name="Dot509" parent="Level/Collectibles" unique_id=73378212 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 1976)
+
+[node name="Dot510" parent="Level/Collectibles" unique_id=395737689 instance=ExtResource("4_dp3eg")]
+position = Vector2(328, 1976)
+
+[node name="Dot511" parent="Level/Collectibles" unique_id=685753371 instance=ExtResource("4_dp3eg")]
+position = Vector2(344, 1976)
+
+[node name="Dot512" parent="Level/Collectibles" unique_id=1167700739 instance=ExtResource("4_dp3eg")]
+position = Vector2(360, 1976)
+
+[node name="Dot513" parent="Level/Collectibles" unique_id=320838795 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 1976)
+
+[node name="Dot514" parent="Level/Collectibles" unique_id=362054170 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 1960)
+
+[node name="Dot515" parent="Level/Collectibles" unique_id=71027338 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 1944)
+
+[node name="Dot516" parent="Level/Collectibles" unique_id=1915231266 instance=ExtResource("4_dp3eg")]
+position = Vector2(360, 1944)
+
+[node name="Dot517" parent="Level/Collectibles" unique_id=260605915 instance=ExtResource("4_dp3eg")]
+position = Vector2(344, 1944)
+
+[node name="Dot518" parent="Level/Collectibles" unique_id=1115937342 instance=ExtResource("4_dp3eg")]
+position = Vector2(344, 1928)
+
+[node name="Dot519" parent="Level/Collectibles" unique_id=1443880710 instance=ExtResource("4_dp3eg")]
+position = Vector2(344, 1912)
+
+[node name="Dot520" parent="Level/Collectibles" unique_id=1904776816 instance=ExtResource("4_dp3eg")]
+position = Vector2(344, 1896)
+
+[node name="Dot521" parent="Level/Collectibles" unique_id=1522651962 instance=ExtResource("4_dp3eg")]
+position = Vector2(344, 1880)
+
+[node name="Dot522" parent="Level/Collectibles" unique_id=1391701382 instance=ExtResource("4_dp3eg")]
+position = Vector2(344, 1864)
+
+[node name="Dot523" parent="Level/Collectibles" unique_id=1656719203 instance=ExtResource("4_dp3eg")]
+position = Vector2(328, 1848)
+
+[node name="Dot524" parent="Level/Collectibles" unique_id=14279281 instance=ExtResource("4_dp3eg")]
+position = Vector2(328, 1832)
+
+[node name="Dot525" parent="Level/Collectibles" unique_id=1817994482 instance=ExtResource("4_dp3eg")]
+position = Vector2(328, 1816)
+
+[node name="Dot526" parent="Level/Collectibles" unique_id=814355871 instance=ExtResource("4_dp3eg")]
+position = Vector2(328, 1800)
+
+[node name="Dot527" parent="Level/Collectibles" unique_id=146580861 instance=ExtResource("4_dp3eg")]
+position = Vector2(328, 1784)
+
+[node name="Dot528" parent="Level/Collectibles" unique_id=800266543 instance=ExtResource("4_dp3eg")]
+position = Vector2(328, 1768)
+
+[node name="Dot529" parent="Level/Collectibles" unique_id=659933314 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 1768)
+
+[node name="Dot530" parent="Level/Collectibles" unique_id=474267384 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 1768)
+
+[node name="Dot531" parent="Level/Collectibles" unique_id=1152744952 instance=ExtResource("4_dp3eg")]
+position = Vector2(280, 1768)
+
+[node name="Dot532" parent="Level/Collectibles" unique_id=341197938 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 1768)
+
+[node name="Dot533" parent="Level/Collectibles" unique_id=1297408760 instance=ExtResource("4_dp3eg")]
+position = Vector2(248, 1768)
+
+[node name="Dot534" parent="Level/Collectibles" unique_id=1320004960 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 1768)
+
+[node name="Dot535" parent="Level/Collectibles" unique_id=542908974 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 1784)
+
+[node name="Dot536" parent="Level/Collectibles" unique_id=281709217 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 1800)
+
+[node name="Dot537" parent="Level/Collectibles" unique_id=238211098 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 1816)
+
+[node name="Dot538" parent="Level/Collectibles" unique_id=710705102 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 1832)
+
+[node name="Dot539" parent="Level/Collectibles" unique_id=1050594978 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 1848)
+
+[node name="Dot540" parent="Level/Collectibles" unique_id=240625821 instance=ExtResource("4_dp3eg")]
+position = Vector2(216, 1848)
+
+[node name="Dot541" parent="Level/Collectibles" unique_id=1886852118 instance=ExtResource("4_dp3eg")]
+position = Vector2(200, 1848)
+
+[node name="Dot542" parent="Level/Collectibles" unique_id=1807820333 instance=ExtResource("4_dp3eg")]
+position = Vector2(184, 1848)
+
+[node name="Dot543" parent="Level/Collectibles" unique_id=1570413514 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 1848)
+
+[node name="Dot544" parent="Level/Collectibles" unique_id=167047814 instance=ExtResource("4_dp3eg")]
+position = Vector2(152, 1848)
+
+[node name="Dot545" parent="Level/Collectibles" unique_id=828617707 instance=ExtResource("4_dp3eg")]
+position = Vector2(136, 1848)
+
+[node name="Dot546" parent="Level/Collectibles" unique_id=573867347 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 1848)
+
+[node name="Dot547" parent="Level/Collectibles" unique_id=1334900079 instance=ExtResource("4_dp3eg")]
+position = Vector2(104, 1848)
+
+[node name="Dot548" parent="Level/Collectibles" unique_id=657456178 instance=ExtResource("4_dp3eg")]
+position = Vector2(104, 1832)
+
+[node name="Dot549" parent="Level/Collectibles" unique_id=1400593541 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 1832)
+
+[node name="Dot550" parent="Level/Collectibles" unique_id=262434497 instance=ExtResource("4_dp3eg")]
+position = Vector2(136, 1832)
+
+[node name="Dot551" parent="Level/Collectibles" unique_id=756892809 instance=ExtResource("4_dp3eg")]
+position = Vector2(152, 1832)
+
+[node name="Dot552" parent="Level/Collectibles" unique_id=1028725415 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 1832)
+
+[node name="Dot553" parent="Level/Collectibles" unique_id=1963135299 instance=ExtResource("4_dp3eg")]
+position = Vector2(184, 1832)
+
+[node name="Dot554" parent="Level/Collectibles" unique_id=1081056181 instance=ExtResource("4_dp3eg")]
+position = Vector2(184, 1816)
+
+[node name="Dot555" parent="Level/Collectibles" unique_id=269713726 instance=ExtResource("4_dp3eg")]
+position = Vector2(184, 1800)
+
+[node name="Dot556" parent="Level/Collectibles" unique_id=1203126792 instance=ExtResource("4_dp3eg")]
+position = Vector2(184, 1784)
+
+[node name="Dot557" parent="Level/Collectibles" unique_id=1124428809 instance=ExtResource("4_dp3eg")]
+position = Vector2(184, 1768)
+
+[node name="Dot558" parent="Level/Collectibles" unique_id=540486111 instance=ExtResource("4_dp3eg")]
+position = Vector2(184, 1752)
+
+[node name="Dot559" parent="Level/Collectibles" unique_id=1789497633 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 1752)
+
+[node name="Dot560" parent="Level/Collectibles" unique_id=780253789 instance=ExtResource("4_dp3eg")]
+position = Vector2(152, 1752)
+
+[node name="Dot561" parent="Level/Collectibles" unique_id=1477878171 instance=ExtResource("4_dp3eg")]
+position = Vector2(136, 1768)
+
+[node name="Dot562" parent="Level/Collectibles" unique_id=1760801484 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 1768)
+
+[node name="Dot563" parent="Level/Collectibles" unique_id=989110453 instance=ExtResource("4_dp3eg")]
+position = Vector2(104, 1768)
+
+[node name="Dot564" parent="Level/Collectibles" unique_id=1980720532 instance=ExtResource("4_dp3eg")]
+position = Vector2(88, 1768)
+
+[node name="Dot565" parent="Level/Collectibles" unique_id=1266954766 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 1768)
+
+[node name="Dot566" parent="Level/Collectibles" unique_id=751137259 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 1752)
+
+[node name="Dot567" parent="Level/Collectibles" unique_id=187273641 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 1736)
+
+[node name="Dot568" parent="Level/Collectibles" unique_id=158251231 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 1720)
+
+[node name="Dot569" parent="Level/Collectibles" unique_id=1682988806 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 1704)
+
+[node name="Dot570" parent="Level/Collectibles" unique_id=198692717 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 1688)
+
+[node name="Dot571" parent="Level/Collectibles" unique_id=1746066669 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 1672)
+
+[node name="Dot572" parent="Level/Collectibles" unique_id=1072602409 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 1656)
+
+[node name="Dot573" parent="Level/Collectibles" unique_id=1680659032 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 1640)
+
+[node name="Dot574" parent="Level/Collectibles" unique_id=680071223 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 1624)
+
+[node name="Dot575" parent="Level/Collectibles" unique_id=579735994 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 1608)
+
+[node name="Dot576" parent="Level/Collectibles" unique_id=1627682799 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 1592)
+
+[node name="Dot577" parent="Level/Collectibles" unique_id=1431866826 instance=ExtResource("4_dp3eg")]
+position = Vector2(88, 1592)
+
+[node name="Dot578" parent="Level/Collectibles" unique_id=495434216 instance=ExtResource("4_dp3eg")]
+position = Vector2(104, 1592)
+
+[node name="Dot579" parent="Level/Collectibles" unique_id=371510667 instance=ExtResource("4_dp3eg")]
+position = Vector2(104, 1576)
+
+[node name="Dot580" parent="Level/Collectibles" unique_id=707936530 instance=ExtResource("4_dp3eg")]
+position = Vector2(104, 1560)
+
+[node name="Dot581" parent="Level/Collectibles" unique_id=938994173 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 1560)
+
+[node name="Dot582" parent="Level/Collectibles" unique_id=1097211052 instance=ExtResource("4_dp3eg")]
+position = Vector2(136, 1560)
+
+[node name="Dot583" parent="Level/Collectibles" unique_id=1215975363 instance=ExtResource("4_dp3eg")]
+position = Vector2(152, 1560)
+
+[node name="Dot584" parent="Level/Collectibles" unique_id=722347471 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 1560)
+
+[node name="Dot585" parent="Level/Collectibles" unique_id=702979278 instance=ExtResource("4_dp3eg")]
+position = Vector2(184, 1560)
+
+[node name="Dot586" parent="Level/Collectibles" unique_id=1957994359 instance=ExtResource("4_dp3eg")]
+position = Vector2(200, 1560)
+
+[node name="Dot587" parent="Level/Collectibles" unique_id=1938677582 instance=ExtResource("4_dp3eg")]
+position = Vector2(216, 1560)
+
+[node name="Dot588" parent="Level/Collectibles" unique_id=1564452970 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 1560)
+
+[node name="Dot589" parent="Level/Collectibles" unique_id=1421006426 instance=ExtResource("4_dp3eg")]
+position = Vector2(248, 1560)
+
+[node name="Dot590" parent="Level/Collectibles" unique_id=1850933243 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 1560)
+
+[node name="Dot591" parent="Level/Collectibles" unique_id=1069126639 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 1544)
+
+[node name="Dot592" parent="Level/Collectibles" unique_id=875584853 instance=ExtResource("4_dp3eg")]
+position = Vector2(280, 1544)
+
+[node name="Dot593" parent="Level/Collectibles" unique_id=683627850 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 1544)
+
+[node name="Dot594" parent="Level/Collectibles" unique_id=389553273 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 1544)
+
+[node name="Dot595" parent="Level/Collectibles" unique_id=431949806 instance=ExtResource("4_dp3eg")]
+position = Vector2(328, 1544)
+
+[node name="Dot596" parent="Level/Collectibles" unique_id=1741682901 instance=ExtResource("4_dp3eg")]
+position = Vector2(344, 1544)
+
+[node name="Dot597" parent="Level/Collectibles" unique_id=1004299962 instance=ExtResource("4_dp3eg")]
+position = Vector2(360, 1544)
+
+[node name="Dot598" parent="Level/Collectibles" unique_id=482813131 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 1544)
+
+[node name="Dot599" parent="Level/Collectibles" unique_id=1868473399 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 1528)
+
+[node name="Dot600" parent="Level/Collectibles" unique_id=1489962161 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 1512)
+
+[node name="Dot601" parent="Level/Collectibles" unique_id=1985128903 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 1496)
+
+[node name="Dot602" parent="Level/Collectibles" unique_id=758498075 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 1480)
+
+[node name="Dot603" parent="Level/Collectibles" unique_id=1639564903 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 1464)
+
+[node name="Dot604" parent="Level/Collectibles" unique_id=1700464742 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 1448)
+
+[node name="Dot605" parent="Level/Collectibles" unique_id=761843540 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 1432)
+
+[node name="Dot606" parent="Level/Collectibles" unique_id=889823871 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 1416)
+
+[node name="Dot607" parent="Level/Collectibles" unique_id=1795892909 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 1400)
+
+[node name="Dot608" parent="Level/Collectibles" unique_id=1734944226 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 1384)
+
+[node name="Dot609" parent="Level/Collectibles" unique_id=1276721727 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 1368)
+
+[node name="Dot610" parent="Level/Collectibles" unique_id=829539076 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 1352)
+
+[node name="Dot611" parent="Level/Collectibles" unique_id=467146749 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 1336)
+
+[node name="Dot612" parent="Level/Collectibles" unique_id=341525405 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 1320)
+
+[node name="Dot613" parent="Level/Collectibles" unique_id=958482918 instance=ExtResource("4_dp3eg")]
+position = Vector2(360, 1320)
+
+[node name="Dot614" parent="Level/Collectibles" unique_id=1605643432 instance=ExtResource("4_dp3eg")]
+position = Vector2(344, 1320)
+
+[node name="Dot615" parent="Level/Collectibles" unique_id=1226699425 instance=ExtResource("4_dp3eg")]
+position = Vector2(328, 1320)
+
+[node name="Dot616" parent="Level/Collectibles" unique_id=1420555956 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 1320)
+
+[node name="Dot617" parent="Level/Collectibles" unique_id=1590785102 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 1320)
+
+[node name="Dot618" parent="Level/Collectibles" unique_id=283984632 instance=ExtResource("4_dp3eg")]
+position = Vector2(280, 1320)
+
+[node name="Dot619" parent="Level/Collectibles" unique_id=936200227 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 1320)
+
+[node name="Dot620" parent="Level/Collectibles" unique_id=584728906 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 1304)
+
+[node name="Dot621" parent="Level/Collectibles" unique_id=716465210 instance=ExtResource("4_dp3eg")]
+position = Vector2(248, 1288)
+
+[node name="Dot622" parent="Level/Collectibles" unique_id=1804536297 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 1288)
+
+[node name="Dot623" parent="Level/Collectibles" unique_id=263072538 instance=ExtResource("4_dp3eg")]
+position = Vector2(216, 1288)
+
+[node name="Dot624" parent="Level/Collectibles" unique_id=697268977 instance=ExtResource("4_dp3eg")]
+position = Vector2(216, 1272)
+
+[node name="Dot625" parent="Level/Collectibles" unique_id=582209575 instance=ExtResource("4_dp3eg")]
+position = Vector2(216, 1256)
+
+[node name="Dot626" parent="Level/Collectibles" unique_id=1816420518 instance=ExtResource("4_dp3eg")]
+position = Vector2(216, 1240)
+
+[node name="Dot627" parent="Level/Collectibles" unique_id=1871400221 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 1240)
+
+[node name="Dot628" parent="Level/Collectibles" unique_id=964447283 instance=ExtResource("4_dp3eg")]
+position = Vector2(248, 1240)
+
+[node name="Dot629" parent="Level/Collectibles" unique_id=576125949 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 1240)
+
+[node name="Dot630" parent="Level/Collectibles" unique_id=322163155 instance=ExtResource("4_dp3eg")]
+position = Vector2(280, 1240)
+
+[node name="Dot631" parent="Level/Collectibles" unique_id=1180629701 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 1240)
+
+[node name="Dot632" parent="Level/Collectibles" unique_id=1356207702 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 1240)
+
+[node name="Dot633" parent="Level/Collectibles" unique_id=585905490 instance=ExtResource("4_dp3eg")]
+position = Vector2(328, 1240)
+
+[node name="Dot634" parent="Level/Collectibles" unique_id=513140174 instance=ExtResource("4_dp3eg")]
+position = Vector2(344, 1240)
+
+[node name="Dot635" parent="Level/Collectibles" unique_id=722474149 instance=ExtResource("4_dp3eg")]
+position = Vector2(360, 1240)
+
+[node name="Dot636" parent="Level/Collectibles" unique_id=2097889976 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 1240)
+
+[node name="Dot637" parent="Level/Collectibles" unique_id=318088439 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 1224)
+
+[node name="Dot638" parent="Level/Collectibles" unique_id=1215382430 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 1208)
+
+[node name="Dot639" parent="Level/Collectibles" unique_id=1668763880 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 1192)
+
+[node name="Dot640" parent="Level/Collectibles" unique_id=274647734 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 1176)
+
+[node name="Dot641" parent="Level/Collectibles" unique_id=585332397 instance=ExtResource("4_dp3eg")]
+position = Vector2(360, 1176)
+
+[node name="Dot642" parent="Level/Collectibles" unique_id=640220748 instance=ExtResource("4_dp3eg")]
+position = Vector2(344, 1176)
+
+[node name="Dot643" parent="Level/Collectibles" unique_id=1243489755 instance=ExtResource("4_dp3eg")]
+position = Vector2(328, 1176)
+
+[node name="Dot644" parent="Level/Collectibles" unique_id=993684848 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 1176)
+
+[node name="Dot645" parent="Level/Collectibles" unique_id=1369769295 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 1176)
+
+[node name="Dot646" parent="Level/Collectibles" unique_id=871666758 instance=ExtResource("4_dp3eg")]
+position = Vector2(280, 1176)
+
+[node name="Dot647" parent="Level/Collectibles" unique_id=867813002 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 1176)
+
+[node name="Dot648" parent="Level/Collectibles" unique_id=56645083 instance=ExtResource("4_dp3eg")]
+position = Vector2(248, 1176)
+
+[node name="Dot649" parent="Level/Collectibles" unique_id=1190545096 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 1176)
+
+[node name="Dot650" parent="Level/Collectibles" unique_id=1548591050 instance=ExtResource("4_dp3eg")]
+position = Vector2(216, 1176)
+
+[node name="Dot651" parent="Level/Collectibles" unique_id=716886983 instance=ExtResource("4_dp3eg")]
+position = Vector2(200, 1176)
+
+[node name="Dot652" parent="Level/Collectibles" unique_id=1457655028 instance=ExtResource("4_dp3eg")]
+position = Vector2(184, 1176)
+
+[node name="Dot653" parent="Level/Collectibles" unique_id=889738579 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 1176)
+
+[node name="Dot654" parent="Level/Collectibles" unique_id=733352127 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 1192)
+
+[node name="Dot655" parent="Level/Collectibles" unique_id=214024030 instance=ExtResource("4_dp3eg")]
+position = Vector2(152, 1192)
+
+[node name="Dot656" parent="Level/Collectibles" unique_id=1468517096 instance=ExtResource("4_dp3eg")]
+position = Vector2(152, 1208)
+
+[node name="Dot657" parent="Level/Collectibles" unique_id=1657450774 instance=ExtResource("4_dp3eg")]
+position = Vector2(152, 1224)
+
+[node name="Dot658" parent="Level/Collectibles" unique_id=1991899957 instance=ExtResource("4_dp3eg")]
+position = Vector2(136, 1224)
+
+[node name="Dot659" parent="Level/Collectibles" unique_id=1072326706 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 1224)
+
+[node name="Dot660" parent="Level/Collectibles" unique_id=1961078605 instance=ExtResource("4_dp3eg")]
+position = Vector2(104, 1224)
+
+[node name="Dot661" parent="Level/Collectibles" unique_id=1466427797 instance=ExtResource("4_dp3eg")]
+position = Vector2(88, 1208)
+
+[node name="Dot662" parent="Level/Collectibles" unique_id=1829683893 instance=ExtResource("4_dp3eg")]
+position = Vector2(88, 1192)
+
+[node name="Dot663" parent="Level/Collectibles" unique_id=1369327771 instance=ExtResource("4_dp3eg")]
+position = Vector2(88, 1176)
+
+[node name="Dot664" parent="Level/Collectibles" unique_id=2055967008 instance=ExtResource("4_dp3eg")]
+position = Vector2(88, 1160)
+
+[node name="Dot665" parent="Level/Collectibles" unique_id=1816088982 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 1160)
+
+[node name="Dot666" parent="Level/Collectibles" unique_id=1443720689 instance=ExtResource("4_dp3eg")]
+position = Vector2(56, 1160)
+
+[node name="Dot667" parent="Level/Collectibles" unique_id=1651471223 instance=ExtResource("4_dp3eg")]
+position = Vector2(56, 1144)
+
+[node name="Dot668" parent="Level/Collectibles" unique_id=1183409144 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 1144)
+
+[node name="Dot669" parent="Level/Collectibles" unique_id=1119584082 instance=ExtResource("4_dp3eg")]
+position = Vector2(24, 1144)
+
+[node name="Dot670" parent="Level/Collectibles" unique_id=460785182 instance=ExtResource("4_dp3eg")]
+position = Vector2(24, 1128)
+
+[node name="Dot671" parent="Level/Collectibles" unique_id=921470103 instance=ExtResource("4_dp3eg")]
+position = Vector2(24, 1112)
+
+[node name="Dot672" parent="Level/Collectibles" unique_id=766258789 instance=ExtResource("4_dp3eg")]
+position = Vector2(24, 1096)
+
+[node name="Dot673" parent="Level/Collectibles" unique_id=1402053360 instance=ExtResource("4_dp3eg")]
+position = Vector2(24, 1080)
+
+[node name="Dot674" parent="Level/Collectibles" unique_id=719626245 instance=ExtResource("4_dp3eg")]
+position = Vector2(24, 1064)
+
+[node name="Dot675" parent="Level/Collectibles" unique_id=138916423 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 1064)
+
+[node name="Dot676" parent="Level/Collectibles" unique_id=1991892955 instance=ExtResource("4_dp3eg")]
+position = Vector2(56, 1064)
+
+[node name="Dot677" parent="Level/Collectibles" unique_id=868485532 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 1064)
+
+[node name="Dot678" parent="Level/Collectibles" unique_id=1565714640 instance=ExtResource("4_dp3eg")]
+position = Vector2(88, 1064)
+
+[node name="Dot679" parent="Level/Collectibles" unique_id=381449140 instance=ExtResource("4_dp3eg")]
+position = Vector2(88, 1080)
+
+[node name="Dot680" parent="Level/Collectibles" unique_id=32581690 instance=ExtResource("4_dp3eg")]
+position = Vector2(88, 1096)
+
+[node name="Dot681" parent="Level/Collectibles" unique_id=583495938 instance=ExtResource("4_dp3eg")]
+position = Vector2(88, 1112)
+
+[node name="Dot682" parent="Level/Collectibles" unique_id=1210274681 instance=ExtResource("4_dp3eg")]
+position = Vector2(88, 1128)
+
+[node name="Dot683" parent="Level/Collectibles" unique_id=1516872015 instance=ExtResource("4_dp3eg")]
+position = Vector2(104, 1128)
+
+[node name="Dot684" parent="Level/Collectibles" unique_id=551539573 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 1128)
+
+[node name="Dot685" parent="Level/Collectibles" unique_id=290459626 instance=ExtResource("4_dp3eg")]
+position = Vector2(136, 1128)
+
+[node name="Dot686" parent="Level/Collectibles" unique_id=727288929 instance=ExtResource("4_dp3eg")]
+position = Vector2(152, 1128)
+
+[node name="Dot687" parent="Level/Collectibles" unique_id=1253288699 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 1128)
+
+[node name="Dot688" parent="Level/Collectibles" unique_id=1393766938 instance=ExtResource("4_dp3eg")]
+position = Vector2(184, 1128)
+
+[node name="Dot689" parent="Level/Collectibles" unique_id=1323641153 instance=ExtResource("4_dp3eg")]
+position = Vector2(200, 1128)
+
+[node name="Dot690" parent="Level/Collectibles" unique_id=900394977 instance=ExtResource("4_dp3eg")]
+position = Vector2(200, 1112)
+
+[node name="Dot691" parent="Level/Collectibles" unique_id=1798686173 instance=ExtResource("4_dp3eg")]
+position = Vector2(200, 1096)
+
+[node name="Dot692" parent="Level/Collectibles" unique_id=1681174572 instance=ExtResource("4_dp3eg")]
+position = Vector2(200, 1080)
+
+[node name="Dot693" parent="Level/Collectibles" unique_id=1732474991 instance=ExtResource("4_dp3eg")]
+position = Vector2(200, 1064)
+
+[node name="Dot694" parent="Level/Collectibles" unique_id=1032079332 instance=ExtResource("4_dp3eg")]
+position = Vector2(200, 1048)
+
+[node name="Dot695" parent="Level/Collectibles" unique_id=1838219896 instance=ExtResource("4_dp3eg")]
+position = Vector2(184, 1048)
+
+[node name="Dot696" parent="Level/Collectibles" unique_id=1919509746 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 1032)
+
+[node name="Dot697" parent="Level/Collectibles" unique_id=1047057900 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 1016)
+
+[node name="Dot698" parent="Level/Collectibles" unique_id=737452671 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 1000)
+
+[node name="Dot699" parent="Level/Collectibles" unique_id=35241554 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 984)
+
+[node name="Dot700" parent="Level/Collectibles" unique_id=90521123 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 968)
+
+[node name="Dot701" parent="Level/Collectibles" unique_id=1636225135 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 952)
+
+[node name="Dot702" parent="Level/Collectibles" unique_id=482169609 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 936)
+
+[node name="Dot703" parent="Level/Collectibles" unique_id=1376379707 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 920)
+
+[node name="Dot704" parent="Level/Collectibles" unique_id=269502261 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 904)
+
+[node name="Dot705" parent="Level/Collectibles" unique_id=1428792071 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 888)
+
+[node name="Dot706" parent="Level/Collectibles" unique_id=1839424801 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 872)
+
+[node name="Dot707" parent="Level/Collectibles" unique_id=2032924757 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 856)
+
+[node name="Dot708" parent="Level/Collectibles" unique_id=586908951 instance=ExtResource("4_dp3eg")]
+position = Vector2(184, 856)
+
+[node name="Dot709" parent="Level/Collectibles" unique_id=711397525 instance=ExtResource("4_dp3eg")]
+position = Vector2(200, 856)
+
+[node name="Dot710" parent="Level/Collectibles" unique_id=48199577 instance=ExtResource("4_dp3eg")]
+position = Vector2(216, 856)
+
+[node name="Dot711" parent="Level/Collectibles" unique_id=1684543913 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 856)
+
+[node name="Dot712" parent="Level/Collectibles" unique_id=459305598 instance=ExtResource("4_dp3eg")]
+position = Vector2(248, 856)
+
+[node name="Dot713" parent="Level/Collectibles" unique_id=1708111460 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 856)
+
+[node name="Dot714" parent="Level/Collectibles" unique_id=991693417 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 840)
+
+[node name="Dot715" parent="Level/Collectibles" unique_id=1115828563 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 824)
+
+[node name="Dot716" parent="Level/Collectibles" unique_id=604658493 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 808)
+
+[node name="Dot717" parent="Level/Collectibles" unique_id=1347507975 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 792)
+
+[node name="Dot718" parent="Level/Collectibles" unique_id=1363279464 instance=ExtResource("4_dp3eg")]
+position = Vector2(280, 792)
+
+[node name="Dot719" parent="Level/Collectibles" unique_id=803354188 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 792)
+
+[node name="Dot720" parent="Level/Collectibles" unique_id=179625345 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 792)
+
+[node name="Dot721" parent="Level/Collectibles" unique_id=1203496375 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 808)
+
+[node name="Dot722" parent="Level/Collectibles" unique_id=1496990439 instance=ExtResource("4_dp3eg")]
+position = Vector2(328, 808)
+
+[node name="Dot723" parent="Level/Collectibles" unique_id=412980915 instance=ExtResource("4_dp3eg")]
+position = Vector2(344, 808)
+
+[node name="Dot724" parent="Level/Collectibles" unique_id=1167410401 instance=ExtResource("4_dp3eg")]
+position = Vector2(360, 808)
+
+[node name="Dot725" parent="Level/Collectibles" unique_id=1661283564 instance=ExtResource("4_dp3eg")]
+position = Vector2(360, 792)
+
+[node name="Dot726" parent="Level/Collectibles" unique_id=34466572 instance=ExtResource("4_dp3eg")]
+position = Vector2(360, 776)
+
+[node name="Dot727" parent="Level/Collectibles" unique_id=215283423 instance=ExtResource("4_dp3eg")]
+position = Vector2(360, 760)
+
+[node name="Dot728" parent="Level/Collectibles" unique_id=344635992 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 760)
+
+[node name="Dot729" parent="Level/Collectibles" unique_id=718634102 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 744)
+
+[node name="Dot730" parent="Level/Collectibles" unique_id=2098026604 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 728)
+
+[node name="Dot731" parent="Level/Collectibles" unique_id=481167157 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 712)
+
+[node name="Dot732" parent="Level/Collectibles" unique_id=2035268440 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 696)
+
+[node name="Dot733" parent="Level/Collectibles" unique_id=1005281158 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 680)
+
+[node name="Dot734" parent="Level/Collectibles" unique_id=453178190 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 664)
+
+[node name="Dot735" parent="Level/Collectibles" unique_id=1311551344 instance=ExtResource("4_dp3eg")]
+position = Vector2(360, 664)
+
+[node name="Dot736" parent="Level/Collectibles" unique_id=1455563425 instance=ExtResource("4_dp3eg")]
+position = Vector2(344, 664)
+
+[node name="Dot737" parent="Level/Collectibles" unique_id=376742222 instance=ExtResource("4_dp3eg")]
+position = Vector2(328, 664)
+
+[node name="Dot738" parent="Level/Collectibles" unique_id=1525083824 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 648)
+
+[node name="Dot739" parent="Level/Collectibles" unique_id=674534781 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 632)
+
+[node name="Dot740" parent="Level/Collectibles" unique_id=190994601 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 616)
+
+[node name="Dot741" parent="Level/Collectibles" unique_id=1228966550 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 600)
+
+[node name="Dot742" parent="Level/Collectibles" unique_id=905584550 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 584)
+
+[node name="Dot743" parent="Level/Collectibles" unique_id=1538640992 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 568)
+
+[node name="Dot744" parent="Level/Collectibles" unique_id=1130558704 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 568)
+
+[node name="Dot745" parent="Level/Collectibles" unique_id=1472737701 instance=ExtResource("4_dp3eg")]
+position = Vector2(280, 568)
+
+[node name="Dot746" parent="Level/Collectibles" unique_id=1274998399 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 568)
+
+[node name="Dot747" parent="Level/Collectibles" unique_id=1210781477 instance=ExtResource("4_dp3eg")]
+position = Vector2(248, 568)
+
+[node name="Dot748" parent="Level/Collectibles" unique_id=296157714 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 568)
+
+[node name="Dot749" parent="Level/Collectibles" unique_id=242048259 instance=ExtResource("4_dp3eg")]
+position = Vector2(216, 568)
+
+[node name="Dot750" parent="Level/Collectibles" unique_id=70783161 instance=ExtResource("4_dp3eg")]
+position = Vector2(216, 584)
+
+[node name="Dot751" parent="Level/Collectibles" unique_id=591698936 instance=ExtResource("4_dp3eg")]
+position = Vector2(216, 600)
+
+[node name="Dot752" parent="Level/Collectibles" unique_id=2026549814 instance=ExtResource("4_dp3eg")]
+position = Vector2(216, 616)
+
+[node name="Dot753" parent="Level/Collectibles" unique_id=910946028 instance=ExtResource("4_dp3eg")]
+position = Vector2(200, 616)
+
+[node name="Dot754" parent="Level/Collectibles" unique_id=105518082 instance=ExtResource("4_dp3eg")]
+position = Vector2(184, 616)
+
+[node name="Dot755" parent="Level/Collectibles" unique_id=407838914 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 616)
+
+[node name="Dot756" parent="Level/Collectibles" unique_id=1191614967 instance=ExtResource("4_dp3eg")]
+position = Vector2(152, 616)
+
+[node name="Dot757" parent="Level/Collectibles" unique_id=1586791239 instance=ExtResource("4_dp3eg")]
+position = Vector2(136, 616)
+
+[node name="Dot758" parent="Level/Collectibles" unique_id=1112574485 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 616)
+
+[node name="Dot759" parent="Level/Collectibles" unique_id=506828895 instance=ExtResource("4_dp3eg")]
+position = Vector2(104, 616)
+
+[node name="Dot760" parent="Level/Collectibles" unique_id=2036117480 instance=ExtResource("4_dp3eg")]
+position = Vector2(88, 616)
+
+[node name="Dot761" parent="Level/Collectibles" unique_id=1965200109 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 616)
+
+[node name="Dot762" parent="Level/Collectibles" unique_id=1020970383 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 600)
+
+[node name="Dot763" parent="Level/Collectibles" unique_id=1422797365 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 584)
+
+[node name="Dot764" parent="Level/Collectibles" unique_id=1433891957 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 568)
+
+[node name="Dot765" parent="Level/Collectibles" unique_id=742863330 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 552)
+
+[node name="Dot766" parent="Level/Collectibles" unique_id=747785427 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 536)
+
+[node name="Dot767" parent="Level/Collectibles" unique_id=756062848 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 520)
+
+[node name="Dot768" parent="Level/Collectibles" unique_id=692509587 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 504)
+
+[node name="Dot769" parent="Level/Collectibles" unique_id=1312677125 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 488)
+
+[node name="Dot770" parent="Level/Collectibles" unique_id=1040131642 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 472)
+
+[node name="Dot771" parent="Level/Collectibles" unique_id=558359065 instance=ExtResource("4_dp3eg")]
+position = Vector2(88, 472)
+
+[node name="Dot772" parent="Level/Collectibles" unique_id=1058650815 instance=ExtResource("4_dp3eg")]
+position = Vector2(104, 472)
+
+[node name="Dot773" parent="Level/Collectibles" unique_id=1906787162 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 472)
+
+[node name="Dot774" parent="Level/Collectibles" unique_id=712298752 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 456)
+
+[node name="Dot775" parent="Level/Collectibles" unique_id=1811654454 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 440)
+
+[node name="Dot776" parent="Level/Collectibles" unique_id=547090394 instance=ExtResource("4_dp3eg")]
+position = Vector2(136, 440)
+
+[node name="Dot777" parent="Level/Collectibles" unique_id=88845852 instance=ExtResource("4_dp3eg")]
+position = Vector2(136, 424)
+
+[node name="Dot778" parent="Level/Collectibles" unique_id=1392114830 instance=ExtResource("4_dp3eg")]
+position = Vector2(136, 408)
+
+[node name="Dot779" parent="Level/Collectibles" unique_id=1062277232 instance=ExtResource("4_dp3eg")]
+position = Vector2(136, 392)
+
+[node name="Dot780" parent="Level/Collectibles" unique_id=296118498 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 392)
+
+[node name="Dot781" parent="Level/Collectibles" unique_id=56759595 instance=ExtResource("4_dp3eg")]
+position = Vector2(104, 392)
+
+[node name="Dot782" parent="Level/Collectibles" unique_id=1042250240 instance=ExtResource("4_dp3eg")]
+position = Vector2(88, 392)
+
+[node name="Dot783" parent="Level/Collectibles" unique_id=1747209242 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 392)
+
+[node name="Dot784" parent="Level/Collectibles" unique_id=796381532 instance=ExtResource("4_dp3eg")]
+position = Vector2(56, 392)
+
+[node name="Dot785" parent="Level/Collectibles" unique_id=555144717 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 392)
+
+[node name="Dot786" parent="Level/Collectibles" unique_id=1806407115 instance=ExtResource("4_dp3eg")]
+position = Vector2(24, 376)
+
+[node name="Dot787" parent="Level/Collectibles" unique_id=1631270238 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 376)
+
+[node name="Dot788" parent="Level/Collectibles" unique_id=1010978659 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 360)
+
+[node name="Dot789" parent="Level/Collectibles" unique_id=436778231 instance=ExtResource("4_dp3eg")]
+position = Vector2(56, 360)
+
+[node name="Dot790" parent="Level/Collectibles" unique_id=799289854 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 360)
+
+[node name="Dot791" parent="Level/Collectibles" unique_id=597626243 instance=ExtResource("4_dp3eg")]
+position = Vector2(88, 360)
+
+[node name="Dot792" parent="Level/Collectibles" unique_id=1110142410 instance=ExtResource("4_dp3eg")]
+position = Vector2(104, 360)
+
+[node name="Dot793" parent="Level/Collectibles" unique_id=1818711906 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 360)
+
+[node name="Dot794" parent="Level/Collectibles" unique_id=1582271228 instance=ExtResource("4_dp3eg")]
+position = Vector2(136, 360)
+
+[node name="Dot795" parent="Level/Collectibles" unique_id=868834458 instance=ExtResource("4_dp3eg")]
+position = Vector2(152, 360)
+
+[node name="Dot796" parent="Level/Collectibles" unique_id=662980147 instance=ExtResource("4_dp3eg")]
+position = Vector2(152, 344)
+
+[node name="Dot797" parent="Level/Collectibles" unique_id=478783267 instance=ExtResource("4_dp3eg")]
+position = Vector2(152, 328)
+
+[node name="Dot798" parent="Level/Collectibles" unique_id=1259284020 instance=ExtResource("4_dp3eg")]
+position = Vector2(152, 312)
+
+[node name="Dot799" parent="Level/Collectibles" unique_id=126367118 instance=ExtResource("4_dp3eg")]
+position = Vector2(152, 296)
+
+[node name="Dot800" parent="Level/Collectibles" unique_id=1760069577 instance=ExtResource("4_dp3eg")]
+position = Vector2(152, 280)
+
+[node name="Dot801" parent="Level/Collectibles" unique_id=892312242 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 280)
+
+[node name="Dot802" parent="Level/Collectibles" unique_id=1863135858 instance=ExtResource("4_dp3eg")]
+position = Vector2(184, 280)
+
+[node name="Dot803" parent="Level/Collectibles" unique_id=148629295 instance=ExtResource("4_dp3eg")]
+position = Vector2(200, 280)
+
+[node name="Dot804" parent="Level/Collectibles" unique_id=1568838761 instance=ExtResource("4_dp3eg")]
+position = Vector2(200, 296)
+
+[node name="Dot805" parent="Level/Collectibles" unique_id=1560620362 instance=ExtResource("4_dp3eg")]
+position = Vector2(216, 296)
+
+[node name="Dot806" parent="Level/Collectibles" unique_id=1396105488 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 296)
+
+[node name="Dot807" parent="Level/Collectibles" unique_id=1429829638 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 280)
+
+[node name="Dot808" parent="Level/Collectibles" unique_id=1102985698 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 264)
+
+[node name="Dot809" parent="Level/Collectibles" unique_id=1474705245 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 248)
+
+[node name="Dot810" parent="Level/Collectibles" unique_id=1153045214 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 232)
+
+[node name="Dot811" parent="Level/Collectibles" unique_id=1654644940 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 216)
+
+[node name="Dot812" parent="Level/Collectibles" unique_id=1852575932 instance=ExtResource("4_dp3eg")]
+position = Vector2(248, 216)
+
+[node name="Dot813" parent="Level/Collectibles" unique_id=651251244 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 216)
+
+[node name="Dot814" parent="Level/Collectibles" unique_id=1046369616 instance=ExtResource("4_dp3eg")]
+position = Vector2(280, 216)
+
+[node name="Dot815" parent="Level/Collectibles" unique_id=1333730507 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 216)
+
+[node name="Dot816" parent="Level/Collectibles" unique_id=204816067 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 216)
+
+[node name="Dot817" parent="Level/Collectibles" unique_id=1841910447 instance=ExtResource("4_dp3eg")]
+position = Vector2(328, 216)
+
+[node name="Dot818" parent="Level/Collectibles" unique_id=1104430975 instance=ExtResource("4_dp3eg")]
+position = Vector2(344, 216)
+
+[node name="Dot819" parent="Level/Collectibles" unique_id=1131937641 instance=ExtResource("4_dp3eg")]
+position = Vector2(360, 216)
+
+[node name="Dot820" parent="Level/Collectibles" unique_id=1289536435 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 232)
+
+[node name="Dot821" parent="Level/Collectibles" unique_id=708141548 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 248)
+
+[node name="Dot822" parent="Level/Collectibles" unique_id=1060623248 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 264)
+
+[node name="Dot823" parent="Level/Collectibles" unique_id=692761337 instance=ExtResource("4_dp3eg")]
+position = Vector2(376, 280)
+
+[node name="Dot824" parent="Level/Collectibles" unique_id=1428537751 instance=ExtResource("4_dp3eg")]
+position = Vector2(360, 280)
+
+[node name="Dot825" parent="Level/Collectibles" unique_id=739305330 instance=ExtResource("4_dp3eg")]
+position = Vector2(344, 280)
+
+[node name="Dot826" parent="Level/Collectibles" unique_id=783264403 instance=ExtResource("4_dp3eg")]
+position = Vector2(328, 280)
+
+[node name="Dot827" parent="Level/Collectibles" unique_id=399039902 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 280)
+
+[node name="Dot828" parent="Level/Collectibles" unique_id=177649655 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 280)
+
+[node name="Dot829" parent="Level/Collectibles" unique_id=1216977810 instance=ExtResource("4_dp3eg")]
+position = Vector2(280, 280)
+
+[node name="Dot830" parent="Level/Collectibles" unique_id=1864351092 instance=ExtResource("4_dp3eg")]
+position = Vector2(280, 264)
+
+[node name="Dot831" parent="Level/Collectibles" unique_id=1723540709 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 264)
+
+[node name="Dot832" parent="Level/Collectibles" unique_id=384408658 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 264)
+
+[node name="Dot833" parent="Level/Collectibles" unique_id=1640634791 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 248)
+
+[node name="Dot834" parent="Level/Collectibles" unique_id=562955848 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 232)
+
+[node name="Dot835" parent="Level/Collectibles" unique_id=2080076896 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 200)
+
+[node name="Dot836" parent="Level/Collectibles" unique_id=2044682301 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 184)
+
+[node name="Dot837" parent="Level/Collectibles" unique_id=2072652167 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 168)
+
+[node name="Dot838" parent="Level/Collectibles" unique_id=1881600874 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 152)
+
+[node name="Dot839" parent="Level/Collectibles" unique_id=1143856235 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 136)
+
+[node name="Dot840" parent="Level/Collectibles" unique_id=1127855969 instance=ExtResource("4_dp3eg")]
+position = Vector2(312, 120)
+
+[node name="Dot841" parent="Level/Collectibles" unique_id=1874664005 instance=ExtResource("4_dp3eg")]
+position = Vector2(328, 120)
+
+[node name="Dot842" parent="Level/Collectibles" unique_id=832118066 instance=ExtResource("4_dp3eg")]
+position = Vector2(328, 136)
+
+[node name="Dot843" parent="Level/Collectibles" unique_id=1364077272 instance=ExtResource("4_dp3eg")]
+position = Vector2(328, 152)
+
+[node name="Dot844" parent="Level/Collectibles" unique_id=238415478 instance=ExtResource("4_dp3eg")]
+position = Vector2(328, 168)
+
+[node name="Dot845" parent="Level/Collectibles" unique_id=1997505719 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 168)
+
+[node name="Dot846" parent="Level/Collectibles" unique_id=1318579938 instance=ExtResource("4_dp3eg")]
+position = Vector2(280, 168)
+
+[node name="Dot847" parent="Level/Collectibles" unique_id=471373293 instance=ExtResource("4_dp3eg")]
+position = Vector2(280, 152)
+
+[node name="Dot848" parent="Level/Collectibles" unique_id=72010356 instance=ExtResource("4_dp3eg")]
+position = Vector2(280, 136)
+
+[node name="Dot849" parent="Level/Collectibles" unique_id=1006023172 instance=ExtResource("4_dp3eg")]
+position = Vector2(280, 120)
+
+[node name="Dot850" parent="Level/Collectibles" unique_id=527318748 instance=ExtResource("4_dp3eg")]
+position = Vector2(280, 104)
+
+[node name="Dot851" parent="Level/Collectibles" unique_id=460263200 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 88)
+
+[node name="Dot852" parent="Level/Collectibles" unique_id=931244882 instance=ExtResource("4_dp3eg")]
+position = Vector2(296, 72)
+
+[node name="Dot853" parent="Level/Collectibles" unique_id=1100995346 instance=ExtResource("4_dp3eg")]
+position = Vector2(280, 72)
+
+[node name="Dot854" parent="Level/Collectibles" unique_id=1847138287 instance=ExtResource("4_dp3eg")]
+position = Vector2(264, 72)
+
+[node name="Dot855" parent="Level/Collectibles" unique_id=1140814834 instance=ExtResource("4_dp3eg")]
+position = Vector2(248, 72)
+
+[node name="Dot856" parent="Level/Collectibles" unique_id=281625666 instance=ExtResource("4_dp3eg")]
+position = Vector2(232, 72)
+
+[node name="Dot857" parent="Level/Collectibles" unique_id=1113122613 instance=ExtResource("4_dp3eg")]
+position = Vector2(216, 72)
+
+[node name="Dot858" parent="Level/Collectibles" unique_id=463716618 instance=ExtResource("4_dp3eg")]
+position = Vector2(200, 72)
+
+[node name="Dot859" parent="Level/Collectibles" unique_id=1710122980 instance=ExtResource("4_dp3eg")]
+position = Vector2(184, 72)
+
+[node name="Dot860" parent="Level/Collectibles" unique_id=1859654513 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 72)
+
+[node name="Dot861" parent="Level/Collectibles" unique_id=591287036 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 88)
+
+[node name="Dot862" parent="Level/Collectibles" unique_id=1675985271 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 104)
+
+[node name="Dot863" parent="Level/Collectibles" unique_id=1886487847 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 120)
+
+[node name="Dot864" parent="Level/Collectibles" unique_id=1548432615 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 136)
+
+[node name="Dot865" parent="Level/Collectibles" unique_id=1059225217 instance=ExtResource("4_dp3eg")]
+position = Vector2(168, 152)
+
+[node name="Dot866" parent="Level/Collectibles" unique_id=303584407 instance=ExtResource("4_dp3eg")]
+position = Vector2(152, 152)
+
+[node name="Dot867" parent="Level/Collectibles" unique_id=1210201590 instance=ExtResource("4_dp3eg")]
+position = Vector2(136, 152)
+
+[node name="Dot868" parent="Level/Collectibles" unique_id=1467048777 instance=ExtResource("4_dp3eg")]
+position = Vector2(120, 152)
+
+[node name="Dot869" parent="Level/Collectibles" unique_id=1815140873 instance=ExtResource("4_dp3eg")]
+position = Vector2(104, 152)
+
+[node name="Dot870" parent="Level/Collectibles" unique_id=1849981890 instance=ExtResource("4_dp3eg")]
+position = Vector2(88, 152)
+
+[node name="Dot871" parent="Level/Collectibles" unique_id=709565553 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 152)
+
+[node name="Dot872" parent="Level/Collectibles" unique_id=791138047 instance=ExtResource("4_dp3eg")]
+position = Vector2(56, 152)
+
+[node name="Dot873" parent="Level/Collectibles" unique_id=1407745481 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 152)
+
+[node name="Dot874" parent="Level/Collectibles" unique_id=851818041 instance=ExtResource("4_dp3eg")]
+position = Vector2(24, 152)
+
+[node name="Dot875" parent="Level/Collectibles" unique_id=1153970741 instance=ExtResource("4_dp3eg")]
+position = Vector2(24, 136)
+
+[node name="Dot876" parent="Level/Collectibles" unique_id=1331210689 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 136)
+
+[node name="Dot877" parent="Level/Collectibles" unique_id=1569398557 instance=ExtResource("4_dp3eg")]
+position = Vector2(56, 136)
+
+[node name="Dot878" parent="Level/Collectibles" unique_id=1167695022 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 136)
+
+[node name="Dot879" parent="Level/Collectibles" unique_id=415989306 instance=ExtResource("4_dp3eg")]
+position = Vector2(88, 136)
+
+[node name="Dot880" parent="Level/Collectibles" unique_id=336402029 instance=ExtResource("4_dp3eg")]
+position = Vector2(104, 136)
+
+[node name="Dot881" parent="Level/Collectibles" unique_id=1313033336 instance=ExtResource("4_dp3eg")]
+position = Vector2(104, 120)
+
+[node name="Dot882" parent="Level/Collectibles" unique_id=1193926639 instance=ExtResource("4_dp3eg")]
+position = Vector2(104, 104)
+
+[node name="Dot883" parent="Level/Collectibles" unique_id=1523584706 instance=ExtResource("4_dp3eg")]
+position = Vector2(104, 88)
+
+[node name="Dot884" parent="Level/Collectibles" unique_id=338796264 instance=ExtResource("4_dp3eg")]
+position = Vector2(104, 72)
+
+[node name="Dot885" parent="Level/Collectibles" unique_id=1574961716 instance=ExtResource("4_dp3eg")]
+position = Vector2(104, 56)
+
+[node name="Dot886" parent="Level/Collectibles" unique_id=319190526 instance=ExtResource("4_dp3eg")]
+position = Vector2(88, 56)
+
+[node name="Dot887" parent="Level/Collectibles" unique_id=291871578 instance=ExtResource("4_dp3eg")]
+position = Vector2(72, 56)
+
+[node name="Dot888" parent="Level/Collectibles" unique_id=1722221758 instance=ExtResource("4_dp3eg")]
+position = Vector2(56, 56)
+
+[node name="Dot889" parent="Level/Collectibles" unique_id=1762106978 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 56)
+
+[node name="Dot890" parent="Level/Collectibles" unique_id=1726171246 instance=ExtResource("4_dp3eg")]
+position = Vector2(24, 56)
+
+[node name="Dot891" parent="Level/Collectibles" unique_id=1420858079 instance=ExtResource("4_dp3eg")]
+position = Vector2(24, 72)
+
+[node name="Dot892" parent="Level/Collectibles" unique_id=1240384386 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 72)
+
+[node name="Dot893" parent="Level/Collectibles" unique_id=141163739 instance=ExtResource("4_dp3eg")]
+position = Vector2(40, 40)
+
+[node name="Bubble0" parent="Level/Collectibles" unique_id=1731966244 instance=ExtResource("7_yc10j")]
+position = Vector2(232, 5144)
+
+[node name="Bubble1" parent="Level/Collectibles" unique_id=1441606259 instance=ExtResource("7_yc10j")]
+position = Vector2(40, 5144)
+
+[node name="Bubble2" parent="Level/Collectibles" unique_id=1868475578 instance=ExtResource("7_yc10j")]
+position = Vector2(264, 4696)
+
+[node name="Bubble3" parent="Level/Collectibles" unique_id=84139437 instance=ExtResource("7_yc10j")]
+position = Vector2(264, 4344)
+
+[node name="Bubble4" parent="Level/Collectibles" unique_id=612083947 instance=ExtResource("7_yc10j")]
+position = Vector2(168, 4008)
+
+[node name="Bubble5" parent="Level/Collectibles" unique_id=1705462457 instance=ExtResource("7_yc10j")]
+position = Vector2(376, 4136)
+
+[node name="Bubble6" parent="Level/Collectibles" unique_id=652833144 instance=ExtResource("7_yc10j")]
+position = Vector2(232, 3784)
+
+[node name="Bubble7" parent="Level/Collectibles" unique_id=2030723361 instance=ExtResource("7_yc10j")]
+position = Vector2(376, 3576)
+
+[node name="Bubble8" parent="Level/Collectibles" unique_id=1770199127 instance=ExtResource("7_yc10j")]
+position = Vector2(40, 3160)
+
+[node name="Bubble9" parent="Level/Collectibles" unique_id=394370205 instance=ExtResource("7_yc10j")]
+position = Vector2(104, 2728)
+
+[node name="Bubble10" parent="Level/Collectibles" unique_id=308905425 instance=ExtResource("7_yc10j")]
+position = Vector2(360, 2280)
+
+[node name="Bubble11" parent="Level/Collectibles" unique_id=584577597 instance=ExtResource("7_yc10j")]
+position = Vector2(344, 1848)
+
+[node name="Bubble12" parent="Level/Collectibles" unique_id=2078246245 instance=ExtResource("7_yc10j")]
+position = Vector2(152, 1768)
+
+[node name="Bubble13" parent="Level/Collectibles" unique_id=1170326640 instance=ExtResource("7_yc10j")]
+position = Vector2(264, 1288)
+
+[node name="Bubble14" parent="Level/Collectibles" unique_id=1498099573 instance=ExtResource("7_yc10j")]
+position = Vector2(88, 1224)
+
+[node name="Bubble15" parent="Level/Collectibles" unique_id=775901873 instance=ExtResource("7_yc10j")]
+position = Vector2(168, 1048)
+
+[node name="Bubble16" parent="Level/Collectibles" unique_id=284855146 instance=ExtResource("7_yc10j")]
+position = Vector2(312, 664)
+
+[node name="Bubble17" parent="Level/Collectibles" unique_id=992031790 instance=ExtResource("7_yc10j")]
+position = Vector2(24, 392)
+
+[node name="Bubble18" parent="Level/Collectibles" unique_id=371409066 instance=ExtResource("7_yc10j")]
+position = Vector2(376, 216)
+
+[node name="Bubble19" parent="Level/Collectibles" unique_id=410660457 instance=ExtResource("7_yc10j")]
+position = Vector2(296, 104)
+
+[node name="Bubble20" parent="Level/Collectibles" unique_id=1498165415 instance=ExtResource("7_yc10j")]
+position = Vector2(184, 152)
+
+[node name="Bubble21" parent="Level/Collectibles" unique_id=125196996 instance=ExtResource("7_yc10j")]
+position = Vector2(280, 392)
+
+[node name="Bubble22" parent="Level/Collectibles" unique_id=1623530152 instance=ExtResource("7_yc10j")]
+position = Vector2(136, 456)
+
+[node name="Bubble23" parent="Level/Collectibles" unique_id=408646332 instance=ExtResource("7_yc10j")]
+position = Vector2(328, 760)
+
+[node name="Bubble24" parent="Level/Collectibles" unique_id=1470130700 instance=ExtResource("7_yc10j")]
+position = Vector2(232, 792)
+
+[node name="Bubble25" parent="Level/Collectibles" unique_id=340494428 instance=ExtResource("7_yc10j")]
+position = Vector2(88, 1032)
+
+[node name="Bubble26" parent="Level/Collectibles" unique_id=898880457 instance=ExtResource("7_yc10j")]
+position = Vector2(24, 1192)
+
+[node name="Bubble27" parent="Level/Collectibles" unique_id=1387020457 instance=ExtResource("7_yc10j")]
+position = Vector2(376, 1560)
+
+[node name="Bubble28" parent="Level/Collectibles" unique_id=1347451157 instance=ExtResource("7_yc10j")]
+position = Vector2(232, 1752)
+
+[node name="Bubble29" parent="Level/Collectibles" unique_id=1061713576 instance=ExtResource("7_yc10j")]
+position = Vector2(104, 1880)
+
+[node name="Bubble30" parent="Level/Collectibles" unique_id=1969322308 instance=ExtResource("7_yc10j")]
+position = Vector2(344, 2104)
+
+[node name="Bubble31" parent="Level/Collectibles" unique_id=1182677268 instance=ExtResource("7_yc10j")]
+position = Vector2(280, 2360)
+
+[node name="Bubble32" parent="Level/Collectibles" unique_id=2066093382 instance=ExtResource("7_yc10j")]
+position = Vector2(360, 2408)
+
+[node name="Bubble33" parent="Level/Collectibles" unique_id=72297753 instance=ExtResource("7_yc10j")]
+position = Vector2(216, 2696)
+
+[node name="Bubble34" parent="Level/Collectibles" unique_id=655637042 instance=ExtResource("7_yc10j")]
+position = Vector2(264, 2760)
+
+[node name="Bubble35" parent="Level/Collectibles" unique_id=484457618 instance=ExtResource("7_yc10j")]
+position = Vector2(296, 2920)
+
+[node name="Bubble36" parent="Level/Collectibles" unique_id=1115046667 instance=ExtResource("7_yc10j")]
+position = Vector2(40, 3352)
+
+[node name="Bubble37" parent="Level/Collectibles" unique_id=792020740 instance=ExtResource("7_yc10j")]
+position = Vector2(264, 3608)
+
+[node name="Bubble38" parent="Level/Collectibles" unique_id=1917019907 instance=ExtResource("7_yc10j")]
+position = Vector2(376, 3704)
+
+[node name="Bubble39" parent="Level/Collectibles" unique_id=1175537957 instance=ExtResource("7_yc10j")]
+position = Vector2(344, 3880)
+
+[node name="Bubble40" parent="Level/Collectibles" unique_id=207545074 instance=ExtResource("7_yc10j")]
+position = Vector2(104, 4152)
+
+[node name="Bubble41" parent="Level/Collectibles" unique_id=1009953964 instance=ExtResource("7_yc10j")]
+position = Vector2(376, 4312)
+
+[node name="Bubble42" parent="Level/Collectibles" unique_id=1471135526 instance=ExtResource("7_yc10j")]
+position = Vector2(232, 4392)
+
+[node name="Bubble43" parent="Level/Collectibles" unique_id=1614486558 instance=ExtResource("7_yc10j")]
+position = Vector2(24, 4824)
+
+[node name="Bubble44" parent="Level/Collectibles" unique_id=883587666 instance=ExtResource("7_yc10j")]
+position = Vector2(88, 5048)
+
+[node name="Bubble45" parent="Level/Collectibles" unique_id=342898479 instance=ExtResource("7_yc10j")]
+position = Vector2(200, 5208)
+
+[node name="Goal" parent="Level" unique_id=1937577901 instance=ExtResource("8_jscy8")]
+position = Vector2(40, 24)
+
+[node name="Checkpoint" type="Marker2D" parent="Level" unique_id=1123909417]
+position = Vector2(200, 5256)
+
+[node name="Player" parent="Level" unique_id=1740113718 instance=ExtResource("10_y6deb")]
+position = Vector2(168, 152)
+
+[node name="Water" parent="Level" unique_id=1048130599 instance=ExtResource("12_2wyq8")]
+position = Vector2(0, 5284)
+
+[node name="HUD" parent="." unique_id=1415309168 instance=ExtResource("14_2f3dj")]
